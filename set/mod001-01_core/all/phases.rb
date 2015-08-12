@@ -118,8 +118,10 @@ def event_applies? opts
   if opts[:on]
     return false unless Array.wrap( opts[:on] ).member? @action
   end
-  if opts[:changed]
-    return false if @action == :delete or !changes[ opts[:changed].to_s ]
+  if changed_field = opts[:changed]
+
+    changed_field = 'db_content' if changed_field.to_sym == :content
+    return false if @action == :delete or !changes[ changed_field.to_s ]
   end
   if opts[:when]
     return false unless opts[:when].call self
@@ -144,12 +146,14 @@ event :process_subcards, :after=>:approve, :on=>:save do
 
     opts[:supercard] = self
 
-    subcard = if known_card = Card[ab_name]
-      known_card.refresh.assign_attributes opts
-      known_card
-    elsif opts['subcards'].present? or (opts['content'].present? and opts['content'].strip.present?)
-      Card.new opts.reverse_merge 'name' => sub_name
-    end
+    subcard =
+      if known_card = Card[ab_name]
+        known_card.refresh.assign_attributes opts
+        known_card
+      elsif (opts['content'].present? && opts['content'].strip.present?) ||
+        opts['subcards'].present? || opts['file'].present? || opts['image'].present?
+        Card.new opts.reverse_merge 'name' => sub_name
+      end
 
     if subcard
       @subcards[sub_name] = subcard

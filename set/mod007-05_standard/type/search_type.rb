@@ -147,6 +147,9 @@ format do
     content_tag :li, content_tag(:span, '...')
   end
 
+  def chunk_list
+    :query
+  end
 end
 
 
@@ -178,7 +181,7 @@ end
 
 format :rss do
   def raw_feed_items
-    search_params.merge!(:default_limit => 25) 
+    search_params.merge!(:default_limit => 25)
     search_results
   end
 end
@@ -281,7 +284,6 @@ format :html do
   end
 
 end
-
 
 
 
