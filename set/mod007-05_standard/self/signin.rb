@@ -32,7 +32,6 @@ format :html do
 
   view :core do |args|
     account = card.fetch :trait=>:account, :new=>{}
-
     form_args = {
       :hidden => { :success=>"REDIRECT: #{interrupted_action || '*previous'}" },
       :recaptcha => :off
