@@ -32,7 +32,7 @@ format :html do
     bits = []
     [:favicon, :logo].each do |name|
       if c = Card[name] and c.type_id == ImageID and !c.db_content.blank?
-        bits << %{<link rel="shortcut icon" href="#{ subformat(c)._render_source :size=>:small }" />}
+        bits << %{<link rel="shortcut icon" href="#{ subformat(c)._render_source size: :small }" />}
         break
       end
     end
@@ -40,12 +40,12 @@ format :html do
     #Universal Edit Button
     if root.card
       if !root.card.new_record? && root.card.ok?(:update)
-        bits << %{<link rel="alternate" type="application/x-wiki" title="Edit this page!" href="#{ root.path :view=>:edit }"/>}
+        bits << %{<link rel="alternate" type="application/x-wiki" title="Edit this page!" href="#{ root.path view: :edit }"/>}
       end
 
       # RSS # move to mods!
       if root.card.type_id == SearchTypeID
-        opts = { :format => :rss }
+        opts = { format: :rss }
         root.search_params[:vars].each { |key, val| opts["_#{key}"] = val }
         bits << %{<link rel="alternate" type="application/rss+xml" title="RSS" href=#{page_path root.card.cardname, opts} />}
       end
@@ -58,7 +58,7 @@ format :html do
     style_card   = Card[manual_style] if manual_style
     style_card ||= root.card.rule_card :style
     @css_path = if params[:debug] == 'style'
-      page_path( style_card.cardname, :item => :import, :format => :css)
+      page_path( style_card.cardname, item: :import, format: :css)
     elsif style_card
       card_path style_card.machine_output_url
     end
@@ -82,7 +82,7 @@ format :html do
     script_card ||= root.card.rule_card :script
 
     @js_tag = if params[:debug] == 'script'
-      script_card.format(:js).render_core :item => :include_tag
+      script_card.format(:js).render_core item: :include_tag
     elsif script_card
       javascript_include_tag script_card.machine_output_url
     end

@@ -6,7 +6,7 @@ require 'uglifier'
 include Machine
 include MachineInput
 
-store_machine_output :filetype => "js"
+store_machine_output filetype: "js"
 
 machine_input do
   Uglifier.compile(format(:js)._render_core)
@@ -24,8 +24,8 @@ format do
 end
 
 format :html do
-  view :editor, :mod=>Html::HtmlFormat
-  view :content_changes, :mod=>CoffeeScript::HtmlFormat
+  view :editor, mod: Html::HtmlFormat
+  view :content_changes, mod: CoffeeScript::HtmlFormat
 
   view :core do |args|
     highlighted_js = ::CodeRay.scan( _render_raw, :js ).div
@@ -35,7 +35,7 @@ format :html do
 end
 
 def diff_args
-   {:format=>:text}
+   {format: :text}
 end
 
 

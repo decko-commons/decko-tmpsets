@@ -3,7 +3,7 @@ class Card; module Set; module All; module RichBootstrap; extend Card::Set # ~~~
 format :html do
 
   view :closed do |args|
-    args.merge! :body_class=>'closed-content'
+    args.merge! body_class: 'closed-content'
     super args
   end
 

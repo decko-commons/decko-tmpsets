@@ -20,7 +20,7 @@ machine_input do
   Uglifier.compile( compile_coffee format(:js)._render_raw )
 end
 
-store_machine_output :filetype => "js"
+store_machine_output filetype: 'js'
 
 def clean_html?
   false
@@ -35,7 +35,7 @@ end
 
 
 format :html do
-  view :editor, :mod=>Html::HtmlFormat
+  view :editor, mod: Html::HtmlFormat
 
   view :content_changes do |args|
     %{
@@ -59,7 +59,7 @@ format do
 end
 
 def diff_args
-   {:format=>:text}
+  { format: :text }
 end
 
 

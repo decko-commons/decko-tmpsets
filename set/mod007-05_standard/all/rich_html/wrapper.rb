@@ -35,7 +35,7 @@ format :html do
       }
     div =
       content_tag :div, output(yield).html_safe,
-      :id=>card.cardname.url_key, :data=>data, :style=>h(args[:style]), :class=>classes
+      id: card.cardname.url_key, data: data, style: h(args[:style]), class: classes
 
     if params[:debug] == 'slot' && !tagged( @current_view, :no_wrap_comments )
       name = h card.name
@@ -50,13 +50,13 @@ format :html do
     css_classes = [ 'card-body' ]
     css_classes << args[:body_class]                      if args[:body_class]
     css_classes += [ 'card-content', card.safe_set_keys ] if args[:content]
-    content_tag :div, :class=>css_classes.compact*' ' do
+    content_tag :div, class: css_classes.compact*' ' do
       yield args
     end
   end
 
   def panel args={}
-    wrap_with :div, :class=>"card-frame #{args[:panel_class]}" do
+    wrap_with :div, class: "card-frame #{args[:panel_class]}" do
       output(yield)
     end
   end
@@ -66,7 +66,7 @@ format :html do
       args.delete(:panel_class)
       subframe args, &block
     else
-      show_subheader = show_view?(:toolbar, args.merge(:default_visibility=>:hide)) && @current_view != :related && @current_view != :open
+      show_subheader = show_view?(:toolbar, args.merge(default_visibility: :hide)) && @current_view != :related && @current_view != :open
       wrap args do
         [
           _optional_render( :menu, args ),
@@ -74,7 +74,7 @@ format :html do
             [
               _optional_render( :header, args, :show),
               _optional_render( :subheader, args,(show_subheader ? :show : :hide)),
-              _optional_render( :help, args.merge(:help_class=>'alert alert-info'), :hide),
+              _optional_render( :help, args.merge(help_class: 'alert alert-info'), :hide),
               wrap_body(args) { output( block.call(args) ) } ,
             ]
           end
@@ -86,9 +86,9 @@ format :html do
   def subframe args={}
     wrap args do
       [
-        _optional_render( :menu, args.merge(:optional_horizontal_menu=>:hide) ),
+        _optional_render( :menu, args.merge(optional_horizontal_menu: :hide) ),
         _optional_render( :subheader, args, :show),
-        _optional_render( :help, args.merge(:help_class=>'alert alert-info'), :hide),
+        _optional_render( :help, args.merge(help_class: 'alert alert-info'), :hide),
         panel(args) do
           [
             _optional_render( :header, args, :hide),
@@ -120,7 +120,7 @@ format :html do
           <span aria-hidden="true">&times;</span>
         </button>
       } : ''
-    content_tag :div, :class=>css_class, :role=>'alert' do
+    content_tag :div, class: css_class, role: 'alert' do
       close_button + output( yield args)
     end
   end
