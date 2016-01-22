@@ -24,7 +24,7 @@ def assign_attributes args={}
 end
 
 def assign_set_specific_attributes
-  return unless @set_specific && @set_specific.present?
+  return unless @set_specific.present?
   @set_specific.each_pair do |name, value|
     send "#{name}=", value
   end
@@ -68,7 +68,7 @@ event :set_content, before: :store, on: :save do
   self.db_content = Card::Content.clean!(db_content) if clean_html?
   @selected_action_id = @selected_content = nil
   clear_drafts
-  reset_patterns_if_rule saving=true
+  reset_patterns_if_rule true
 end
 
 # FIXME: the following don't really belong here, but they have to come after
@@ -104,11 +104,6 @@ event :update_ruled_cards, after: :store do
                   item_card.update_read_rule
                 end
               end
-            # elsif rule_class_index = rule_class_ids.index( 0 )
-            #   in_set[trunk.key] = true
-            #   #warn "self rule update: #{trunk.inspect}, #{rule_class_index},
-            #   #{cur_index}"
-            #   trunk.update_read_rule if cur_index > rule_class_index
             else warn "No current rule index #{class_id}, " \
                       "#{rule_class_ids.inspect}"
             end
@@ -119,10 +114,10 @@ event :update_ruled_cards, after: :store do
 
       # then find all cards with me as read_rule_id that were not just updated
       # and regenerate their read_rules
-      if !new_record?
-        Card.where(read_rule_id: self.id, trash: false).reject do |w|
-          in_set[w.key]
-        end.each(&:update_read_rule)
+      if !new_card?
+        Card.search(read_rule_id: self.id) do |card|
+          card.update_read_rule unless in_set[card.key]
+        end
       end
     end
   end
@@ -133,27 +128,23 @@ event :process_read_rule_update_queue, after: :store do
   @read_rule_update_queue = []
 end
 
-#  set_callback :store, :after, :process_read_rule_update_queue, prepend: true
-
 event :expire_related, after: :store do
   subcards.keys.each do |key|
-    Card.cache.delete_local key
+    Card.cache.soft.delete key
   end
   expire true
 
-  if self.is_structure?
+  if is_structure?
     structuree_names.each do |name|
       Card.expire name, true
     end
   end
+end
 
-  # FIXME: really shouldn't be instantiating all the following bastards.
-  # Just need the key.
-  # fix in id_cache branch
-  dependents.each       { |c| c.expire(true) }
-  # self.referencers.each      { |c| c.expire(true) }
+event :expire_related_names, before: :expire_related, changed: :name do
+  # FIXME: look for opportunities to avoid instantiating the following
+  descendants.each { |c| c.expire(true) }
   name_referencers.each { |c| c.expire(true) }
-  # FIXME: this will need review when we do the new defaults/templating system
 end
 
 

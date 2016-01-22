@@ -9,14 +9,41 @@ format do
   end
 
   # NAME VIEWS
+  view :name, closed: true, perms: :none do |args|
+    return card.name unless args[:variant]
+    args[:variant].split(/[\s,]+/).inject(card.name) do |name, variant|
+      case variant.to_sym
+      when :capitalized
+        name.capitalize
+      when :singular
+        name.singularize
+      when :plural
+        name.pluralize
+      when :title
+        name.titleize
+      else
+        if ::Set.new([
+          :downcase, :upcase, :swapcase, :reverse, :succ
+        ]).include?(variant.to_sym)
+          name.send variant
+        else
+          name
+        end
+      end
+    end
+  end
 
-  simple_args = { closed: true, perms: :none }
-  view(:name,     simple_args) { card.name                           }
-  view(:key,      simple_args) { card.key                            }
-  view(:title,    simple_args) { |args| args[:title] || card.name    }
-  view(:linkname, simple_args) { card.cardname.url_key               }
-  view(:url,      simple_args) { card_url _render_linkname           }
-  view(:url_link, simple_args) { web_link card_url(_render_linkname) }
+  view(:key,      closed: true, perms: :none) { card.key }
+  view(:linkname, closed: true, perms: :none) { card.cardname.url_key }
+  view(:url,      closed: true, perms: :none) { card_url _render_linkname }
+
+  view :title, closed: true, perms: :none do |args|
+    args[:title] || card.name
+  end
+
+  view :url_link, closed: true, perms: :none do
+    web_link card_url(_render_linkname)
+  end
 
   view :link, closed: true, perms: :none do |args|
     card_link(
@@ -95,9 +122,9 @@ format do
     # FIXME: - relativity should be handled in smartname
     return '' unless args[:inc_name]
     name = args[:inc_name].to_name
-    stripped_name = name.stripped.to_name
+    stripped = name.stripped
 
-    if name.relative? && !stripped_name.starts_with_joint?
+    if name.relative? && !stripped.to_name.starts_with_joint?
       # not a simple relative name; just return the original syntax
       "{{#{args[:inc_syntax]}}}"
     else
@@ -108,7 +135,7 @@ format do
         when type = on_type_set
           "#{type}#{name}+#{Card[:type_plus_right].name}" # *type plus right
         else
-          "#{stripped_name.gsub(/^\+/, '')}+#{Card[:right].name}" # *right
+          "#{stripped.gsub(/^\+/, '')}+#{Card[:right].name}" # *right
         end
       subformat(Card.fetch set_name).render_template_link args
     end

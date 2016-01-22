@@ -4,18 +4,20 @@ class Card; module Set; module All; module Name; extend Card::Set
 require 'uuid'
 
 module ClassMethods
-  def uniquify_name name, rename=false
-    return name unless Card[name]
+  def uniquify_name name, rename=:new
+    return name unless Card.exists?(name)
     uniq_name = "#{name} 1"
-    while Card[uniq_name]
+    while Card.exists?(uniq_name)
       uniq_name.next!
     end
-    return uniq_name unless rename
-
-    Card[name].update_attributes! name: uniq_name,
-                                  update_referencers: true
-    # name conflict resolved; original name can be used
-    name
+    if rename == :old
+      # name conflict resolved; original name can be used
+      Card[name].update_attributes! name: uniq_name,
+                                    update_referencers: true
+      name
+    else
+      uniq_name
+    end
   end
 end
 
@@ -122,24 +124,42 @@ def left_or_new args={}
   left(args) || Card.new(args.merge(name: cardname.left))
 end
 
-def children
-  Card.search((simple? ? :part : :left) => name).to_a
+def fields
+  field_names.map { |name| Card[name] }
 end
 
-def dependents
-  return [] if new_card?
+def field_names parent_name=nil
+  child_names parent_name, :left
+end
 
-  if @dependents.nil?
-    @dependents =
-      Auth.as_bot do
-        deps = children
-        deps.inject(deps) do |array, card|
-          array + card.dependents
-        end
-      end
-    # Rails.logger.warn "dependents[#{inspect}] #{@dependents.inspect}"
+def children
+  child_names.map { |name| Card[name] }
+end
+
+def child_names parent_name=nil, side=nil
+  # eg, A+B is a child of A and B
+  parent_name ||= name
+  side ||= parent_name.to_name.simple? ? :part : :left
+  Card.search({ side => parent_name, return: :name },
+              "(#{side}) children of #{parent_name}")
+end
+
+def descendant_names parent_name=nil
+  return [] if new_card?
+  parent_name ||= name
+  Auth.as_bot do
+    deps = child_names parent_name
+    deps.inject(deps) do |array, childname|
+      array + descendant_names(childname)
+    end
   end
-  @dependents
+end
+
+def descendants
+  # children and children's children
+  # NOTE - set modules are not loaded
+  # -- should only be used for name manipulations
+  @descendants ||= descendant_names.map { |name| Card.quick_fetch name }
 end
 
 def repair_key
@@ -157,7 +177,7 @@ def repair_key
     saved ||= (self.cardname = current_key) && self.save!
 
     if saved
-      dependents.each(&:repair_key)
+      descendants.each(&:repair_key)
     else
       Rails.logger.debug "FAILED TO REPAIR BROKEN KEY: #{key}"
       self.name = "BROKEN KEY: #{name}"
@@ -215,8 +235,9 @@ end
 event :set_autoname, before: :validate_name, on: :create do
   if name.blank? && (autoname_card = rule_card(:autoname))
     self.name = autoname autoname_card.content
-    # FIXME: should give placeholder on new, do next and save on create
-    Auth.as_bot { autoname_card.refresh.update_attributes! content: name }
+    # FIXME: should give placeholder in approve phase
+    # and finalize/commit change in store phase
+    autoname_card.refresh.update_column :db_content, name
   end
 end
 
@@ -278,28 +299,25 @@ event :cascade_name_changes, after: :store, on: :update, changed: :name do
   self.update_referencers = false if update_referencers == 'false'
   Card::Reference.update_on_rename self, name, self.update_referencers
 
-  deps = dependents
-  # warn "-------------------#{name_was}---- CASCADE #{self.name} -> deps: " \
-  #      " #{deps.map(&:name)*', '} -----------------------"
+  des = descendants
+  @descendants = nil # reset
 
-  @dependents = nil # reset
-
-  deps.each do |dep|
+  des.each do |de|
     # here we specifically want NOT to invoke recursive cascades on these
     # cards, have to go this low level to avoid callbacks.
-    Rails.logger.info "cascading name: #{dep.name}"
-    Card.expire dep.name # old name
-    newname = dep.cardname.replace_part name_was, name
-    Card.where(id: dep.id).update_all name: newname.to_s, key: newname.key
-    Card::Reference.update_on_rename dep, newname, update_referencers
+    Rails.logger.info "cascading name: #{de.name}"
+    Card.expire de.name # old name
+    newname = de.cardname.replace_part name_was, name
+    Card.where(id: de.id).update_all name: newname.to_s, key: newname.key
+    Card::Reference.update_on_rename de, newname, update_referencers
     Card.expire newname
   end
-  execute_referencers_update(deps) if update_referencers
+  execute_referencers_update(des) if update_referencers
 end
 
-def execute_referencers_update dependents
+def execute_referencers_update descendants
   Auth.as_bot do
-    [name_referencers(name_was) + dependents.map(&:referencers)]
+    [name_referencers(name_was) + descendants.map(&:referencers)]
       .flatten.uniq.each do |card|
       # FIXME:  using 'name_referencers' instead of plain 'referencers' for self
       # because there are cases where trunk and tag
@@ -310,7 +328,7 @@ def execute_referencers_update dependents
       # so at this time X is still including Y, which does not exist.
       # therefore #referencers doesn't find it, but name_referencers(old_name)
       # does.
-      # some even more complicated scenario probably breaks on the dependents,
+      # some even more complicated scenario probably breaks on the descendants,
       # so this probably needs a more thoughtful refactor
       # aligning the dependent saving with the name cascading
 

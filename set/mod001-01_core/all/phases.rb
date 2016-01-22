@@ -146,7 +146,8 @@ def phase_ok? opts
   phase && (
     (opts[:during] && in?(opts[:during])) ||
     (opts[:before] && before?(opts[:before])) ||
-    (opts[:after]  && after?(opts[:after]))
+    (opts[:after]  && after?(opts[:after])) ||
+    true # no phase restriction in opts
   )
 end
 
