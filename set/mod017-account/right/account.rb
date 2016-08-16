@@ -165,7 +165,7 @@ def ok_to_read
 end
 
 def changes_visible? act
-  act.relevant_actions_for(act.card).each do |action|
+  act.actions_affecting(act.card).each do |action|
     return true if action.card.ok? :read
   end
   false
