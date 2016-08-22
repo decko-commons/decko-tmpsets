@@ -207,6 +207,7 @@ rescue
 end
 
 event :set_autoname, :prepare_to_validate, on: :create do
+  #binding.pry
   if name.blank? && (autoname_card = rule_card(:autoname))
     self.name = autoname autoname_card.content
     # FIXME: should give placeholder in approve phase

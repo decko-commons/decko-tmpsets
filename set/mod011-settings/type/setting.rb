@@ -85,7 +85,7 @@ format do
   view :rule_help do |_args|
     <<-HTML
       <div class="alert alert-info">
-        #{process_content_object '{{+*right+*help|content}}'}
+        #{process_content '{{+*right+*help|content}}'}
       </div>
     HTML
   end
