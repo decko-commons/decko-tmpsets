@@ -35,7 +35,7 @@ end
 # removes the action if there are no changes
 event :finalize_action, :finalize,
       when: proc { |c| c.finalize_action? } do
-  @changed_fields = Card::TRACKED_FIELDS.select do |f|
+  @changed_fields = Card::Change::TRACKED_FIELDS.select do |f|
     changed_attributes.member? f
   end
   if @changed_fields.present?
@@ -85,7 +85,8 @@ event :rollback_actions, :prepare_to_validate,
   Env.params["action_ids"] = nil
   update_attributes! revision
   rollback_actions.each do |action|
-    action.card.try :symlink_to, action.id
+    # rollback file and image cards
+    action.card.try :rollback_to, action
   end
   clear_drafts
   abort :success
