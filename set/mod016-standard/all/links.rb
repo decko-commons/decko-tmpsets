@@ -43,7 +43,7 @@ format do
         "email-link"
       when /^([a-zA-Z][\-+\.a-zA-Z\d]*):/
         Regexp.last_match(1) + "-link"
-      when /^\//
+      when %r{^/}
         href = internal_url href[1..-1]
         "internal-link"
       else
@@ -156,7 +156,7 @@ end
 
 format :css do
   def link_to _text, href, _opts={}
-    interpret_href href
+    card_url interpret_href(href)
   end
 end
 
