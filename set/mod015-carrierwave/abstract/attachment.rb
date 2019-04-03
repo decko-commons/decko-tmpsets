@@ -66,7 +66,7 @@ def attachment_changed?
   send "#{attachment_name}_changed?"
 end
 
-def create_versions?
+def create_versions? new_file
   true
 end
 
