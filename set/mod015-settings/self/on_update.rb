@@ -1,6 +1,7 @@
 # -*- encoding : utf-8 -*-
 class Card; module Set; class Self
 # Set: The card "OnUpdate"
+#
 module OnUpdate;
 extend Card::Set
 def self.source_location; "/Users/ethan/dev/decko/gem/card/mod/settings/set/self/on_update.rb"; end

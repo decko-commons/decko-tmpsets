@@ -1,6 +1,7 @@
 # -*- encoding : utf-8 -*-
 class Card; module Set; class All; module History;
-# Set: All cards
+# Set: All cards (History, Events)
+#
 # must be called on all actions and before :set_name, :process_subcards and
 module Events;
 extend Card::Set

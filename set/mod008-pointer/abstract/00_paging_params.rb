@@ -1,6 +1,7 @@
 # -*- encoding : utf-8 -*-
 class Card; module Set; class Abstract
 # Set: Abstract (PagingParams)
+#
 module PagingParams;
 extend Card::Set
 def self.source_location; "/Users/ethan/dev/decko/gem/card/mod/pointer/set/abstract/00_paging_params.rb"; end

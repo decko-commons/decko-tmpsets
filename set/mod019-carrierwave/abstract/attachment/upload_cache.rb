@@ -1,6 +1,7 @@
 # -*- encoding : utf-8 -*-
 class Card; module Set; class Abstract; module Attachment;
 # Set: Abstract (Attachment, UploadCache)
+#
 # action id of the cached upload
 module UploadCache;
 extend Card::Set

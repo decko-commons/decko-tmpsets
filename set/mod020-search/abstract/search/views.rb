@@ -1,6 +1,7 @@
 # -*- encoding : utf-8 -*-
 class Card; module Set; class Abstract; module Search;
 # Set: Abstract (Search, Views)
+#
 module Views;
 extend Card::Set
 def self.source_location; "/Users/ethan/dev/decko/gem/card/mod/search/set/abstract/search/views.rb"; end

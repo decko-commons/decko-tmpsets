@@ -1,6 +1,7 @@
 # -*- encoding : utf-8 -*-
 class Card; module Set; class Type; module EmailTemplate;
-# Set: All "EmailTemplate" cards
+# Set: All "EmailTemplate+EmailConfig" cards (EmailConfig)
+#
 module EmailConfig;
 extend Card::Set
 def self.source_location; "/Users/ethan/dev/decko/gem/card/mod/email/set/type/email_template/email_config.rb"; end

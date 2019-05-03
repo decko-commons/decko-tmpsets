@@ -1,6 +1,7 @@
 # -*- encoding : utf-8 -*-
 class Card; module Set; class All
-# Set: All cards
+# Set: All cards (Bar)
+#
 module Bar;
 extend Card::Set
 def self.source_location; "/Users/ethan/dev/decko/gem/card/mod/item/set/all/bar.rb"; end

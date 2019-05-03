@@ -1,6 +1,7 @@
 # -*- encoding : utf-8 -*-
 class Card; module Set; class Abstract
 # Set: Abstract (AceEditor)
+#
 module AceEditor;
 extend Card::Set
 def self.source_location; "/Users/ethan/dev/decko/gem/card/mod/ace_editor/set/abstract/ace_editor.rb"; end

@@ -1,6 +1,7 @@
 # -*- encoding : utf-8 -*-
 class Card; module Set; class Abstract
 # Set: Abstract (Permission)
+#
 module Permission;
 extend Card::Set
 def self.source_location; "/Users/ethan/dev/decko/gem/card/mod/settings/set/abstract/permission.rb"; end

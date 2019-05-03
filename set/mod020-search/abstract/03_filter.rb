@@ -1,6 +1,7 @@
 # -*- encoding : utf-8 -*-
 class Card; module Set; class Abstract
 # Set: Abstract (Filter)
+#
 module Filter;
 extend Card::Set
 def self.source_location; "/Users/ethan/dev/decko/gem/card/mod/search/set/abstract/03_filter.rb"; end

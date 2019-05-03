@@ -1,6 +1,7 @@
 # -*- encoding : utf-8 -*-
 class Card; module Set; class Abstract
 # Set: Abstract (BsBadge)
+#
 module BsBadge;
 extend Card::Set
 def self.source_location; "/Users/ethan/dev/decko/gem/card/mod/utility/set/abstract/bs_badge.rb"; end

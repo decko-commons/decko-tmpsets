@@ -1,6 +1,7 @@
 # -*- encoding : utf-8 -*-
 class Card; module Set; class Self
 # Set: The card "Admin"
+#
 # collect arrays of the form
 module Admin;
 extend Card::Set

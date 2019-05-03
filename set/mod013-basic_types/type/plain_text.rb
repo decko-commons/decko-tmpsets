@@ -1,6 +1,7 @@
 # -*- encoding : utf-8 -*-
 class Card; module Set; class Type
 # Set: All "PlainText" cards
+#
 module PlainText;
 extend Card::Set
 def self.source_location; "/Users/ethan/dev/decko/gem/card/mod/basic_types/set/type/plain_text.rb"; end

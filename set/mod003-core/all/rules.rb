@@ -1,6 +1,7 @@
 # -*- encoding : utf-8 -*-
 class Card; module Set; class All
-# Set: All cards
+# Set: All cards (Rules)
+#
 # frozen_string_literal: true
 module Rules;
 extend Card::Set

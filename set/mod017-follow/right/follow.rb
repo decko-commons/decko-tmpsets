@@ -1,6 +1,7 @@
 # -*- encoding : utf-8 -*-
 class Card; module Set; class Right
 # Set: All "+Follow" cards
+#
 # The Right::Follow set configures follow preferences (`[Set]+[User]+:follow`)
 # While the user follow dashboard ([User]+:follow`) is also in this Set, its
 module Follow;

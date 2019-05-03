@@ -1,6 +1,7 @@
 # -*- encoding : utf-8 -*-
 class Card; module Set; class Self
 # Set: The card "ScriptJqueryHelper"
+#
 module ScriptJqueryHelper;
 extend Card::Set
 def self.source_location; "/Users/ethan/dev/decko/gem/card/mod/machines/set/self/script_jquery_helper.rb"; end

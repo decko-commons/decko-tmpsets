@@ -1,6 +1,7 @@
 # -*- encoding : utf-8 -*-
 class Card; module Set; class Abstract; module Attachment;
 # Set: Abstract (Attachment, StorageType)
+#
 module StorageType;
 extend Card::Set
 def self.source_location; "/Users/ethan/dev/decko/gem/card/mod/carrierwave/set/abstract/attachment/storage_type.rb"; end

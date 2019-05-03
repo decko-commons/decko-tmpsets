@@ -1,6 +1,7 @@
 # -*- encoding : utf-8 -*-
 class Card; module Set; class Abstract
 # Set: Abstract (WqlSearch)
+#
 module WqlSearch;
 extend Card::Set
 def self.source_location; "/Users/ethan/dev/decko/gem/card/mod/search/set/abstract/wql_search.rb"; end

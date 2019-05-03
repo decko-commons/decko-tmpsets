@@ -1,6 +1,7 @@
 # -*- encoding : utf-8 -*-
 class Card; module Set; class Type
 # Set: All "CustomizedBootswatchSkin" cards
+#
 module CustomizedBootswatchSkin;
 extend Card::Set
 def self.source_location; "/Users/ethan/dev/decko/gem/card/mod/bootstrap/set/type/customized_bootswatch_skin.rb"; end

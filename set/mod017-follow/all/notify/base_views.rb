@@ -1,6 +1,7 @@
 # -*- encoding : utf-8 -*-
 class Card; module Set; class All; module Notify;
-# Set: All cards
+# Set: All cards (Notify, BaseViews)
+#
 module BaseViews;
 extend Card::Set
 def self.source_location; "/Users/ethan/dev/decko/gem/card/mod/follow/set/all/notify/base_views.rb"; end

@@ -1,6 +1,7 @@
 # -*- encoding : utf-8 -*-
 class Card; module Set; class Abstract
 # Set: Abstract (CodePointer)
+#
 module CodePointer;
 extend Card::Set
 def self.source_location; "/Users/ethan/dev/decko/gem/card/mod/pointer/set/abstract/code_pointer.rb"; end

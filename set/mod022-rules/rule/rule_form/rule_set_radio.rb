@@ -1,6 +1,7 @@
 # -*- encoding : utf-8 -*-
 class Card; module Set; class Rule
-# Set: All rule cards
+# Set: All rule cards (RuleForm)
+#
 #! no set module
 module RuleForm;
 def self.source_location; "/Users/ethan/dev/decko/gem/card/mod/rules/set/rule/rule_form/rule_set_radio.rb"; end

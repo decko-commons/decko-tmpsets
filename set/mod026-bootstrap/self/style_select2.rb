@@ -1,6 +1,7 @@
 # -*- encoding : utf-8 -*-
 class Card; module Set; class Self
 # Set: The card "StyleSelect2"
+#
 module StyleSelect2;
 extend Card::Set
 def self.source_location; "/Users/ethan/dev/decko/gem/card/mod/bootstrap/set/self/style_select2.rb"; end

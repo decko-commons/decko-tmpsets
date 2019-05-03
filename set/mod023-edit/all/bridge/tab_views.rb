@@ -1,6 +1,7 @@
 # -*- encoding : utf-8 -*-
 class Card; module Set; class All; module Bridge;
-# Set: All cards
+# Set: All cards (Bridge, TabViews)
+#
 module TabViews;
 extend Card::Set
 def self.source_location; "/Users/ethan/dev/decko/gem/card/mod/edit/set/all/bridge/tab_views.rb"; end

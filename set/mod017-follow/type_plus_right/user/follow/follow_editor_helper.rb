@@ -1,6 +1,7 @@
 # -*- encoding : utf-8 -*-
 class Card; module Set; class TypePlusRight; module User;; module Follow;
-# Set: All "+User" cards on "" cards
+# Set: All "+FollowEditorHelper" cards on "User+Follow" cards (FollowEditorHelper)
+#
 # all the following methods are used to construct the Follow and Ignore tabs
 
 module FollowEditorHelper;

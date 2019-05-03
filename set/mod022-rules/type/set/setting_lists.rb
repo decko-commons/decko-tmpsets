@@ -1,6 +1,7 @@
 # -*- encoding : utf-8 -*-
 class Card; module Set; class Type; module Set;
-# Set: All "Set" cards
+# Set: All "Set+SettingLists" cards (SettingLists)
+#
 module SettingLists;
 extend Card::Set
 def self.source_location; "/Users/ethan/dev/decko/gem/card/mod/rules/set/type/set/setting_lists.rb"; end

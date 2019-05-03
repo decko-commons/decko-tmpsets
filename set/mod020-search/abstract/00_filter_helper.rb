@@ -1,6 +1,7 @@
 # -*- encoding : utf-8 -*-
 class Card; module Set; class Abstract
 # Set: Abstract (FilterHelper)
+#
 # TODO: move sort/filter handling out of card and into base format
 module FilterHelper;
 extend Card::Set

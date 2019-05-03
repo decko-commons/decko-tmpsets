@@ -1,6 +1,7 @@
 # -*- encoding : utf-8 -*-
 class Card; module Set; class Abstract
 # Set: Abstract (BootstrapCodeFile)
+#
 module BootstrapCodeFile;
 extend Card::Set
 def self.source_location; "/Users/ethan/dev/decko/gem/card/mod/bootstrap/set/abstract/bootstrap_code_file.rb"; end

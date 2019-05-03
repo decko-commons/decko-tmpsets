@@ -1,6 +1,7 @@
 # -*- encoding : utf-8 -*-
 class Card; module Set; class Abstract; module Pointer;
 # Set: Abstract (Pointer, OptionsApi)
+#
 # TODO: some of this should be moved to right/options!!
 module OptionsApi;
 extend Card::Set

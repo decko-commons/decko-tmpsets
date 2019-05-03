@@ -1,6 +1,7 @@
 # -*- encoding : utf-8 -*-
 class Card; module Set; class Abstract
 # Set: Abstract (Script)
+#
 # -*- encoding : utf-8 -*-
 module Script;
 extend Card::Set

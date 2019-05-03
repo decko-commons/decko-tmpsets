@@ -1,6 +1,7 @@
 # -*- encoding : utf-8 -*-
 class Card; module Set; class Type
 # Set: All "File" cards
+#
 module File;
 extend Card::Set
 def self.source_location; "/Users/ethan/dev/decko/gem/card/mod/carrierwave/set/type/file.rb"; end

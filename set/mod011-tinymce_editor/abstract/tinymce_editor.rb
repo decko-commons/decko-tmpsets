@@ -1,6 +1,7 @@
 # -*- encoding : utf-8 -*-
 class Card; module Set; class Abstract
 # Set: Abstract (TinymceEditor)
+#
 module TinymceEditor;
 extend Card::Set
 def self.source_location; "/Users/ethan/dev/decko/gem/card/mod/tinymce_editor/set/abstract/tinymce_editor.rb"; end

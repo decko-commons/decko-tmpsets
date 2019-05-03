@@ -1,4 +1,6 @@
 # -*- encoding : utf-8 -*-
+# Set Pattern: Rstar
+#
 class Card::Set::Rstar < Card::Set::Pattern::Abstract
 cattr_accessor :options
 class << self
@@ -19,7 +21,6 @@ end
 def pattern_applies? card
   card.name.rstar?
 end
-
               end
               register "Rstar".underscore.to_sym, (options || {})
             end

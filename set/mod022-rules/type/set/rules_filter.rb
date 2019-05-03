@@ -1,6 +1,7 @@
 # -*- encoding : utf-8 -*-
 class Card; module Set; class Type; module Set;
-# Set: All "Set" cards
+# Set: All "Set+RulesFilter" cards (RulesFilter)
+#
 module RulesFilter;
 extend Card::Set
 def self.source_location; "/Users/ethan/dev/decko/gem/card/mod/rules/set/type/set/rules_filter.rb"; end

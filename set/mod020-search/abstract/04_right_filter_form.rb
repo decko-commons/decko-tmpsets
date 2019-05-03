@@ -1,6 +1,7 @@
 # -*- encoding : utf-8 -*-
 class Card; module Set; class Abstract
 # Set: Abstract (RightFilterForm)
+#
 # To be included in a field card to get a filter for the parent.
 module RightFilterForm;
 extend Card::Set

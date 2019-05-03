@@ -1,6 +1,7 @@
 # -*- encoding : utf-8 -*-
 class Card; module Set; class Abstract
 # Set: Abstract (VirtualCache)
+#
 # -*- encoding : utf-8 -*-
 module VirtualCache;
 extend Card::Set

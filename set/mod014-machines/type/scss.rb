@@ -1,6 +1,7 @@
 # -*- encoding : utf-8 -*-
 class Card; module Set; class Type
 # Set: All "Scss" cards
+#
 module Scss;
 extend Card::Set
 def self.source_location; "/Users/ethan/dev/decko/gem/card/mod/machines/set/type/scss.rb"; end

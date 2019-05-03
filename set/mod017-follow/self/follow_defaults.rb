@@ -1,6 +1,7 @@
 # -*- encoding : utf-8 -*-
 class Card; module Set; class Self
 # Set: The card "FollowDefaults"
+#
 # DEPRECATED
 #
 # Despite its name (*follow defaults)card does not influence defaults for *follow rules.

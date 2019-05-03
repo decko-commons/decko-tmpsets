@@ -1,4 +1,6 @@
 # -*- encoding : utf-8 -*-
+# Set Pattern: AllPlus
+#
 class Card::Set::AllPlus < Card::Set::Pattern::Abstract
 cattr_accessor :options
 class << self
@@ -15,7 +17,6 @@ end
 def prototype_args _anchor
   { name: "+" }
 end
-
               end
               register "AllPlus".underscore.to_sym, (options || {})
             end

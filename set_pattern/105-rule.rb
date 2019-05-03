@@ -1,4 +1,6 @@
 # -*- encoding : utf-8 -*-
+# Set Pattern: Rule
+#
 class Card::Set::Rule < Card::Set::Pattern::Abstract
 cattr_accessor :options
 class << self
@@ -19,7 +21,6 @@ end
 def pattern_applies? card
   card.is_rule?
 end
-
               end
               register "Rule".underscore.to_sym, (options || {})
             end

@@ -1,6 +1,7 @@
 # -*- encoding : utf-8 -*-
 class Card; module Set; class Right
 # Set: All "+Options" cards
+#
 module Options;
 extend Card::Set
 def self.source_location; "/Users/ethan/dev/decko/gem/card/mod/pointer/set/right/options.rb"; end

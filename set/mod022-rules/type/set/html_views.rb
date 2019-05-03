@@ -1,6 +1,7 @@
 # -*- encoding : utf-8 -*-
 class Card; module Set; class Type; module Set;
-# Set: All "Set" cards
+# Set: All "Set+HtmlViews" cards (HtmlViews)
+#
 module HtmlViews;
 extend Card::Set
 def self.source_location; "/Users/ethan/dev/decko/gem/card/mod/rules/set/type/set/html_views.rb"; end

@@ -1,6 +1,7 @@
 # -*- encoding : utf-8 -*-
 class Card; module Set; class All; module Bootstrap;
-# Set: All cards
+# Set: All cards (Bootstrap, Helper)
+#
 module Helper;
 extend Card::Set
 def self.source_location; "/Users/ethan/dev/decko/gem/card/mod/bootstrap/set/all/bootstrap/helper.rb"; end

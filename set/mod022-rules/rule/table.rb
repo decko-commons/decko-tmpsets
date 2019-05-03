@@ -1,6 +1,7 @@
 # -*- encoding : utf-8 -*-
 class Card; module Set; class Rule
-# Set: All rule cards
+# Set: All rule cards (Table)
+#
 module Table;
 extend Card::Set
 def self.source_location; "/Users/ethan/dev/decko/gem/card/mod/rules/set/rule/table.rb"; end

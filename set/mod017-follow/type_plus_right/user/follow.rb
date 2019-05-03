@@ -1,6 +1,7 @@
 # -*- encoding : utf-8 -*-
 class Card; module Set; class TypePlusRight; module User;
-# Set: All "+User" cards on "" cards
+# Set: All "+Follow" cards on "User" cards
+#
 # a virtual pointer to the sets that a user is following.
 module Follow;
 extend Card::Set

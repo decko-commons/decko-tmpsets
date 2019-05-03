@@ -1,6 +1,7 @@
 # -*- encoding : utf-8 -*-
 class Card; module Set; class Abstract; module Pointer;
 # Set: Abstract (Pointer, OtherViews)
+#
 # BASE views
 module OtherViews;
 extend Card::Set

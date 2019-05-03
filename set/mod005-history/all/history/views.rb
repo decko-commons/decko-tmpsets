@@ -1,6 +1,7 @@
 # -*- encoding : utf-8 -*-
 class Card; module Set; class All; module History;
-# Set: All cards
+# Set: All cards (History, Views)
+#
 # History views
 module Views;
 extend Card::Set

@@ -1,6 +1,7 @@
 # -*- encoding : utf-8 -*-
 class Card; module Set; class Self
 # Set: The card "SmartmenuJs"
+#
 module SmartmenuJs;
 extend Card::Set
 def self.source_location; "/Users/ethan/dev/decko/gem/card/mod/bootstrap/set/self/smartmenu_js.rb"; end

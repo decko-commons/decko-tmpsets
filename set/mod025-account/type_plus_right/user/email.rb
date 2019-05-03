@@ -1,6 +1,7 @@
 # -*- encoding : utf-8 -*-
 class Card; module Set; class TypePlusRight; module User;
-# Set: All "+User" cards on "" cards
+# Set: All "+Email" cards on "User" cards
+#
 # supports legacy references to <User>+*email
 module Email;
 extend Card::Set

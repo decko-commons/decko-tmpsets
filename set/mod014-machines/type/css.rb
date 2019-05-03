@@ -1,6 +1,7 @@
 # -*- encoding : utf-8 -*-
 class Card; module Set; class Type
 # Set: All "Css" cards
+#
 # -*- encoding : utf-8 -*-
 module Css;
 extend Card::Set

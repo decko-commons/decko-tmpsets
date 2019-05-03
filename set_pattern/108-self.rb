@@ -1,4 +1,6 @@
 # -*- encoding : utf-8 -*-
+# Set Pattern: Self
+#
 class Card::Set::Self < Card::Set::Pattern::Abstract
 cattr_accessor :options
 class << self
@@ -21,7 +23,6 @@ end
 def anchor_id card
   card.id
 end
-
               end
               register "Self".underscore.to_sym, (options || {})
             end

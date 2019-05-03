@@ -1,6 +1,7 @@
 # -*- encoding : utf-8 -*-
 class Card; module Set; class Right
 # Set: All "+Account" cards
+#
 # -*- encoding : utf-8 -*-
 module Account;
 extend Card::Set

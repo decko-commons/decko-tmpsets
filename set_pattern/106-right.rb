@@ -1,4 +1,6 @@
 # -*- encoding : utf-8 -*-
+# Set Pattern: Right
+#
 class Card::Set::Right < Card::Set::Pattern::Abstract
 cattr_accessor :options
 class << self
@@ -22,7 +24,6 @@ end
 def anchor_name card
   card.name.tag
 end
-
               end
               register "Right".underscore.to_sym, (options || {})
             end

@@ -1,6 +1,7 @@
 # -*- encoding : utf-8 -*-
 class Card; module Set; class Right
 # Set: All "+Cc" cards
+#
 module Cc;
 extend Card::Set
 def self.source_location; "/Users/ethan/dev/decko/gem/card/mod/email/set/right/cc.rb"; end

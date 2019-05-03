@@ -1,7 +1,11 @@
 # -*- encoding : utf-8 -*-
+# Set Pattern: TypePlusRight
+#
+# Patterned field names on a specific type
 class Card::Set::TypePlusRight < Card::Set::Pattern::Abstract
 cattr_accessor :options
 class << self
+
 @@options = {
   junction_only: true,
   assigns_type: true,
@@ -29,7 +33,6 @@ def anchor_name card
   type_name = card.left(new: {})&.type_name || Card.default_type_id.cardname
   "#{type_name}+#{card.name.tag}"
 end
-
               end
               register "TypePlusRight".underscore.to_sym, (options || {})
             end

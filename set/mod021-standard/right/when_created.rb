@@ -1,6 +1,7 @@
 # -*- encoding : utf-8 -*-
 class Card; module Set; class Right
 # Set: All "+WhenCreated" cards
+#
 module WhenCreated;
 extend Card::Set
 def self.source_location; "/Users/ethan/dev/decko/gem/card/mod/standard/set/right/when_created.rb"; end

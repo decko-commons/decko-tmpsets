@@ -1,6 +1,7 @@
 # -*- encoding : utf-8 -*-
 class Card; module Set; class Abstract; module Pointer;; module HtmlViews;
 # Set: Abstract (Pointer, HtmlViews, Filter)
+#
 module Filter;
 extend Card::Set
 def self.source_location; "/Users/ethan/dev/decko/gem/card/mod/pointer/set/abstract/02_pointer/html_views/filter.rb"; end

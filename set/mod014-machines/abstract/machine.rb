@@ -1,6 +1,7 @@
 # -*- encoding : utf-8 -*-
 class Card; module Set; class Abstract
 # Set: Abstract (Machine)
+#
 # ## What are Machines?
 # {Machine} and {MachineInput} together implement a kind of observer pattern.
 # {Machine} processes a collection of input cards to generate an output card

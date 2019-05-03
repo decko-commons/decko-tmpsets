@@ -1,6 +1,7 @@
 # -*- encoding : utf-8 -*-
 class Card; module Set; class Type
 # Set: All "CoffeeScript" cards
+#
 # -*- encoding : utf-8 -*-
 module CoffeeScript;
 extend Card::Set

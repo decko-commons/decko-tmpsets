@@ -1,6 +1,7 @@
 # -*- encoding : utf-8 -*-
 class Card; module Set; class All; module History;
-# Set: All cards
+# Set: All cards (History, Selected)
+#
 # if these aren't in a nested module, the methods just overwrite the base
 #  methods, but we need a distinct module so that super will be able to refer to
 module Selected;

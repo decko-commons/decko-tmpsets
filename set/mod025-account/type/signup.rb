@@ -1,6 +1,7 @@
 # -*- encoding : utf-8 -*-
 class Card; module Set; class Type
 # Set: All "Signup" cards
+#
 module Signup;
 extend Card::Set
 def self.source_location; "/Users/ethan/dev/decko/gem/card/mod/account/set/type/signup.rb"; end

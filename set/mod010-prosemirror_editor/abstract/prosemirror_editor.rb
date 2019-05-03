@@ -1,6 +1,7 @@
 # -*- encoding : utf-8 -*-
 class Card; module Set; class Abstract
 # Set: Abstract (ProsemirrorEditor)
+#
 module ProsemirrorEditor;
 extend Card::Set
 def self.source_location; "/Users/ethan/dev/decko/gem/card/mod/prosemirror_editor/set/abstract/prosemirror_editor.rb"; end

@@ -1,6 +1,7 @@
 # -*- encoding : utf-8 -*-
 class Card; module Set; class Rule; module RuleForm;
-# Set: All rule cards
+# Set: All rule cards (RuleForm, SetSelection)
+#
 module SetSelection;
 extend Card::Set
 def self.source_location; "/Users/ethan/dev/decko/gem/card/mod/rules/set/rule/rule_form/set_selection.rb"; end
