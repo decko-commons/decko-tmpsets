@@ -1,5 +1,6 @@
 # -*- encoding : utf-8 -*-
 class Card; module Set; class Right
+# Set: All "+Style" cards
 module Style;
 extend Card::Set
 def self.source_location; "/Users/ethan/dev/decko/gem/card/mod/settings/set/right/style.rb"; end
@@ -8,14 +9,14 @@ include_set Abstract::Machine
 
 store_machine_output filetype: "css"
 
-format do
+module Format; parent.send :register_set_format, Card::Format, self; extend Card::Set::AbstractFormat
   # turn off autodetection of uri's
   def chunk_list
     :nest_only
   end
 end
 
-format :html do
+module HtmlFormat; parent.send :register_set_format, Card::Format::HtmlFormat, self; extend Card::Set::AbstractFormat
   HIDDEN_SKINS = %w[bootstrap_default_skin themeless_bootstrap_skin bootstrap_default_skin
                     classic_bootstrap_skin].freeze
 

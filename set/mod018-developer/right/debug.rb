@@ -1,5 +1,6 @@
 # -*- encoding : utf-8 -*-
 class Card; module Set; class Right
+# Set: All "+Debug" cards
 module Debug;
 extend Card::Set
 def self.source_location; "/Users/ethan/dev/decko/gem/card/mod/developer/set/right/debug.rb"; end
@@ -7,7 +8,7 @@ def virtual?
   true
 end
 
-format :html do
+module HtmlFormat; parent.send :register_set_format, Card::Format::HtmlFormat, self; extend Card::Set::AbstractFormat
   view :core do
     subject = card.left
 

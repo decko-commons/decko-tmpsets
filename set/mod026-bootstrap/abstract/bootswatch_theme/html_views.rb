@@ -1,12 +1,13 @@
 # -*- encoding : utf-8 -*-
 class Card; module Set; class Abstract; module BootswatchTheme;
+# Set: Abstract (BootswatchTheme, HtmlViews)
 module HtmlViews;
 extend Card::Set
 def self.source_location; "/Users/ethan/dev/decko/gem/card/mod/bootstrap/set/abstract/bootswatch_theme/html_views.rb"; end
 include_set Abstract::Media
 include_set Abstract::BsBadge
 
-format :html do
+module HtmlFormat; parent.send :register_set_format, Card::Format::HtmlFormat, self; extend Card::Set::AbstractFormat
   before :box do
     voo.show! :customize_button, :box_middle
   end

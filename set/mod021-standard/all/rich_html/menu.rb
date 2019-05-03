@@ -1,9 +1,10 @@
 # -*- encoding : utf-8 -*-
 class Card; module Set; class All; module RichHtml;
+# Set: All cards
 module Menu;
 extend Card::Set
 def self.source_location; "/Users/ethan/dev/decko/gem/card/mod/standard/set/all/rich_html/menu.rb"; end
-format :html do
+module HtmlFormat; parent.send :register_set_format, Card::Format::HtmlFormat, self; extend Card::Set::AbstractFormat
   view :menu, denial: :blank, unknown: true do
     return "" if card.unknown?
     wrap_with :div, class: "card-menu #{menu_link_classes}" do

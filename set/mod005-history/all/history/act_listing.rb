@@ -1,11 +1,12 @@
 # -*- encoding : utf-8 -*-
 class Card; module Set; class All; module History;
+# Set: All cards
 module ActListing;
 extend Card::Set
 def self.source_location; "/Users/ethan/dev/decko/gem/card/mod/history/set/all/history/act_listing.rb"; end
 ACTS_PER_PAGE = Card.config.acts_per_page
 
-format :html do
+module HtmlFormat; parent.send :register_set_format, Card::Format::HtmlFormat, self; extend Card::Set::AbstractFormat
   def act_from_context
     if (act_id = params["act_id"])
       Act.find(act_id) || raise(Card::NotFound, "act not found")

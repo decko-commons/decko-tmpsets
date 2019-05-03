@@ -1,5 +1,6 @@
 # -*- encoding : utf-8 -*-
 class Card; module Set; class TypePlusRight; module User;
+# Set: All "+User" cards on "" cards
 # a virtual pointer to the sets that a user is following.
 module Follow;
 extend Card::Set
@@ -32,7 +33,7 @@ def current_user?
   Auth.signed_in? && Auth.current_id == left.id
 end
 
-format :html do
+module HtmlFormat; parent.send :register_set_format, Card::Format::HtmlFormat, self; extend Card::Set::AbstractFormat
   view :closed_content do
     ""
   end

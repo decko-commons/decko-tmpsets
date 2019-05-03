@@ -1,11 +1,12 @@
 # -*- encoding : utf-8 -*-
 class Card; module Set; class Abstract
+# Set: Abstract (Paging)
 module Paging;
 extend Card::Set
 def self.source_location; "/Users/ethan/dev/decko/gem/card/mod/pointer/set/abstract/01_paging.rb"; end
 include_set Abstract::PagingParams
 
-format do
+module Format; parent.send :register_set_format, Card::Format, self; extend Card::Set::AbstractFormat
   def limit
     limit_param
   end
@@ -36,7 +37,7 @@ format do
   end
 end
 
-format :html do
+module HtmlFormat; parent.send :register_set_format, Card::Format::HtmlFormat, self; extend Card::Set::AbstractFormat
   PAGE_LI_CLASS = { ellipses: "disabled", current: "active" }.freeze
 
   def with_paging path_args={}
@@ -128,7 +129,7 @@ format :html do
   end
 end
 
-format :json do
+module JsonFormat; parent.send :register_set_format, Card::Format::JsonFormat, self; extend Card::Set::AbstractFormat
   def page_link_path_args page
     {
       limit: limit,

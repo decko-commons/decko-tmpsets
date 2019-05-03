@@ -1,9 +1,10 @@
 # -*- encoding : utf-8 -*-
 class Card; module Set; class All; module Bridge;
+# Set: All cards
 module TabVisibility;
 extend Card::Set
 def self.source_location; "/Users/ethan/dev/decko/gem/card/mod/edit/set/all/bridge/tab_visibility.rb"; end
-format :html do
+module HtmlFormat; parent.send :register_set_format, Card::Format::HtmlFormat, self; extend Card::Set::AbstractFormat
   def visible_bridge_tabs
     BRIDGE_TABS.select do |key, _title|
       send "show_#{key}?"

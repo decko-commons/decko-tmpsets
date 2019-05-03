@@ -1,11 +1,12 @@
 # -*- encoding : utf-8 -*-
 class Card; module Set; class All
+# Set: All cards
 module AllCsv;
 extend Card::Set
 def self.source_location; "/Users/ethan/dev/decko/gem/card/mod/basic_formats/set/all/all_csv.rb"; end
 require "csv"
 
-format :csv  do
+module CsvFormat; parent.send :register_set_format, Card::Format::CsvFormat, self; extend Card::Set::AbstractFormat
   def default_nest_view
     :core
   end

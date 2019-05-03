@@ -1,5 +1,6 @@
 # -*- encoding : utf-8 -*-
 class Card; module Set; class All
+# Set: All cards
 module FileUtils;
 extend Card::Set
 def self.source_location; "/Users/ethan/dev/decko/gem/card/mod/carrierwave/set/all/file_utils.rb"; end

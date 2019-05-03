@@ -1,5 +1,6 @@
 # -*- encoding : utf-8 -*-
 class Card; module Set; class Self
+# Set: The card "InputOptions"
 module InputOptions;
 extend Card::Set
 def self.source_location; "/Users/ethan/dev/decko/gem/card/mod/pointer/set/self/input_options.rb"; end

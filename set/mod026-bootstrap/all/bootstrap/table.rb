@@ -1,9 +1,10 @@
 # -*- encoding : utf-8 -*-
 class Card; module Set; class All; module Bootstrap;
+# Set: All cards
 module Table;
 extend Card::Set
 def self.source_location; "/Users/ethan/dev/decko/gem/card/mod/bootstrap/set/all/bootstrap/table.rb"; end
-format :html do
+module HtmlFormat; parent.send :register_set_format, Card::Format::HtmlFormat, self; extend Card::Set::AbstractFormat
   class TableHelper
     def initialize format, content, opts={}
       @format = format

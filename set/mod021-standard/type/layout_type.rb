@@ -1,5 +1,6 @@
 # -*- encoding : utf-8 -*-
 class Card; module Set; class Type
+# Set: All "LayoutType" cards
 # -*- encoding : utf-8 -*-
 module LayoutType;
 extend Card::Set
@@ -12,7 +13,7 @@ event :update_layout_registry, :finalize, on: :update do
   Card::Layout.register_layout_with_nest name, format
 end
 
-format :html do
+module HtmlFormat; parent.send :register_set_format, Card::Format::HtmlFormat, self; extend Card::Set::AbstractFormat
   view :core do
     with_nest_mode :template do
       process_content ::CodeRay.scan(_render_raw, :html).div

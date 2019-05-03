@@ -1,9 +1,10 @@
 # -*- encoding : utf-8 -*-
 class Card; module Set; class Self
+# Set: The card "Head"
 module Head;
 extend Card::Set
 def self.source_location; "/Users/ethan/dev/decko/gem/card/mod/basic_formats/set/self/head.rb"; end
-format :html do
+module HtmlFormat; parent.send :register_set_format, Card::Format::HtmlFormat, self; extend Card::Set::AbstractFormat
   # when *head is rendered in the main body of a page, we escape the HTML
   # otherwise (most typically in the head tag, of course), we render the
   # HTML unescaped

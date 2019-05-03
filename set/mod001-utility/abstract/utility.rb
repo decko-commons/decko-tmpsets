@@ -1,5 +1,6 @@
 # -*- encoding : utf-8 -*-
 class Card; module Set; class Abstract
+# Set: Abstract (Utility)
 module Utility;
 extend Card::Set
 def self.source_location; "/Users/ethan/dev/decko/gem/card/mod/utility/set/abstract/utility.rb"; end

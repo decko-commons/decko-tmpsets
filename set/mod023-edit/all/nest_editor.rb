@@ -1,9 +1,10 @@
 # -*- encoding : utf-8 -*-
 class Card; module Set; class All
+# Set: All cards
 module NestEditor;
 extend Card::Set
 def self.source_location; "/Users/ethan/dev/decko/gem/card/mod/edit/set/all/nest_editor.rb"; end
-format :html do
+module HtmlFormat; parent.send :register_set_format, Card::Format::HtmlFormat, self; extend Card::Set::AbstractFormat
   NEST_OPTIONS = %i[view title show hide wrap help variant size params].freeze
   # Card::View::Options.shark_keys - %i[nest_syntax nest_name items cache]
   # TODO: connect to Card::View::Options

@@ -1,5 +1,6 @@
 # -*- encoding : utf-8 -*-
 class Card; module Set; class All
+# Set: All cards
 # track history (acts, actions, changes) on this card
 module History;
 extend Card::Set

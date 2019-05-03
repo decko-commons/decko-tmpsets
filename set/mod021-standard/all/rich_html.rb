@@ -1,9 +1,10 @@
 # -*- encoding : utf-8 -*-
 class Card; module Set; class All
+# Set: All cards
 module RichHtml;
 extend Card::Set
 def self.source_location; "/Users/ethan/dev/decko/gem/card/mod/standard/set/all/rich_html.rb"; end
-format :html do
+module HtmlFormat; parent.send :register_set_format, Card::Format::HtmlFormat, self; extend Card::Set::AbstractFormat
   delegate :class_up, :class_down, :with_class_up, :without_upped_class, :classy,
            to: :voo
 end

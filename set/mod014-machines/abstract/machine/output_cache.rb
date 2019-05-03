@@ -1,5 +1,6 @@
 # -*- encoding : utf-8 -*-
 class Card; module Set; class Abstract; module Machine;
+# Set: Abstract (Machine, OutputCache)
 module OutputCache;
 extend Card::Set
 def self.source_location; "/Users/ethan/dev/decko/gem/card/mod/machines/set/abstract/machine/output_cache.rb"; end

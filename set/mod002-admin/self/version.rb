@@ -1,5 +1,6 @@
 # -*- encoding : utf-8 -*-
 class Card; module Set; class Self
+# Set: The card "Version"
 # -*- encoding : utf-8 -*-
 module Version;
 extend Card::Set

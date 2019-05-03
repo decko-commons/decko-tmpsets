@@ -1,11 +1,12 @@
 # -*- encoding : utf-8 -*-
 class Card; module Set; class Abstract
+# Set: Abstract (SearchParams)
 module SearchParams;
 extend Card::Set
 def self.source_location; "/Users/ethan/dev/decko/gem/card/mod/search/set/abstract/02_search_params.rb"; end
 include_set Abstract::PagingParams
 
-format do
+module Format; parent.send :register_set_format, Card::Format, self; extend Card::Set::AbstractFormat
   def offset
     search_params[:offset] || 0
   end
@@ -44,19 +45,19 @@ format do
   end
 end
 
-format :html do
+module HtmlFormat; parent.send :register_set_format, Card::Format::HtmlFormat, self; extend Card::Set::AbstractFormat
   def default_limit
     Cardio.config.paging_limit || 20
   end
 end
 
-format :json do
+module JsonFormat; parent.send :register_set_format, Card::Format::JsonFormat, self; extend Card::Set::AbstractFormat
   def default_limit
     20
   end
 end
 
-format :rss do
+module RssFormat; parent.send :register_set_format, Card::Format::RssFormat, self; extend Card::Set::AbstractFormat
   def default_limit
     25
   end

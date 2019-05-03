@@ -1,11 +1,12 @@
 # -*- encoding : utf-8 -*-
 class Card; module Set; class Abstract; module Pointer;
+# Set: Abstract (Pointer, OtherViews)
 # BASE views
 module OtherViews;
 extend Card::Set
 def self.source_location; "/Users/ethan/dev/decko/gem/card/mod/pointer/set/abstract/02_pointer/other_views.rb"; end
 
-format do
+module Format; parent.send :register_set_format, Card::Format, self; extend Card::Set::AbstractFormat
   def default_limit
     20
   end
@@ -34,7 +35,7 @@ end
 
 # JavaScript views
 
-format :js do
+module JsFormat; parent.send :register_set_format, Card::Format::JsFormat, self; extend Card::Set::AbstractFormat
   view :core do
     nest_item_array.join "\n\n"
   end
@@ -42,7 +43,7 @@ end
 
 # Data views
 
-format :data do
+module DataFormat; parent.send :register_set_format, Card::Format::DataFormat, self; extend Card::Set::AbstractFormat
   view :core do
     nest_item_array
   end
@@ -50,7 +51,7 @@ end
 
 # JSON views
 
-format :json do
+module JsonFormat; parent.send :register_set_format, Card::Format::JsonFormat, self; extend Card::Set::AbstractFormat
   view :content do
     card.item_names
   end
@@ -81,7 +82,7 @@ end
 
 # CSS views
 
-format :css do
+module CssFormat; parent.send :register_set_format, Card::Format::CssFormat, self; extend Card::Set::AbstractFormat
   # generalize to all collections?
   def default_item_view
     :content
@@ -101,7 +102,7 @@ end
 
 # RSS views
 
-format :rss do
+module RssFormat; parent.send :register_set_format, Card::Format::RssFormat, self; extend Card::Set::AbstractFormat
   def raw_feed_items
     @raw_feed_items ||= card.item_cards(limit: limit, offset: offset)
   end

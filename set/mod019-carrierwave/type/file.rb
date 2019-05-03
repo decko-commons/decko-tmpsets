@@ -1,5 +1,6 @@
 # -*- encoding : utf-8 -*-
 class Card; module Set; class Type
+# Set: All "File" cards
 module File;
 extend Card::Set
 def self.source_location; "/Users/ethan/dev/decko/gem/card/mod/carrierwave/set/type/file.rb"; end
@@ -20,7 +21,7 @@ module SelectedAction
 end
 include SelectedAction
 
-format do
+module Format; parent.send :register_set_format, Card::Format, self; extend Card::Set::AbstractFormat
   view :source do
     file = card.attachment
     return "" unless file.valid?
@@ -50,7 +51,7 @@ format do
   end
 end
 
-format :file do
+module FileFormat; parent.send :register_set_format, Card::Format::FileFormat, self; extend Card::Set::AbstractFormat
   # NOCACHE because returns send_file args.  not in love with this...
   view :core, cache: :never do
     # this means we only support known formats.  dislike.
@@ -78,7 +79,7 @@ format :file do
   end
 end
 
-format :html do
+module HtmlFormat; parent.send :register_set_format, Card::Format::HtmlFormat, self; extend Card::Set::AbstractFormat
   view :core do
     handle_source do |source|
       "<a href=\"#{source}\">#{tr :download, title: title_in_context(voo.title)}</a>"

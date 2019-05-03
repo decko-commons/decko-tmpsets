@@ -1,11 +1,12 @@
 # -*- encoding : utf-8 -*-
 class Card; module Set; class Abstract
+# Set: Abstract (FilterFormHelper)
 module FilterFormHelper;
 extend Card::Set
 def self.source_location; "/Users/ethan/dev/decko/gem/card/mod/search/set/abstract/01_filter_form_helper.rb"; end
 include_set Abstract::FilterHelper
 
-format :html do
+module HtmlFormat; parent.send :register_set_format, Card::Format::HtmlFormat, self; extend Card::Set::AbstractFormat
   view :filter_name_formgroup, cache: :never do
     text_filter :name
   end

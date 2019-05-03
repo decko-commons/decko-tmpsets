@@ -1,5 +1,6 @@
 # -*- encoding : utf-8 -*-
 class Card; module Set; class Self
+# Set: The card "Signin"
 module Signin;
 extend Card::Set
 def self.source_location; "/Users/ethan/dev/decko/gem/card/mod/account/set/self/signin.rb"; end
@@ -81,7 +82,7 @@ def send_reset_password_email_or_fail email
   end
 end
 
-format :html do
+module HtmlFormat; parent.send :register_set_format, Card::Format::HtmlFormat, self; extend Card::Set::AbstractFormat
   view :core, cache: :never do
     voo.edit_structure = [signin_field(:email), signin_field(:password)]
     with_nest_mode :edit do

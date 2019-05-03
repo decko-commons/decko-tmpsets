@@ -1,5 +1,6 @@
 # -*- encoding : utf-8 -*-
 class Card; module Set; class Abstract
+# Set: Abstract (SolidCache)
 # -*- encoding : utf-8 -*-
 
 # A card that includes Abstract::SolidCache has its "core" view fully rendered

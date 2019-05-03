@@ -1,5 +1,6 @@
 # -*- encoding : utf-8 -*-
 class Card; module Set; class TypePlusRight; module CustomizedBootswatchSkin;
+# Set: All "+CustomizedBootswatchSkin" cards on "" cards
 module Colors;
 extend Card::Set
 def self.source_location; "/Users/ethan/dev/decko/gem/card/mod/bootstrap/set/type_plus_right/customized_bootswatch_skin/colors.rb"; end
@@ -61,7 +62,7 @@ def variable_group_with_values group
   end
 end
 
-format :html do
+module HtmlFormat; parent.send :register_set_format, Card::Format::HtmlFormat, self; extend Card::Set::AbstractFormat
   view :editor, template: :haml do
     @colors = card.colors
     @theme_colors = card.theme_colors

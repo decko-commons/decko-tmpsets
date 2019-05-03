@@ -1,5 +1,6 @@
 # -*- encoding : utf-8 -*-
 class Card; module Set; class Abstract; module Pointer;
+# Set: Abstract (Pointer, OptionsApi)
 # TODO: some of this should be moved to right/options!!
 module OptionsApi;
 extend Card::Set
@@ -59,13 +60,13 @@ def options_card_name
   options_rule_card&.name&.url_key || ":all"
 end
 
-format do
+module Format; parent.send :register_set_format, Card::Format, self; extend Card::Set::AbstractFormat
   def options_card_name
     card.options_card_name
   end
 end
 
-format :html do
+module HtmlFormat; parent.send :register_set_format, Card::Format::HtmlFormat, self; extend Card::Set::AbstractFormat
   def option_label option_name, id
     %(<label for="#{id}">#{option_label_text option_name}</label>)
   end

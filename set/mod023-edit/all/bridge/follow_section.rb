@@ -1,9 +1,10 @@
 # -*- encoding : utf-8 -*-
 class Card; module Set; class All; module Bridge;
+# Set: All cards
 module FollowSection;
 extend Card::Set
 def self.source_location; "/Users/ethan/dev/decko/gem/card/mod/edit/set/all/bridge/follow_section.rb"; end
-format :html do
+module HtmlFormat; parent.send :register_set_format, Card::Format::HtmlFormat, self; extend Card::Set::AbstractFormat
   def follow_section
     return unless show_follow?
 

@@ -1,9 +1,10 @@
 # -*- encoding : utf-8 -*-
 class Card; module Set; class All; module RichHtml;
+# Set: All cards
 module Modal;
 extend Card::Set
 def self.source_location; "/Users/ethan/dev/decko/gem/card/mod/standard/set/all/rich_html/modal.rb"; end
-format :html do
+module HtmlFormat; parent.send :register_set_format, Card::Format::HtmlFormat, self; extend Card::Set::AbstractFormat
   MODAL_SIZE = { small: "sm", medium: nil, large: "lg", full: "full" }.freeze
   MODAL_CLOSE_OPTS = { class: "_close-modal", "data-dismiss": "modal",
                        "data-cy": "close-modal" }.freeze

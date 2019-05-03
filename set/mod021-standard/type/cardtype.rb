@@ -1,5 +1,6 @@
 # -*- encoding : utf-8 -*-
 class Card; module Set; class Type
+# Set: All "Cardtype" cards
 module Cardtype;
 extend Card::Set
 def self.source_location; "/Users/ethan/dev/decko/gem/card/mod/standard/set/type/cardtype.rb"; end
@@ -9,7 +10,7 @@ def wql_hash
   { type_id: id, sort: :name }
 end
 
-format :html do
+module HtmlFormat; parent.send :register_set_format, Card::Format::HtmlFormat, self; extend Card::Set::AbstractFormat
   view :type do
     link_args = { class: "cardtype" }
     add_class link_args, "no-edit" if card.cards_of_type_exist?

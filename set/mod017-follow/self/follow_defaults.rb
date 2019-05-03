@@ -1,5 +1,6 @@
 # -*- encoding : utf-8 -*-
 class Card; module Set; class Self
+# Set: The card "FollowDefaults"
 # DEPRECATED
 #
 # Despite its name (*follow defaults)card does not influence defaults for *follow rules.
@@ -48,7 +49,7 @@ def follow_option item
   option_card.follow_option? ? option_card.name : "*always"
 end
 
-format :html do
+module HtmlFormat; parent.send :register_set_format, Card::Format::HtmlFormat, self; extend Card::Set::AbstractFormat
   view :edit, perms: :update, unknown: true do
     frame_and_form :update, hidden: { success: "_self",
                                       card: { update_all_users: false } } do

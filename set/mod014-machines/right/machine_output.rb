@@ -1,5 +1,6 @@
 # -*- encoding : utf-8 -*-
 class Card; module Set; class Right
+# Set: All "+MachineOutput" cards
 module MachineOutput;
 extend Card::Set
 def self.source_location; "/Users/ethan/dev/decko/gem/card/mod/machines/set/right/machine_output.rb"; end
@@ -19,7 +20,7 @@ event :remove_codename, :prepare_to_validate,
   self.codename = nil
 end
 
-format do
+module Format; parent.send :register_set_format, Card::Format, self; extend Card::Set::AbstractFormat
   view :not_found do
     if update_machine_output_live?
       Card::Cache.reset_all # FIXME: wow, this is overkill, no?

@@ -1,5 +1,6 @@
 # -*- encoding : utf-8 -*-
 class Card; module Set; class Right
+# Set: All "+SolidCache" cards
 module SolidCache;
 extend Card::Set
 def self.source_location; "/Users/ethan/dev/decko/gem/card/mod/solid_cache/set/right/solid_cache.rb"; end
@@ -28,7 +29,7 @@ def write! new_content
   end
 end
 
-format :html do
+module HtmlFormat; parent.send :register_set_format, Card::Format::HtmlFormat, self; extend Card::Set::AbstractFormat
   view :core, cache: :never do
     return super() unless card.new_card?
     @denied_view = :core

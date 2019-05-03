@@ -1,9 +1,10 @@
 # -*- encoding : utf-8 -*-
 class Card; module Set; class All
+# Set: All cards
 module EditType;
 extend Card::Set
 def self.source_location; "/Users/ethan/dev/decko/gem/card/mod/edit/set/all/edit_type.rb"; end
-format :html do
+module HtmlFormat; parent.send :register_set_format, Card::Format::HtmlFormat, self; extend Card::Set::AbstractFormat
   view :edit_type, cache: :never, perms: :update do
     frame do
       _render_edit_type_form

@@ -1,5 +1,6 @@
 # -*- encoding : utf-8 -*-
 class Card; module Set; class Self
+# Set: The card "ScriptTinymceConfig"
 module ScriptTinymceConfig;
 extend Card::Set
 def self.source_location; "/Users/ethan/dev/decko/gem/card/mod/tinymce_editor/set/self/script_tinymce_config.rb"; end

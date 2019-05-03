@@ -1,11 +1,12 @@
 # -*- encoding : utf-8 -*-
 class Card; module Set; class All
+# Set: All cards
 module Calendar;
 extend Card::Set
 def self.source_location; "/Users/ethan/dev/decko/gem/card/mod/date/set/all/calendar.rb"; end
 Self::InputOptions.add_to_basket :options, "calendar"
 
-format :html do
+module HtmlFormat; parent.send :register_set_format, Card::Format::HtmlFormat, self; extend Card::Set::AbstractFormat
   def calendar_input
     text_field :content, class: "date-editor datetimepicker-input",
                          "data-toggle": "datetimepicker",

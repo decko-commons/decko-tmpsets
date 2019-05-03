@@ -1,5 +1,6 @@
 # -*- encoding : utf-8 -*-
 class Card; module Set; class Type
+# Set: All "EmailTemplate" cards
 module EmailTemplate;
 extend Card::Set
 def self.source_location; "/Users/ethan/dev/decko/gem/card/mod/email/set/type/email_template.rb"; end
@@ -15,7 +16,7 @@ rescue Net::SMTPError => exception
   errors.add :exception, exception.message
 end
 
-format do
+module Format; parent.send :register_set_format, Card::Format, self; extend Card::Set::AbstractFormat
   def mail context=nil, fields={}, opts={}
     config = card.email_config context, fields, opts
     fmt = self # self is <Mail::Message> within the new_mail block

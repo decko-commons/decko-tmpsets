@@ -1,11 +1,12 @@
 # -*- encoding : utf-8 -*-
 class Card; module Set; class Type
+# Set: All "Scss" cards
 module Scss;
 extend Card::Set
 def self.source_location; "/Users/ethan/dev/decko/gem/card/mod/machines/set/type/scss.rb"; end
 include_set Type::Css
 
-format do
+module Format; parent.send :register_set_format, Card::Format, self; extend Card::Set::AbstractFormat
   view :core, cache: :never do
     compile_scss(process_content(_render_raw))
   end
@@ -19,7 +20,7 @@ format do
   end
 end
 
-format :html do
+module HtmlFormat; parent.send :register_set_format, Card::Format::HtmlFormat, self; extend Card::Set::AbstractFormat
   def ace_mode
     :scss
   end

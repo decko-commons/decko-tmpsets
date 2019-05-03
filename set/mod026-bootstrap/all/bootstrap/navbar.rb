@@ -1,11 +1,12 @@
 # -*- encoding : utf-8 -*-
 class Card; module Set; class All; module Bootstrap;
+# Set: All cards
 module Navbar;
 extend Card::Set
 def self.source_location; "/Users/ethan/dev/decko/gem/card/mod/bootstrap/set/all/bootstrap/navbar.rb"; end
 
 
-format :html do
+module HtmlFormat; parent.send :register_set_format, Card::Format::HtmlFormat, self; extend Card::Set::AbstractFormat
   # Options
   # @param opts [Hash]
   # @option opts [String, Hash<name, href>] brand

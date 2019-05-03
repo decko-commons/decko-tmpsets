@@ -1,5 +1,6 @@
 # -*- encoding : utf-8 -*-
 class Card; module Set; class Abstract
+# Set: Abstract (FilterHelper)
 # TODO: move sort/filter handling out of card and into base format
 module FilterHelper;
 extend Card::Set
@@ -50,7 +51,7 @@ def offset
   param_to_i :offset, 0
 end
 
-format do
+module Format; parent.send :register_set_format, Card::Format, self; extend Card::Set::AbstractFormat
   delegate :filter_hash, :sort_hash, :filter_param, :sort_param,
            :all_filter_keys, to: :card
 

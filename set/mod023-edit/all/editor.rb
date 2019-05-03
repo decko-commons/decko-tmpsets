@@ -1,5 +1,6 @@
 # -*- encoding : utf-8 -*-
 class Card; module Set; class All
+# Set: All cards
 module Editor;
 extend Card::Set
 def self.source_location; "/Users/ethan/dev/decko/gem/card/mod/edit/set/all/editor.rb"; end
@@ -10,7 +11,7 @@ include_set Abstract::AceEditor
 Self::InputOptions.add_to_basket :options, "text area"
 Self::InputOptions.add_to_basket :options, "text field"
 
-format :html do
+module HtmlFormat; parent.send :register_set_format, Card::Format::HtmlFormat, self; extend Card::Set::AbstractFormat
   def editor
     (c = card.rule(:input)) && c.gsub(/[\[\]]/, "").tr(" ", "_")
   end

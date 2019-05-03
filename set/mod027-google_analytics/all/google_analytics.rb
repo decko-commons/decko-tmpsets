@@ -1,10 +1,11 @@
 # -*- encoding : utf-8 -*-
 class Card; module Set; class All
+# Set: All cards
 module GoogleAnalytics;
 extend Card::Set
 def self.source_location; "/Users/ethan/dev/decko/gem/card/mod/google_analytics/set/all/google_analytics.rb"; end
 
-format :html do
+module HtmlFormat; parent.send :register_set_format, Card::Format::HtmlFormat, self; extend Card::Set::AbstractFormat
   def views_in_head
     super << :google_analytics_snippet
   end

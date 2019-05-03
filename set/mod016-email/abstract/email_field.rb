@@ -1,10 +1,11 @@
 # -*- encoding : utf-8 -*-
 class Card; module Set; class Abstract
+# Set: Abstract (EmailField)
 module EmailField;
 extend Card::Set
 def self.source_location; "/Users/ethan/dev/decko/gem/card/mod/email/set/abstract/email_field.rb"; end
 
-format do
+module Format; parent.send :register_set_format, Card::Format, self; extend Card::Set::AbstractFormat
   # turn off autodetection of uri's
   def chunk_list
     :references
@@ -19,7 +20,7 @@ end
 #   end
 # end#
 
-format :email_text do
+module EmailTextFormat; parent.send :register_set_format, Card::Format::EmailTextFormat, self; extend Card::Set::AbstractFormat
   def email_addresses context
     context ||= self
     card.item_names(context: context.name).map do |name|

@@ -1,5 +1,6 @@
 # -*- encoding : utf-8 -*-
 class Card; module Set; class Type
+# Set: All "Css" cards
 # -*- encoding : utf-8 -*-
 module Css;
 extend Card::Set
@@ -44,7 +45,7 @@ def compress_css?
   !Rails.env.development?
 end
 
-format do
+module Format; parent.send :register_set_format, Card::Format, self; extend Card::Set::AbstractFormat
   # def default_nest_view
   #   :raw
   # end
@@ -54,7 +55,7 @@ format do
   end
 end
 
-format :html do
+module HtmlFormat; parent.send :register_set_format, Card::Format::HtmlFormat, self; extend Card::Set::AbstractFormat
   def editor
     :ace_editor
   end
@@ -79,7 +80,7 @@ format :html do
   end
 end
 
-format :css do
+module CssFormat; parent.send :register_set_format, Card::Format::CssFormat, self; extend Card::Set::AbstractFormat
   view :import do
     %{\n@import url("#{_render_url}");\n}
   end

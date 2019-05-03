@@ -1,5 +1,6 @@
 # -*- encoding : utf-8 -*-
 class Card; module Set; class Abstract
+# Set: Abstract (Script)
 # -*- encoding : utf-8 -*-
 module Script;
 extend Card::Set
@@ -51,7 +52,7 @@ def clean_html?
   false
 end
 
-format do
+module Format; parent.send :register_set_format, Card::Format, self; extend Card::Set::AbstractFormat
   def chunk_list  # turn off autodetection of uri's
     :nest_only
   end
@@ -61,7 +62,7 @@ format do
   # end
 end
 
-format :html do
+module HtmlFormat; parent.send :register_set_format, Card::Format::HtmlFormat, self; extend Card::Set::AbstractFormat
   def editor
     :ace_editor
   end

@@ -1,12 +1,13 @@
 # -*- encoding : utf-8 -*-
 class Card; module Set; class All
+# Set: All cards
 module Links;
 extend Card::Set
 def self.source_location; "/Users/ethan/dev/decko/gem/card/mod/standard/set/all/links.rb"; end
 RESOURCE_TYPE_REGEXP = /^([a-zA-Z][\-+\.a-zA-Z\d]*):/
 
 # The #link_to methods support smart formatting of links in multiple formats.
-format do
+module Format; parent.send :register_set_format, Card::Format, self; extend Card::Set::AbstractFormat
   # Creates a "link", the meaning of which depends upon the format.  In this base
   # format, the link looks like [text][absolute path]
   #
@@ -90,7 +91,7 @@ end
 
 public
 
-format :html do
+module HtmlFormat; parent.send :register_set_format, Card::Format::HtmlFormat, self; extend Card::Set::AbstractFormat
   # in HTML, #link_to renders an anchor tag <a>
   # it treats opts other than "path" as html opts for that tag,
   # and it adds special handling of "remote" and "method" opts

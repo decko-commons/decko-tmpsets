@@ -1,5 +1,6 @@
 # -*- encoding : utf-8 -*-
 class Card; module Set; class Right
+# Set: All "+HtmlMessage" cards
 module HtmlMessage;
 extend Card::Set
 def self.source_location; "/Users/ethan/dev/decko/gem/card/mod/email/set/right/html_message.rb"; end
@@ -9,7 +10,7 @@ def clean_html?
   false
 end
 
-format :email_html do
+module EmailHtmlFormat; parent.send :register_set_format, Card::Format::EmailHtmlFormat, self; extend Card::Set::AbstractFormat
   def email_content context
     content = contextual_content context
     return unless content.present?

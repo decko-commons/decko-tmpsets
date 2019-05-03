@@ -1,5 +1,6 @@
 # -*- encoding : utf-8 -*-
 class Card; module Set; class Abstract
+# Set: Abstract (Filter)
 module Filter;
 extend Card::Set
 def self.source_location; "/Users/ethan/dev/decko/gem/card/mod/search/set/abstract/03_filter.rb"; end
@@ -59,7 +60,7 @@ def filter_keys_from_params
   filter_hash.keys.map(&:to_sym) - [:not_ids]
 end
 
-format :html do
+module HtmlFormat; parent.send :register_set_format, Card::Format::HtmlFormat, self; extend Card::Set::AbstractFormat
   delegate :filter_hash, to: :card
 
   def filter_fields slot_selector: nil, sort_field: nil

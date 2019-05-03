@@ -1,5 +1,6 @@
 # -*- encoding : utf-8 -*-
 class Card; module Set; class All
+# Set: All cards
 module SolidCache;
 extend Card::Set
 def self.source_location; "/Users/ethan/dev/decko/gem/card/mod/solid_cache/set/all/solid_cache.rb"; end

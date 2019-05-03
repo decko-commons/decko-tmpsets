@@ -1,5 +1,6 @@
 # -*- encoding : utf-8 -*-
 class Card; module Set; class All
+# Set: All cards
 #! no set module
 module Follow;
 def self.source_location; "/Users/ethan/dev/decko/gem/card/mod/follow/set/all/follow/start_follow_link.rb"; end

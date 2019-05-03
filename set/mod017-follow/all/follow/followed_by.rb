@@ -1,5 +1,6 @@
 # -*- encoding : utf-8 -*-
 class Card; module Set; class All; module Follow;
+# Set: All cards
 # used by +:followers overwritten in type/set.rb and type/cardtype.rb
 module FollowedBy;
 extend Card::Set

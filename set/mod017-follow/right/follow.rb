@@ -1,5 +1,6 @@
 # -*- encoding : utf-8 -*-
 class Card; module Set; class Right
+# Set: All "+Follow" cards
 # The Right::Follow set configures follow preferences (`[Set]+[User]+:follow`)
 # While the user follow dashboard ([User]+:follow`) is also in this Set, its
 module Follow;
@@ -52,7 +53,7 @@ def allowed_to_change_follow_status?
     ((user = rule_user) && Auth.current_id == user.id) || Auth.always_ok?
 end
 
-format :html do
+module HtmlFormat; parent.send :register_set_format, Card::Format::HtmlFormat, self; extend Card::Set::AbstractFormat
   # shows a follow item link for each of the current follow options
   view :follow_status, cache: :never do
     wrap { haml :follow_status }

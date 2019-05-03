@@ -1,5 +1,6 @@
 # -*- encoding : utf-8 -*-
 class Card; module Set; class Abstract; module Pointer;
+# Set: Abstract (Pointer, ItemApi)
 # ~~~~~~~~~~~~ READING ITEMS ~~~~~~~~~~~~
 
 module ItemApi;

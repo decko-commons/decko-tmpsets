@@ -1,5 +1,6 @@
 # -*- encoding : utf-8 -*-
 class Card; module Set; class All; module Follow;
+# Set: All cards
 module FollowerIds;
 extend Card::Set
 def self.source_location; "/Users/ethan/dev/decko/gem/card/mod/follow/set/all/follow/follower_ids.rb"; end

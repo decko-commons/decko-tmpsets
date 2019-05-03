@@ -1,5 +1,6 @@
 # -*- encoding : utf-8 -*-
 class Card; module Set; class Type
+# Set: All "Image" cards
 module Image;
 extend Card::Set
 def self.source_location; "/Users/ethan/dev/decko/gem/card/mod/carrierwave/set/type/image.rb"; end
@@ -15,7 +16,7 @@ def svg?
   image&.extension == ".svg"
 end
 
-format do
+module Format; parent.send :register_set_format, Card::Format, self; extend Card::Set::AbstractFormat
   include File::Format
 
   view :closed_content do
@@ -71,7 +72,7 @@ format do
   end
 end
 
-format :html do
+module HtmlFormat; parent.send :register_set_format, Card::Format::HtmlFormat, self; extend Card::Set::AbstractFormat
   include File::HtmlFormat
 
   # core HTML image view.
@@ -141,13 +142,13 @@ format :html do
   end
 end
 
-format do
+module Format; parent.send :register_set_format, Card::Format, self; extend Card::Set::AbstractFormat
   view :inline do
     _render_core
   end
 end
 
-format :email_html do
+module EmailHtmlFormat; parent.send :register_set_format, Card::Format::EmailHtmlFormat, self; extend Card::Set::AbstractFormat
   view :inline, cache: :never do
     handle_source do |source|
       return source unless (mail = inherit :active_mail) &&
@@ -163,7 +164,7 @@ format :email_html do
   end
 end
 
-format :css do
+module CssFormat; parent.send :register_set_format, Card::Format::CssFormat, self; extend Card::Set::AbstractFormat
   view :core do
     handle_source
   end
@@ -173,7 +174,7 @@ format :css do
   end
 end
 
-format :file do
+module FileFormat; parent.send :register_set_format, Card::Format::FileFormat, self; extend Card::Set::AbstractFormat
   include File::FileFormat
 end
 end;end;end;end;

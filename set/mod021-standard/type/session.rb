@@ -1,5 +1,6 @@
 # -*- encoding : utf-8 -*-
 class Card; module Set; class Type
+# Set: All "Session" cards
 module Session;
 extend Card::Set
 def self.source_location; "/Users/ethan/dev/decko/gem/card/mod/standard/set/type/session.rb"; end
@@ -31,7 +32,7 @@ def content= val
   self.db_content = Env.session[key] = val
 end
 
-format :html do
+module HtmlFormat; parent.send :register_set_format, Card::Format::HtmlFormat, self; extend Card::Set::AbstractFormat
   before :core do
     voo.items[:view] = :name
   end

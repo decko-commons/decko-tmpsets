@@ -1,11 +1,12 @@
 # -*- encoding : utf-8 -*-
 class Card; module Set; class All
+# Set: All cards
 module Bar;
 extend Card::Set
 def self.source_location; "/Users/ethan/dev/decko/gem/card/mod/item/set/all/bar.rb"; end
 include_set Abstract::BsBadge
 
-format :html do
+module HtmlFormat; parent.send :register_set_format, Card::Format::HtmlFormat, self; extend Card::Set::AbstractFormat
   setting :bar_cols
   setting :info_bar_cols
 

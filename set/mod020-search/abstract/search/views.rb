@@ -1,10 +1,11 @@
 # -*- encoding : utf-8 -*-
 class Card; module Set; class Abstract; module Search;
+# Set: Abstract (Search, Views)
 module Views;
 extend Card::Set
 def self.source_location; "/Users/ethan/dev/decko/gem/card/mod/search/set/abstract/search/views.rb"; end
 
-format do
+module Format; parent.send :register_set_format, Card::Format, self; extend Card::Set::AbstractFormat
   view :search_count, cache: :never do
     search_with_params.to_s
   end
@@ -25,7 +26,7 @@ format do
   end
 end
 
-format :json do
+module JsonFormat; parent.send :register_set_format, Card::Format::JsonFormat, self; extend Card::Set::AbstractFormat
   AUTOCOMPLETE_LIMIT = 8 # number of name suggestions for autocomplete text fields
 
   def item_cards
@@ -82,7 +83,7 @@ format :json do
   end
 end
 
-format :data do
+module DataFormat; parent.send :register_set_format, Card::Format::DataFormat, self; extend Card::Set::AbstractFormat
   view :card_list do
     search_with_params.map do |item_card|
       nest_item item_card
@@ -90,7 +91,7 @@ format :data do
   end
 end
 
-format :csv do
+module CsvFormat; parent.send :register_set_format, Card::Format::CsvFormat, self; extend Card::Set::AbstractFormat
   view :core, :core, mod: All::AllCsv::CsvFormat
 
   view :card_list do
@@ -103,7 +104,7 @@ format :csv do
   end
 end
 
-format :html do
+module HtmlFormat; parent.send :register_set_format, Card::Format::HtmlFormat, self; extend Card::Set::AbstractFormat
   view :card_list do
     with_results do
       search_result_list "search-result-list" do |item_card|

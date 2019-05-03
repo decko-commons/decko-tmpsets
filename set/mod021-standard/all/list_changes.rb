@@ -1,5 +1,6 @@
 # -*- encoding : utf-8 -*-
 class Card; module Set; class All
+# Set: All cards
 # -*- encoding : utf-8 -*-
 module ListChanges;
 extend Card::Set

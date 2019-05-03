@@ -1,5 +1,6 @@
 # -*- encoding : utf-8 -*-
 class Card; module Set; class Self
+# Set: The card "ScriptAce"
 module ScriptAce;
 extend Card::Set
 def self.source_location; "/Users/ethan/dev/decko/gem/card/mod/ace_editor/set/self/script_ace.rb"; end

@@ -1,5 +1,6 @@
 # -*- encoding : utf-8 -*-
 class Card; module Set; class Type
+# Set: All "NotificationTemplate" cards
 module NotificationTemplate;
 extend Card::Set
 def self.source_location; "/Users/ethan/dev/decko/gem/card/mod/standard/set/type/notification_template.rb"; end
@@ -16,7 +17,7 @@ def alert_message context
   format(:html).alert_message context, mcard
 end
 
-format :html do
+module HtmlFormat; parent.send :register_set_format, Card::Format::HtmlFormat, self; extend Card::Set::AbstractFormat
   def alert_message context, message_card
     mformat = subformat message_card
     alert card.alert_class, true, card.disappear? do

@@ -1,5 +1,6 @@
 # -*- encoding : utf-8 -*-
 class Card; module Set; class All
+# Set: All cards
 # the events method is a developer's tool for visualizing the event order
 # for a given card.
 # For example, from a console you might run

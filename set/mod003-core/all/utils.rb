@@ -1,5 +1,6 @@
 # -*- encoding : utf-8 -*-
 class Card; module Set; class All
+# Set: All cards
 module Utils;
 extend Card::Set
 def self.source_location; "/Users/ethan/dev/decko/gem/card/mod/core/set/all/utils.rb"; end
@@ -84,7 +85,7 @@ def measure desc
 end
 # rubocop:enable Style/GlobalVars
 
-format do
+module Format; parent.send :register_set_format, Card::Format, self; extend Card::Set::AbstractFormat
   delegate :measure, to: :card
 end
 end;end;end;end;

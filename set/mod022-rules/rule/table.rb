@@ -1,9 +1,10 @@
 # -*- encoding : utf-8 -*-
 class Card; module Set; class Rule
+# Set: All rule cards
 module Table;
 extend Card::Set
 def self.source_location; "/Users/ethan/dev/decko/gem/card/mod/rules/set/rule/table.rb"; end
-format :html do
+module HtmlFormat; parent.send :register_set_format, Card::Format::HtmlFormat, self; extend Card::Set::AbstractFormat
   view :open_rule, cache: :never, unknown: true,
                    wrap: { modal: { size: :large,
                                     title: :edit_rule_title,

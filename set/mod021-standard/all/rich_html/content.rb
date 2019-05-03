@@ -1,5 +1,6 @@
 # -*- encoding : utf-8 -*-
 class Card; module Set; class All; module RichHtml;
+# Set: All cards
 module Content;
 extend Card::Set
 def self.source_location; "/Users/ethan/dev/decko/gem/card/mod/standard/set/all/rich_html/content.rb"; end
@@ -13,7 +14,7 @@ def help_rule_card
   help_card if help_card&.ok?(:read)
 end
 
-format :html do
+module HtmlFormat; parent.send :register_set_format, Card::Format::HtmlFormat, self; extend Card::Set::AbstractFormat
   def prepare_content_slot
     class_up "card-slot", "d0-card-content"
     voo.hide :menu

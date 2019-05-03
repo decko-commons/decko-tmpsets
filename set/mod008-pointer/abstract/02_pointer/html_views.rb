@@ -1,11 +1,12 @@
 # -*- encoding : utf-8 -*-
 class Card; module Set; class Abstract; module Pointer;
+# Set: Abstract (Pointer, HtmlViews)
 module HtmlViews;
 extend Card::Set
 def self.source_location; "/Users/ethan/dev/decko/gem/card/mod/pointer/set/abstract/02_pointer/html_views.rb"; end
 include_set Abstract::BsBadge
 
-format :html do
+module HtmlFormat; parent.send :register_set_format, Card::Format::HtmlFormat, self; extend Card::Set::AbstractFormat
   view :core, cache: :never do
     standard_pointer_core
   end

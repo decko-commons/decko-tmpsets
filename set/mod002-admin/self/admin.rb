@@ -1,5 +1,6 @@
 # -*- encoding : utf-8 -*-
 class Card; module Set; class Self
+# Set: The card "Admin"
 # collect arrays of the form
 module Admin;
 extend Card::Set
@@ -46,7 +47,7 @@ def irreversibles_tasks_allowed?
   Cardio.config.allow_irreversible_admin_tasks
 end
 
-format :html do
+module HtmlFormat; parent.send :register_set_format, Card::Format::HtmlFormat, self; extend Card::Set::AbstractFormat
   view :core, cache: :never do
     stats = card_stats
     stats += cache_stats

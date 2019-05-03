@@ -1,5 +1,6 @@
 # -*- encoding : utf-8 -*-
 class Card; module Set; class Abstract
+# Set: Abstract (Search)
 module Search;
 extend Card::Set
 def self.source_location; "/Users/ethan/dev/decko/gem/card/mod/search/set/abstract/search.rb"; end
@@ -56,7 +57,7 @@ def each_item_name_with_options _content=nil
   end
 end
 
-format do
+module Format; parent.send :register_set_format, Card::Format, self; extend Card::Set::AbstractFormat
   def search_with_params
     search_with_rescue search_params
   end

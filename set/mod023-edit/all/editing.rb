@@ -1,9 +1,10 @@
 # -*- encoding : utf-8 -*-
 class Card; module Set; class All
+# Set: All cards
 module Editing;
 extend Card::Set
 def self.source_location; "/Users/ethan/dev/decko/gem/card/mod/edit/set/all/editing.rb"; end
-format :html do
+module HtmlFormat; parent.send :register_set_format, Card::Format::HtmlFormat, self; extend Card::Set::AbstractFormat
   ###---( TOP_LEVEL (used by menu) NEW / EDIT VIEWS )
   view :bridge, perms: :update, unknown: true, cache: :never, wrap: :bridge do
     with_nest_mode :edit do

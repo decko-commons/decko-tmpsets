@@ -1,5 +1,6 @@
 # -*- encoding : utf-8 -*-
 class Card; module Set; class Abstract
+# Set: Abstract (FollowOption)
 module FollowOption;
 extend Card::Set
 def self.source_location; "/Users/ethan/dev/decko/gem/card/mod/follow/set/abstract/follow_option.rb"; end

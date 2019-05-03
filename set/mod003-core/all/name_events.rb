@@ -1,5 +1,6 @@
 # -*- encoding : utf-8 -*-
 class Card; module Set; class All
+# Set: All cards
 # STAGE: prepare to validate
 module NameEvents;
 extend Card::Set

@@ -1,5 +1,6 @@
 # -*- encoding : utf-8 -*-
 class Card; module Set; class All; module History;
+# Set: All cards
 module Last;
 extend Card::Set
 def self.source_location; "/Users/ethan/dev/decko/gem/card/mod/history/set/all/history/last.rb"; end

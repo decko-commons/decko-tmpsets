@@ -1,9 +1,10 @@
 # -*- encoding : utf-8 -*-
 class Card; module Set; class Rule
+# Set: All rule cards
 module BridgeRulesEditor;
 extend Card::Set
 def self.source_location; "/Users/ethan/dev/decko/gem/card/mod/rules/set/rule/bridge_rules_editor.rb"; end
-format :html do
+module HtmlFormat; parent.send :register_set_format, Card::Format::HtmlFormat, self; extend Card::Set::AbstractFormat
   view :overlay_rule, cache: :never, unknown: true do
     wrap_with_overlay slot: breadcrumb_data("Rule editing", "rules") do
       current_rule_form

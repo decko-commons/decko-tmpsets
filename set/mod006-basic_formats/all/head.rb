@@ -1,15 +1,16 @@
 # -*- encoding : utf-8 -*-
 class Card; module Set; class All
+# Set: All cards
 module Head;
 extend Card::Set
 def self.source_location; "/Users/ethan/dev/decko/gem/card/mod/basic_formats/set/all/head.rb"; end
-format do
+module Format; parent.send :register_set_format, Card::Format, self; extend Card::Set::AbstractFormat
   view :page_title, unknown: true, perms: :none do
     [(safe_name if card.name.present?), Card.global_setting(:title)].compact.join " - "
   end
 end
 
-format :html do
+module HtmlFormat; parent.send :register_set_format, Card::Format::HtmlFormat, self; extend Card::Set::AbstractFormat
   # add tuples containing a
   #  - the codename of a card with javascript config (usually in json format)
   #  - the name of a javascript method that handles the config

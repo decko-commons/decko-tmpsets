@@ -1,10 +1,11 @@
 # -*- encoding : utf-8 -*-
 class Card; module Set; class Self
+# Set: The card "AccountLinks"
 module AccountLinks;
 extend Card::Set
 def self.source_location; "/Users/ethan/dev/decko/gem/card/mod/account/set/self/account_links.rb"; end
 
-format :html do
+module HtmlFormat; parent.send :register_set_format, Card::Format::HtmlFormat, self; extend Card::Set::AbstractFormat
   view :core, cache: :never do
     status_class = Auth.signed_in? ? "logged-in" : "logged-out"
     wrap_with :span, id: "logging", class: status_class do

@@ -1,5 +1,6 @@
 # -*- encoding : utf-8 -*-
 class Card; module Set; class Abstract
+# Set: Abstract (CodeFile)
 module CodeFile;
 extend Card::Set
 def self.source_location; "/Users/ethan/dev/decko/gem/card/mod/core/set/abstract/code_file.rb"; end
@@ -59,7 +60,7 @@ def content
   end.compact.join "\n"
 end
 
-format :html do
+module HtmlFormat; parent.send :register_set_format, Card::Format::HtmlFormat, self; extend Card::Set::AbstractFormat
   view :editor do
     "Content is stored in file and can't be edited."
   end

@@ -1,5 +1,6 @@
 # -*- encoding : utf-8 -*-
 class Card; module Set; class All
+# Set: All cards
 module Item;
 extend Card::Set
 def self.source_location; "/Users/ethan/dev/decko/gem/card/mod/core/set/all/item.rb"; end
@@ -60,7 +61,7 @@ def insert_id index, id
   insert_item index, "~#{id}"
 end
 
-format do
+module Format; parent.send :register_set_format, Card::Format, self; extend Card::Set::AbstractFormat
   def item_links _args={}
     raw(render_core).split(/[,\n]/)
   end
@@ -112,7 +113,7 @@ format do
   end
 end
 
-format :html do
+module HtmlFormat; parent.send :register_set_format, Card::Format::HtmlFormat, self; extend Card::Set::AbstractFormat
   def wrap_item rendered, item_view
     %(<div class="item-#{item_view}">#{rendered}</div>)
   end

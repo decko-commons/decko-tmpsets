@@ -1,5 +1,6 @@
 # -*- encoding : utf-8 -*-
 class Card; module Set; class Abstract
+# Set: Abstract (BootswatchTheme)
 # Bootswatch themes are free themes for bootstrap available at https://bootswatch.com/.
 # For every bootswatch theme we have one card of card type "bootswatch skin".
 # They all have codenames following the pattern "#{theme_name}_skin".

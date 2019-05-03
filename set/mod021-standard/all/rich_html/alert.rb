@@ -1,9 +1,10 @@
 # -*- encoding : utf-8 -*-
 class Card; module Set; class All; module RichHtml;
+# Set: All cards
 module Alert;
 extend Card::Set
 def self.source_location; "/Users/ethan/dev/decko/gem/card/mod/standard/set/all/rich_html/alert.rb"; end
-format :html do
+module HtmlFormat; parent.send :register_set_format, Card::Format::HtmlFormat, self; extend Card::Set::AbstractFormat
   # alert_types: 'success', 'info', 'warning', 'danger'
   def alert alert_type, dismissable=false, disappear=false, args={}
     add_class args, alert_classes(alert_type, dismissable, disappear)

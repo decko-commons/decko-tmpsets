@@ -1,5 +1,6 @@
 # -*- encoding : utf-8 -*-
 class Card; module Set; class Type
+# Set: All "Json" cards
 module Json;
 extend Card::Set
 def self.source_location; "/Users/ethan/dev/decko/gem/card/mod/basic_types/set/type/json.rb"; end
@@ -21,7 +22,7 @@ def item_names _args={}
   parse_content.keys
 end
 
-format :html do
+module HtmlFormat; parent.send :register_set_format, Card::Format::HtmlFormat, self; extend Card::Set::AbstractFormat
   view :core do
     process_content ::CodeRay.scan(_render_raw, :json).div
   end

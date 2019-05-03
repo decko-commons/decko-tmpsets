@@ -1,12 +1,13 @@
 # -*- encoding : utf-8 -*-
 class Card; module Set; class Type; module CustomizedBootswatchSkin;
+# Set: All "CustomizedBootswatchSkin" cards
 module HtmlViews;
 extend Card::Set
 def self.source_location; "/Users/ethan/dev/decko/gem/card/mod/bootstrap/set/type/customized_bootswatch_skin/html_views.rb"; end
 include_set Abstract::Media
 include_set Abstract::BsBadge
 
-format :html do
+module HtmlFormat; parent.send :register_set_format, Card::Format::HtmlFormat, self; extend Card::Set::AbstractFormat
   view :menu do
     ""
   end

@@ -1,11 +1,12 @@
 # -*- encoding : utf-8 -*-
 class Card; module Set; class All; module Bootstrap;
+# Set: All cards
 module Tabs;
 extend Card::Set
 def self.source_location; "/Users/ethan/dev/decko/gem/card/mod/bootstrap/set/all/bootstrap/tabs.rb"; end
 
 
-format :html do
+module HtmlFormat; parent.send :register_set_format, Card::Format::HtmlFormat, self; extend Card::Set::AbstractFormat
   # @param tab_type [String] 'tabs' or 'pills'
   # @param tabs [Hash] keys are the labels, values the content for the tabs
   # @param active_name [String] label of the tab that should be active at the

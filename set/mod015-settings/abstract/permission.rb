@@ -1,5 +1,6 @@
 # -*- encoding : utf-8 -*-
 class Card; module Set; class Abstract
+# Set: Abstract (Permission)
 module Permission;
 extend Card::Set
 def self.source_location; "/Users/ethan/dev/decko/gem/card/mod/settings/set/abstract/permission.rb"; end
@@ -9,7 +10,7 @@ def standardize_items
   # would therefore break
 end
 
-format :html do
+module HtmlFormat; parent.send :register_set_format, Card::Format::HtmlFormat, self; extend Card::Set::AbstractFormat
   view :pointer_core do
     wrap_with :div, pointer_items, class: "pointer-list"
   end

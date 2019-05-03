@@ -1,5 +1,6 @@
 # -*- encoding : utf-8 -*-
 class Card; module Set; class Self
+# Set: The card "Search"
 module Search;
 extend Card::Set
 def self.source_location; "/Users/ethan/dev/decko/gem/card/mod/search/set/self/search.rb"; end
@@ -16,7 +17,7 @@ def keyword_contains_wql? hash
   hash[:vars] && (keyword = hash[:vars][:keyword]) && keyword =~ /^\{.+\}$/
 end
 
-format do
+module Format; parent.send :register_set_format, Card::Format, self; extend Card::Set::AbstractFormat
   view :search_error, cache: :never do
     sr_class = search_with_params.class.to_s
 
@@ -25,7 +26,7 @@ format do
   end
 end
 
-format :html do
+module HtmlFormat; parent.send :register_set_format, Card::Format::HtmlFormat, self; extend Card::Set::AbstractFormat
   view :title, cache: :never do
     return super() unless (keyword = search_keyword) &&
                           (title = keyword_search_title(keyword))
@@ -49,7 +50,7 @@ format :html do
   end
 end
 
-format :json do
+module JsonFormat; parent.send :register_set_format, Card::Format::JsonFormat, self; extend Card::Set::AbstractFormat
   view :complete, cache: :never do
     term = term_param
     exact = Card.fetch term, new: {}

@@ -1,9 +1,10 @@
 # -*- encoding : utf-8 -*-
 class Card; module Set; class Type; module Set;
+# Set: All "Set" cards
 module RulesFilter;
 extend Card::Set
 def self.source_location; "/Users/ethan/dev/decko/gem/card/mod/rules/set/type/set/rules_filter.rb"; end
-format :html do
+module HtmlFormat; parent.send :register_set_format, Card::Format::HtmlFormat, self; extend Card::Set::AbstractFormat
   def rules_filter selected_setting=:common, set_options=:related
     form_tag path(mark: "", view: :rules_list, slot: { hide: :content }),
              remote: true, method: "get", role: "filter",

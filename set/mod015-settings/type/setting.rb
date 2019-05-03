@@ -1,5 +1,6 @@
 # -*- encoding : utf-8 -*-
 class Card; module Set; class Type
+# Set: All "Setting" cards
 module Setting;
 extend Card::Set
 def self.source_location; "/Users/ethan/dev/decko/gem/card/mod/settings/set/type/setting.rb"; end
@@ -16,7 +17,7 @@ def self.member_names
   end
 end
 
-format :data do
+module DataFormat; parent.send :register_set_format, Card::Format::DataFormat, self; extend Card::Set::AbstractFormat
   view :core do
     wql = { left:  { type: Card::SetID },
             right: card.id,
@@ -38,7 +39,7 @@ def set_classes_with_rules
   end.compact
 end
 
-format do
+module Format; parent.send :register_set_format, Card::Format, self; extend Card::Set::AbstractFormat
   def duplicate_check rules
     previous_content = nil
     rules.each do |rule|
@@ -94,7 +95,7 @@ format do
   end
 end
 
-format :json do
+module JsonFormat; parent.send :register_set_format, Card::Format::JsonFormat, self; extend Card::Set::AbstractFormat
   def items_for_export
     Card.search left: { type: Card::SetID }, right: card.id, limit: 0
   end

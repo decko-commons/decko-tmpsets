@@ -1,9 +1,10 @@
 # -*- encoding : utf-8 -*-
 class Card; module Set; class Abstract
+# Set: Abstract (BsBadge)
 module BsBadge;
 extend Card::Set
 def self.source_location; "/Users/ethan/dev/decko/gem/card/mod/utility/set/abstract/bs_badge.rb"; end
-format :html do
+module HtmlFormat; parent.send :register_set_format, Card::Format::HtmlFormat, self; extend Card::Set::AbstractFormat
   def labeled_badge count, label, opts={}
     haml :labeled_badge, badge_haml_opts(count, label, opts)
   end

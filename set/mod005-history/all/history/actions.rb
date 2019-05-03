@@ -1,5 +1,6 @@
 # -*- encoding : utf-8 -*-
 class Card; module Set; class All; module History;
+# Set: All cards
 # -*- encoding : utf-8 -*-
 module Actions;
 extend Card::Set
@@ -46,7 +47,7 @@ def current_action_changes_content?
   new_card? || @current_action.new_content? || db_content_is_changing?
 end
 
-format :html do
+module HtmlFormat; parent.send :register_set_format, Card::Format::HtmlFormat, self; extend Card::Set::AbstractFormat
   def action_from_context
     if (action_id = voo.action_id || params[:action_id])
       Action.fetch action_id

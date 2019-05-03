@@ -1,12 +1,13 @@
 # -*- encoding : utf-8 -*-
 class Card; module Set; class Type
+# Set: All "SearchType" cards
 module SearchType;
 extend Card::Set
 def self.source_location; "/Users/ethan/dev/decko/gem/card/mod/search/set/type/search_type.rb"; end
 include_set Type::Json
 include_set Abstract::WqlSearch
 
-format do
+module Format; parent.send :register_set_format, Card::Format, self; extend Card::Set::AbstractFormat
   view :core, cache: :never do
     _render search_result_view
   end
@@ -25,7 +26,7 @@ format do
   end
 end
 
-format :json do
+module JsonFormat; parent.send :register_set_format, Card::Format::JsonFormat, self; extend Card::Set::AbstractFormat
   def items_for_export
     return [] if card.content.empty? || unexportable_tag?(card.name.tag_name.key)
     card.item_cards
@@ -38,7 +39,7 @@ format :json do
   end
 end
 
-format :rss do
+module RssFormat; parent.send :register_set_format, Card::Format::RssFormat, self; extend Card::Set::AbstractFormat
   view :feed_body do
     case raw_feed_items
     when Exception then @xml.item(render!(:search_error))
@@ -52,7 +53,7 @@ format :rss do
   end
 end
 
-format :html do
+module HtmlFormat; parent.send :register_set_format, Card::Format::HtmlFormat, self; extend Card::Set::AbstractFormat
   view :core do
     _render search_result_view
   end

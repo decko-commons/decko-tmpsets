@@ -1,5 +1,6 @@
 # -*- encoding : utf-8 -*-
 class Card; module Set; class Abstract; module Attachment;
+# Set: Abstract (Attachment, Paths)
 module Paths;
 extend Card::Set
 def self.source_location; "/Users/ethan/dev/decko/gem/card/mod/carrierwave/set/abstract/attachment/paths.rb"; end

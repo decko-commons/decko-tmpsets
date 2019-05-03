@@ -1,5 +1,6 @@
 # -*- encoding : utf-8 -*-
 class Card; module Set; class All
+# Set: All cards
 # frozen_string_literal: true
 
 # Cards can refer to other cards in their content, eg via links and nests.

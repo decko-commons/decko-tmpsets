@@ -1,5 +1,6 @@
 # -*- encoding : utf-8 -*-
 class Card; module Set; class All
+# Set: All cards
 # shared methods for card collections (Pointers, Searches, Sets, etc.)
 module Collection;
 extend Card::Set
@@ -43,13 +44,13 @@ def collection?
   item_cards != [self]
 end
 
-format do
+module Format; parent.send :register_set_format, Card::Format, self; extend Card::Set::AbstractFormat
   view :count do
     card.item_names.size
   end
 end
 
-format :html do
+module HtmlFormat; parent.send :register_set_format, Card::Format::HtmlFormat, self; extend Card::Set::AbstractFormat
   view :carousel do
     bs_carousel unique_id, 0 do
       nest_item_array.each do |rendered_item|

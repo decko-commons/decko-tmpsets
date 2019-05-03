@@ -1,5 +1,6 @@
 # -*- encoding : utf-8 -*-
 class Card; module Set; class TypePlusRight; module User;; module Follow;
+# Set: All "+User" cards on "" cards
 # all the following methods are used to construct the Follow and Ignore tabs
 
 module FollowEditorHelper;
@@ -7,7 +8,7 @@ extend Card::Set
 def self.source_location; "/Users/ethan/dev/decko/gem/card/mod/follow/set/type_plus_right/user/follow/follow_editor_helper.rb"; end
 # TODO: these object representations are complex enough for their own class
 
-format :html do
+module HtmlFormat; parent.send :register_set_format, Card::Format::HtmlFormat, self; extend Card::Set::AbstractFormat
   # constructs hash of rules/options for "Follow" tab
   def following_rules_and_options &block
     rule_opt_array = following_rule_options_hash.map do |key, val|

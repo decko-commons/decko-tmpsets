@@ -1,9 +1,10 @@
 # -*- encoding : utf-8 -*-
 class Card; module Set; class Rule; module RuleForm;
+# Set: All rule cards
 module SetSelection;
 extend Card::Set
 def self.source_location; "/Users/ethan/dev/decko/gem/card/mod/rules/set/rule/rule_form/set_selection.rb"; end
-format :html do
+module HtmlFormat; parent.send :register_set_format, Card::Format::HtmlFormat, self; extend Card::Set::AbstractFormat
   def bridge_rule_set_selection
     wrap_with :div, class: "set-list" do
       bridge_rule_set_formgroup

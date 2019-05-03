@@ -1,5 +1,6 @@
 # -*- encoding : utf-8 -*-
 class Card; module Set; class Right
+# Set: All "+Account" cards
 # -*- encoding : utf-8 -*-
 module Account;
 extend Card::Set
@@ -151,7 +152,7 @@ def changes_visible? act
   false
 end
 
-format do
+module Format; parent.send :register_set_format, Card::Format, self; extend Card::Set::AbstractFormat
   view :verify_url, cache: :never do
     card_url path(token_path_opts.merge(mark: card.name.left))
   end
@@ -173,7 +174,7 @@ format do
   end
 end
 
-format :html do
+module HtmlFormat; parent.send :register_set_format, Card::Format::HtmlFormat, self; extend Card::Set::AbstractFormat
   view :raw do
     # FIXME: use field_nest instead of parsing content
     # Problem: when you do that then the fields are missing in the sign up form:
@@ -188,7 +189,7 @@ format :html do
   end
 end
 
-format :email do
+module EmailHtmlFormat; parent.send :register_set_format, Card::Format::EmailHtmlFormat, self; extend Card::Set::AbstractFormat
   def mail context, fields
     super context, fields.reverse_merge(to: card.email)
   end

@@ -1,14 +1,15 @@
 # -*- encoding : utf-8 -*-
 class Card; module Set; class Right
+# Set: All "+Structure" cards
 module Structure;
 extend Card::Set
 def self.source_location; "/Users/ethan/dev/decko/gem/card/mod/settings/set/right/structure.rb"; end
-format :rss do
+module RssFormat; parent.send :register_set_format, Card::Format::RssFormat, self; extend Card::Set::AbstractFormat
   def raw_feed_items
     [card]
   end
 end
-format :html do
+module HtmlFormat; parent.send :register_set_format, Card::Format::HtmlFormat, self; extend Card::Set::AbstractFormat
   include AddHelp::HtmlFormat
 end
 

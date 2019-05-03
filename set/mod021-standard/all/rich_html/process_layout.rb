@@ -1,9 +1,10 @@
 # -*- encoding : utf-8 -*-
 class Card; module Set; class All; module RichHtml;
+# Set: All cards
 module ProcessLayout;
 extend Card::Set
 def self.source_location; "/Users/ethan/dev/decko/gem/card/mod/standard/set/all/rich_html/process_layout.rb"; end
-format :html do
+module HtmlFormat; parent.send :register_set_format, Card::Format::HtmlFormat, self; extend Card::Set::AbstractFormat
   # TODO: use CodeFile cards for these
   # builtin layouts allow for rescue / testing
   # HTML_LAYOUTS = Mod::Loader.load_layouts(:html).merge "none" => "{{_main}}"

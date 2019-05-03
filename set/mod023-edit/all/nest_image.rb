@@ -1,9 +1,10 @@
 # -*- encoding : utf-8 -*-
 class Card; module Set; class All
+# Set: All cards
 module NestImage;
 extend Card::Set
 def self.source_location; "/Users/ethan/dev/decko/gem/card/mod/edit/set/all/nest_image.rb"; end
-format :html do
+module HtmlFormat; parent.send :register_set_format, Card::Format::HtmlFormat, self; extend Card::Set::AbstractFormat
   view :nest_image, wrap: { modal: { footer: "" } } do
     nest card.autoname(card.name.field("image01")), view: :new_image, type: :image
   end
@@ -27,7 +28,7 @@ format :html do
   end
 end
 
-format :js do
+module JsFormat; parent.send :register_set_format, Card::Format::JsFormat, self; extend Card::Set::AbstractFormat
   view :open_nest_editor do
     tm_id = if Env.params[:tinymce_id].present?
               "\"#{Env.params[:tinymce_id]}\""

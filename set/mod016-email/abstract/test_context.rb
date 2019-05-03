@@ -1,9 +1,10 @@
 # -*- encoding : utf-8 -*-
 class Card; module Set; class Abstract
+# Set: Abstract (TestContext)
 module TestContext;
 extend Card::Set
 def self.source_location; "/Users/ethan/dev/decko/gem/card/mod/email/set/abstract/test_context.rb"; end
-format :html do
+module HtmlFormat; parent.send :register_set_format, Card::Format::HtmlFormat, self; extend Card::Set::AbstractFormat
   view :core do
     return super() if voo.hide? :test_context
     card.with_context test_context_card do
@@ -16,14 +17,14 @@ format :html do
   end
 end
 
-format :email_html do
+module EmailHtmlFormat; parent.send :register_set_format, Card::Format::EmailHtmlFormat, self; extend Card::Set::AbstractFormat
   view :core do
     voo.hide! :test_context
     super()
   end
 end
 
-format :email_text do
+module EmailTextFormat; parent.send :register_set_format, Card::Format::EmailTextFormat, self; extend Card::Set::AbstractFormat
   view :core do
     voo.hide! :test_context
     super()

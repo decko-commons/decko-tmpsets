@@ -1,5 +1,6 @@
 # -*- encoding : utf-8 -*-
 class Card; module Set; class All
+# Set: All cards
 module Comment;
 extend Card::Set
 def self.source_location; "/Users/ethan/dev/decko/gem/card/mod/standard/set/all/comment.rb"; end
@@ -27,7 +28,7 @@ def clean_comment
   end * "\n"
 end
 
-format do
+module Format; parent.send :register_set_format, Card::Format, self; extend Card::Set::AbstractFormat
   def comment_with_signature
     card.clean_comment + "\n" + comment_signature
   end

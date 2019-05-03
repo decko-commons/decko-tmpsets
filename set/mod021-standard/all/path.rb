@@ -1,9 +1,10 @@
 # -*- encoding : utf-8 -*-
 class Card; module Set; class All
+# Set: All cards
 module Path;
 extend Card::Set
 def self.source_location; "/Users/ethan/dev/decko/gem/card/mod/standard/set/all/path.rb"; end
-format do
+module Format; parent.send :register_set_format, Card::Format, self; extend Card::Set::AbstractFormat
   # Decko uses "path" a bit unusually.  In most formats, it returns a full url.  In HTML,
   # it provides everything after the domain/port.
   #
@@ -148,13 +149,13 @@ end
 
 public
 
-format :json do
+module JsonFormat; parent.send :register_set_format, Card::Format::JsonFormat, self; extend Card::Set::AbstractFormat
   def add_unknown_name_to_opts name, opts
     # noop
   end
 end
 
-format :css do
+module CssFormat; parent.send :register_set_format, Card::Format::CssFormat, self; extend Card::Set::AbstractFormat
   def contextualize_path relative_path
     if Card.config.file_storage == :local
       # absolute paths lead to invalid assets path in css for cukes
@@ -167,14 +168,14 @@ format :css do
   end
 end
 
-format :html do
+module HtmlFormat; parent.send :register_set_format, Card::Format::HtmlFormat, self; extend Card::Set::AbstractFormat
   # in HTML, decko paths rendered as relative to the site's root.
   def contextualize_path relative_path
     card_path relative_path
   end
 end
 
-format :email_html do
+module EmailHtmlFormat; parent.send :register_set_format, Card::Format::EmailHtmlFormat, self; extend Card::Set::AbstractFormat
   def contextualize_path relative_path
     card_url relative_path
   end
