@@ -6,7 +6,7 @@ module RecaptchaSecretKey;
 extend Card::Set
 def self.source_location; "/Users/ethan/dev/decko/gem/card/mod/admin/set/self/recaptcha_secret_key.rb"; end
 event :validate_recaptcha_secret_key, :validate do
-  return if content.match?(/^[a-zA-Z0-9\-_]+$/)
+  return if content.match?(/^[a-zA-Z0-9\-_]*$/)
 
   errors.add :content, "invalid key" # LOCALIZE
 end

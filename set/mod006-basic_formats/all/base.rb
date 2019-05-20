@@ -29,9 +29,6 @@ module Format; parent.send :register_set_format, Card::Format, self; extend Card
   view(:linkname, closed: true, perms: :none) { card.name.url_key }
   view(:url,      closed: true, perms: :none) { card_url _render_linkname }
 
-  view :title, closed: true, perms: :none do
-    name_variant(title_in_context(voo.title))
-  end
 
   view :url_link, closed: true, perms: :none do
     link_to_resource card_url(_render_linkname)
@@ -116,8 +113,8 @@ module Format; parent.send :register_set_format, Card::Format, self; extend Card
     end
   end
 
-  view :titled_content do
-    _render_core
+  view :titled_content, unknown: :blank do
+    render_core
   end
 
   view :blank, closed: true, perms: :none do

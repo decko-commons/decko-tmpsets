@@ -7,8 +7,7 @@ extend Card::Set
 def self.source_location; "/Users/ethan/dev/decko/gem/card/mod/settings/set/abstract/permission.rb"; end
 
 def standardize_items
-  # noop to override default behavior, which wouldn't let '_left' through and
-  # would therefore break
+  super unless content == "_left"
 end
 
 module HtmlFormat; parent.send :register_set_format, Card::Format::HtmlFormat, self; extend Card::Set::AbstractFormat

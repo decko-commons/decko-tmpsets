@@ -5,6 +5,9 @@ class Card; module Set; class Self
 module AccountLinks;
 extend Card::Set
 def self.source_location; "/Users/ethan/dev/decko/gem/card/mod/account/set/self/account_links.rb"; end
+def ok_to_read
+  true
+end
 
 module HtmlFormat; parent.send :register_set_format, Card::Format::HtmlFormat, self; extend Card::Set::AbstractFormat
   view :core, cache: :never do
@@ -33,12 +36,12 @@ module HtmlFormat; parent.send :register_set_format, Card::Format::HtmlFormat, s
                  path: { action: :new, mark: :signup }
   end
 
-  view :sign_in, link_options { !Auth.signed_in? } do
+  view(:sign_in, link_options { !Auth.signed_in? }) do
     link_to_card :signin, account_link_text(:sign_in),
                  class: nav_link_class("signin-link")
   end
 
-  view :sign_out, link_options { Auth.signed_in? } do
+  view(:sign_out, link_options { Auth.signed_in? }) do
     link_to_card :signin, account_link_text(:sign_out),
                  class: nav_link_class("signout-link"),
                  path: { action: :delete }
@@ -50,8 +53,20 @@ module HtmlFormat; parent.send :register_set_format, Card::Format::HtmlFormat, s
                  path: { action: :new, mark: :signup }
   end
 
-  view :my_card, link_options { Auth.signed_in? } do
-    link_to_card Auth.current.name, nil, id: "my-card-link", class: nav_link_class("my-card")
+  view(:my_card, link_options { Auth.signed_in? }) do
+    link = link_to_card Auth.current.name, nil,
+                        id: "my-card-link",
+                        class: nav_link_class("my-card")
+    split_button link, nil do
+      [
+        link_to_card([Auth.current, :account_settings], "Account"),
+        ["Roles", roles.map(&method(:link_to_card))]
+      ]
+    end
+  end
+
+  def roles
+    [Card[:eagle], Auth.current.fetch(trait: :roles)&.item_names].flatten.compact
   end
 
   def account_link_text purpose

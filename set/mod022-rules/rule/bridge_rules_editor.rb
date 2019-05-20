@@ -12,7 +12,8 @@ module HtmlFormat; parent.send :register_set_format, Card::Format::HtmlFormat, s
     end
   end
 
-  view :modal_rule, cache: :never, unknown: true, wrap: :modal do
+  view :modal_rule, cache: :never, unknown: true,
+                    wrap: { modal: { title: ->(format) { format.render_title } } } do
     current_rule_form
   end
 

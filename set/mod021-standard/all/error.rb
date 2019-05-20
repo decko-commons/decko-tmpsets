@@ -72,8 +72,7 @@ module JsonFormat; parent.send :register_set_format, Card::Format::JsonFormat, s
   end
 
   def format_error error
-    { error_status: error_status,
-      errors: error }
+    { error_status: error_status, errors: error }
   end
 
   def error_list

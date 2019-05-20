@@ -10,6 +10,10 @@ include_set Abstract::Machine
 
 store_machine_output filetype: "css"
 
+def ok_to_read
+  true
+end
+
 module Format; parent.send :register_set_format, Card::Format, self; extend Card::Set::AbstractFormat
   # turn off autodetection of uri's
   def chunk_list

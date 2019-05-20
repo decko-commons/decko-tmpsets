@@ -33,6 +33,7 @@ module Format; parent.send :register_set_format, Card::Format, self; extend Card
     (offset / limit).to_i
   end
 
+  # for override
   def extra_paging_path_args
     {}
   end
@@ -96,22 +97,13 @@ module HtmlFormat; parent.send :register_set_format, Card::Format::HtmlFormat, s
 
   def paging_path_args local_args={}
     @paging_path_args ||= {}
-    @paging_path_args.reverse_merge!(
-      limit: limit,
-      offset: offset,
-      view: paging_view,
-      slot: voo.slot_options
-    )
+    @paging_path_args.reverse_merge!(limit: limit, offset: offset)
     @paging_path_args.merge! extra_paging_path_args
     @paging_path_args.merge local_args
   end
 
   def page_link_path_args page
     paging_path_args.merge offset: page * limit
-  end
-
-  def paging_view
-    voo&.home_view || voo.slot_options[:view] || :content
   end
 
   def paging_needed?

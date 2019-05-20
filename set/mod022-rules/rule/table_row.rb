@@ -41,6 +41,7 @@ module HtmlFormat; parent.send :register_set_format, Card::Format::HtmlFormat, s
     wrap_rule_cell "rule-setting" do
       opts = bridge_link_opts(class: "edit-rule-link")
       opts[:path].delete(:layout)
+      opts["data-modal-class"] = "modal-lg"
       link_to_view :modal_rule, setting_title, opts
     end
   end

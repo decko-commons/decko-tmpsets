@@ -2,12 +2,11 @@
 class Card; module Set; class Self
 # Set: The card "Signin"
 #
+# The Sign In card manages logging in and out of the site.
+#
 module Signin;
 extend Card::Set
 def self.source_location; "/Users/ethan/dev/decko/gem/card/mod/account/set/self/signin.rb"; end
-
-# The Sign In card manages logging in and out of the site.
-#
 # /:signin (core view) gives the login ui
 # /:signin?view=edit gives the forgot password ui
 
@@ -39,6 +38,10 @@ end
 event :send_reset_password_token, before: :signin, on: :update, trigger: :required do
   email = subfield(:email)&.content
   send_reset_password_email_or_fail email
+end
+
+def ok_to_read
+  true
 end
 
 def consider_recaptcha?

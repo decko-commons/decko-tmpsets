@@ -74,7 +74,7 @@ module Format; parent.send :register_set_format, Card::Format, self; extend Card
   end
 
   def implicit_item_view
-    view = params[:item] || voo_items_view || default_item_view
+    view = voo_items_view || default_item_view
     Card::View.normalize view
   end
 

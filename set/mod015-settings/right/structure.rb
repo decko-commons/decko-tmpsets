@@ -5,13 +5,18 @@ class Card; module Set; class Right
 module Structure;
 extend Card::Set
 def self.source_location; "/Users/ethan/dev/decko/gem/card/mod/settings/set/right/structure.rb"; end
+include_set Abstract::TemplatedNests
+
 module RssFormat; parent.send :register_set_format, Card::Format::RssFormat, self; extend Card::Set::AbstractFormat
   def raw_feed_items
     [card]
   end
 end
+
 module HtmlFormat; parent.send :register_set_format, Card::Format::HtmlFormat, self; extend Card::Set::AbstractFormat
-  include AddHelp::HtmlFormat
+  view :closed_content do
+    "#{_render_type} : #{_render_raw}"
+  end
 end
 
 event :update_structurees_references, :integrate,

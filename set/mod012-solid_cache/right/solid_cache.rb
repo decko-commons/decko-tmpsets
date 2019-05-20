@@ -7,6 +7,10 @@ extend Card::Set
 def self.source_location; "/Users/ethan/dev/decko/gem/card/mod/solid_cache/set/right/solid_cache.rb"; end
 include_set Abstract::Lock
 
+def ok_to_read
+  left.ok_to_read
+end
+
 def followable?
   false
 end

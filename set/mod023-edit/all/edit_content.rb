@@ -28,6 +28,7 @@ module HtmlFormat; parent.send :register_set_format, Card::Format::HtmlFormat, s
                                size: :edit_modal_size,
                                title: :render_title,
                                menu: :edit_modal_menu } } do
+    add_name_context
     with_nest_mode :edit do
       voo.show :help
       voo.hide :save_button
@@ -54,9 +55,13 @@ module HtmlFormat; parent.send :register_set_format, Card::Format::HtmlFormat, s
     end
   end
 
-  def bridge_link
-    link_to_view :bridge, material_icon(:more_horiz),
-                 class: "text-muted close", "data-slotter-mode": "modal-replace"
+  def bridge_link in_modal=true
+    opts = { class: "text-muted" }
+    if in_modal
+      add_class opts, "close"
+      opts["data-slotter-mode"] = "modal-replace"
+    end
+    link_to_view :bridge, material_icon(:more_horiz), opts
   end
 
   def edit_form_opts

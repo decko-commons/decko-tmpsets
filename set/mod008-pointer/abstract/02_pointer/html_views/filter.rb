@@ -32,7 +32,7 @@ module HtmlFormat; parent.send :register_set_format, Card::Format::HtmlFormat, s
   # NOCACHE because params alter view
   view :add_selected_link, cache: :never, unknown: true do
     link_to "Add Selected",
-            path: { item: params[:item], filter_card: params[:filter_card] },
+            path: { filter_card: params[:filter_card] },
             class: "_add-selected slotter _close-modal btn btn-primary disabled",
             data: { "slot-selector": ".#{params[:slot_selector]}",
                     "item-selector": ".#{params[:item_selector]}",

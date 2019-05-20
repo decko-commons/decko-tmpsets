@@ -6,7 +6,7 @@ module Frame;
 extend Card::Set
 def self.source_location; "/Users/ethan/dev/decko/gem/card/mod/standard/set/all/rich_html/frame.rb"; end
 module HtmlFormat; parent.send :register_set_format, Card::Format::HtmlFormat, self; extend Card::Set::AbstractFormat
-  view :flash, cache: :never, unknown: true do
+  view :flash, cache: :never, unknown: true, perms: :none do
     flash_notice = params[:flash] || Env.success.flash
     return "" unless flash_notice.present? && focal?
 
@@ -25,9 +25,10 @@ module HtmlFormat; parent.send :register_set_format, Card::Format::HtmlFormat, s
 
   def with_frame slot=true, header=frame_header, slot_opts={}
     voo.hide :help
+    add_name_context
     wrap slot, slot_opts do
       panel do
-        [header, frame_help, _render(:flash), (yield if block_given?)]
+        [header, frame_help, render_flash, (yield if block_given?)]
       end
     end
   end

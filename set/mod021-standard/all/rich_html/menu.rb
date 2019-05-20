@@ -9,7 +9,7 @@ module HtmlFormat; parent.send :register_set_format, Card::Format::HtmlFormat, s
   view :menu, denial: :blank, unknown: true do
     return "" if card.unknown?
     wrap_with :div, class: "card-menu #{menu_link_classes}" do
-      menu_link
+      [bridge_link(false), menu_link]
     end
   end
 

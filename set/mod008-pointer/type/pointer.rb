@@ -8,7 +8,7 @@ def self.source_location; "/Users/ethan/dev/decko/gem/card/mod/pointer/set/type/
 include_set Abstract::Pointer
 
 module HtmlFormat; parent.send :register_set_format, Card::Format::HtmlFormat, self; extend Card::Set::AbstractFormat
-  view :overview do
+  view :view_list do
     %i[info_bar bar box closed titled labeled].map do |view|
       voo.items[:view] = view
       wrap_with :p, [content_tag(:h3, "#{view} items"), render_content]

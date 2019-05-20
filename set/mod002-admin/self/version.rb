@@ -9,6 +9,10 @@ def self.source_location; "/Users/ethan/dev/decko/gem/card/mod/admin/set/self/ve
 
 require_dependency "card/version"
 
+def ok_to_read
+  true
+end
+
 def content
   Card::Version.release
 end

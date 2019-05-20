@@ -20,7 +20,7 @@ end
 
 module DataFormat; parent.send :register_set_format, Card::Format::DataFormat, self; extend Card::Set::AbstractFormat
   view :core do
-    wql = { left:  { type: Card::SetID },
+    wql = { left: { type: Card::SetID },
             right: card.id,
             limit: 0 }
     Card.search(wql).compact.map { |c| nest c }
@@ -29,9 +29,9 @@ end
 
 def set_classes_with_rules
   Card.set_patterns.reverse.map do |set_class|
-    wql = { left:  { type: Card::SetID },
+    wql = { left: { type: Card::SetID },
             right: id,
-            sort:  %w[content name],
+            sort: %w[content name],
             limit: 0 }
     wql[:left][(set_class.anchorless? ? :id : :right_id)] = set_class.pattern_id
 
@@ -40,7 +40,7 @@ def set_classes_with_rules
   end.compact
 end
 
-module Format; parent.send :register_set_format, Card::Format, self; extend Card::Set::AbstractFormat
+module HtmlFormat; parent.send :register_set_format, Card::Format::HtmlFormat, self; extend Card::Set::AbstractFormat
   def duplicate_check rules
     previous_content = nil
     rules.each do |rule|
@@ -50,6 +50,11 @@ module Format; parent.send :register_set_format, Card::Format, self; extend Card
       previous_content = current_content
       yield rule, duplicate, changeover
     end
+  end
+
+  def rule_link rule, text
+    link_to_card rule, text, path: { view: :modal_rule },
+                             slotter: true, "data-modal-class": "modal-lg"
   end
 
   view :core do
@@ -63,18 +68,16 @@ module Format; parent.send :register_set_format, Card::Format, self; extend Card
           - card.set_classes_with_rules.each do |klass, rules|
             %tr.klass-row
               %td{class: ['setting-klass', "anchorless-#{klass.anchorless?}"]}
-                - kpat = klass.pattern
-                = klass.anchorless? ? link_to_card(kpat) : kpat
+                = klass.anchorless? ? rule_link(rules.first, klass.pattern) : klass.pattern
               %td.rule-content-container
                 %span.closed-content.content
                   - if klass.anchorless?
-                    = subformat(rules[0])._render_closed_content
+                    = subformat(rules.first)._render_closed_content
             - if !klass.anchorless?
               - duplicate_check(rules) do |rule, duplicate, changeover|
-                - setname = rule.name.trunk_name
                 %tr{class: ('rule-changeover' if changeover)}
                   %td.rule-anchor
-                    = link_to_card setname, setname.trunk_name
+                    = rule_link rule, rule.name.trunk_name.trunk_name
                   - if duplicate
                     %td
                   - else

@@ -94,7 +94,6 @@ module CssFormat; parent.send :register_set_format, Card::Format::CssFormat, sel
   end
 
   view :core do
-    voo.items[:view] = params[:item] if params[:item]
     nest_item_array.join "\n\n"
   end
 
