@@ -18,5 +18,11 @@ view :javascript_include_tag do
     <script src="#{card.machine_output_url}" type="text/javascript"></script>
   )
 end
+
+module HtmlFormat; parent.send :register_set_format, Card::Format::HtmlFormat, self; extend Card::Set::AbstractFormat
+  def raw_help_text
+    "JavaScript (or CoffeeScript) for card's page."
+  end
+end
 end;end;end;end;
 # ~~ generated from /Users/ethan/dev/decko/gem/card/mod/settings/set/right/script.rb ~~

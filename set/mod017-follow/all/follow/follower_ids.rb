@@ -9,17 +9,29 @@ FOLLOWER_IDS_CACHE_KEY = "FOLLOWER_IDS".freeze
 
 card_accessor :followers
 
-event :cache_expired_for_type_change, :store,
-      on: :update, changed: %i[type_id name] do
+event :cache_expired_for_type_change, :store, on: :update, changed: %i[type_id name] do
+  act_card&.schedule_preference_expiration
   # FIXME: expire (also?) after save
   Card.follow_caches_expired
+end
+
+def schedule_preference_expiration
+  @expire_preferences_scheduled = true
+end
+
+def expire_preferences?
+  @expire_preferences_scheduled
+end
+
+event :expire_preferences_cache, :finalize, when: :expire_preferences? do
+  Card::Rule.clear_preference_cache
 end
 
 # follow cache methods on Card class
 module ClassMethods
   def follow_caches_expired
     Card.clear_follower_ids_cache
-    Card.clear_preference_cache
+    Card::Rule.clear_preference_cache
   end
 
   def follower_ids_cache
@@ -96,7 +108,7 @@ def direct_follower_ids &block
 end
 
 def setcard_from_name set_name
-  Card.fetch set_name, new: { type_id: Card::SetID }
+  Card.fetch set_name, new: { type_id: SetID }
 end
 
 def direct_follower_ids_for_set set_card, ids

@@ -6,6 +6,7 @@ module OnDelete;
 extend Card::Set
 def self.source_location; "/Users/ethan/dev/decko/gem/card/mod/settings/set/self/on_delete.rb"; end
 extend Card::Setting
-setting_opts group: :event, position: 3, rule_type_editable: false
+setting_opts group: :event, position: 3, rule_type_editable: false,
+             help_text: "Configure events to be executed when card is deleted"
 end;end;end;end;
 # ~~ generated from /Users/ethan/dev/decko/gem/card/mod/settings/set/self/on_delete.rb ~~

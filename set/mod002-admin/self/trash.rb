@@ -32,7 +32,7 @@ module HtmlFormat; parent.send :register_set_format, Card::Format::HtmlFormat, s
     return unless (res_id = Env.params[:restore]) &&
                   (res_card = Card[res_id.to_i])
     alert :success, true do
-      wrap_with(:h5, "restored") + subformat(res_card).render_closed
+      wrap_with(:h5, "restored") + subformat(res_card).render_bar
     end
   end
 

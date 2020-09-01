@@ -6,13 +6,14 @@ module HistoryBridge;
 extend Card::Set
 def self.source_location; "/Users/ethan/dev/decko/gem/card/mod/history/set/all/history_bridge.rb"; end
 module HtmlFormat; parent.send :register_set_format, Card::Format::HtmlFormat, self; extend Card::Set::AbstractFormat
-  view :creator_credit, wrap: { div: { class: "text-muted m-2 creator-credit" } }, cache: :never do
+  view :creator_credit,
+       wrap: { div: { class: "text-muted creator-credit" } }, cache: :never do
     return "" unless card.real?
     "Created by #{nest card.creator, view: :link} "\
     "#{time_ago_in_words(card.created_at)} ago"
   end
 
-  view :updated_by, wrap: { div: { class: "text-muted m-2" } } do
+  view :updated_by, wrap: { div: { class: "text-muted" } } do
     return "" unless card.id
     updaters = Card.search(updater_of: { id: card.id })
     return "" unless updaters.present?
@@ -28,7 +29,7 @@ module HtmlFormat; parent.send :register_set_format, Card::Format::HtmlFormat, s
     total = item_cards.size
     fetch_count = total > max_count ? max_count - 1 : max_count
 
-    reduced = item_cards.first(fetch_count).map { |c| nest c, view: item_view }
+    reduced = first_card(fetch_count).map { |c| nest c, view: item_view }
     if total > max_count
       reduced << link_to_card(others_target,  "#{total - fetch_count} others")
     end
@@ -38,7 +39,6 @@ module HtmlFormat; parent.send :register_set_format, Card::Format::HtmlFormat, s
   def acts_bridge_layout acts, context=:bridge
     output [
       _render_creator_credit,
-      _render_updated_by,
       act_link_list(acts, context),
       act_paging(acts, context)
     ]

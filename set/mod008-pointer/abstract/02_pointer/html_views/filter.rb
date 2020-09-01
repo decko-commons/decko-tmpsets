@@ -14,9 +14,7 @@ module HtmlFormat; parent.send :register_set_format, Card::Format::HtmlFormat, s
     render_filter_items
   end
 
-  view :filter_items, unknown: true, wrap: :slot  do
-    haml :filter_items
-  end
+  view :filter_items, unknown: true, wrap: :slot, template: :haml
 
   def filtered_list_input
     with_nest_mode :normal do
@@ -55,7 +53,7 @@ module HtmlFormat; parent.send :register_set_format, Card::Format::HtmlFormat, s
     fcard = card.options_rule_card || Card[:all]
     return fcard if fcard.respond_to? :wql_hash
 
-    fcard.fetch trait: :referred_to_by, new: {}
+    fcard.fetch :referred_to_by, new: {}
   end
 
   def filter_card_from_params

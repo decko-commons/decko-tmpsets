@@ -20,5 +20,11 @@ end
 def list_direct_followers?
   true
 end
+
+module HtmlFormat; parent.send :register_set_format, Card::Format::HtmlFormat, self; extend Card::Set::AbstractFormat
+  def related_by_type_items
+    super.unshift ["#{card.name} cards", [card, :type, :by_name], mark: :absolute]
+  end
+end
 end;end;end;end;
 # ~~ generated from /Users/ethan/dev/decko/gem/card/mod/follow/set/type/cardtype.rb ~~

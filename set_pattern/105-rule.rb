@@ -1,7 +1,8 @@
 # -*- encoding : utf-8 -*-
 # Set Pattern: Rule
 #
-class Card::Set::Rule < Card::Set::Pattern::Abstract
+class Card::Set::Rule < Card::Set::Pattern::Base
+extend Card::Set::Pattern::Helper
 cattr_accessor :options
 class << self
 @@options = { junction_only: true }

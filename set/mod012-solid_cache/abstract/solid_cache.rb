@@ -15,7 +15,7 @@ def self.source_location; "/Users/ethan/dev/decko/gem/card/mod/solid_cache/set/a
 # The cache expiration can be controlled with the cache_update_trigger and
 # cache_expire_trigger methods.
 
-card_accessor :solid_cache, type: :html
+card_accessor :solid_cache, type: HtmlID
 
 def self.included host_class
   host_class.format(host_class.try(:cached_format) || :base) do

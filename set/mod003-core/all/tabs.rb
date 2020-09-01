@@ -16,8 +16,9 @@ module HtmlFormat; parent.send :register_set_format, Card::Format::HtmlFormat, s
     card.each_item_name_with_options(_render_raw) do |name, options|
       construct_tab tabs, name, options
     end
-    lazy_loading_tabs tabs[:paths], tabs[:active][:name],
-                      tabs[:active][:content], type: tab_type
+    tabs tabs[:paths], tabs[:active][:name], tab_type: tab_type, load: :lazy do
+      tabs[:active][:content]
+    end
   end
 
   def construct_tab tabs, name, explicit_options
@@ -52,7 +53,7 @@ module HtmlFormat; parent.send :register_set_format, Card::Format::HtmlFormat, s
     card.item_cards.each do |item|
       tabs[item.name] = nest item, item_view_options(args)
     end
-    static_tabs tabs, tab_type
+    tabs tabs, nil, tab_type: tab_type
   end
 end
 end;end;end;end;

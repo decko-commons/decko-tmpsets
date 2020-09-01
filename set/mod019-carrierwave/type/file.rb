@@ -43,7 +43,8 @@ module Format; parent.send :register_set_format, Card::Format, self; extend Card
     source = _render_source
     return "" if source.blank?
     block_given? ? yield(source) : source
-  rescue
+  rescue => e
+    Rails.logger.info "Error with file source: #{e.message}"
     tr :file_error
   end
 
@@ -92,7 +93,7 @@ module HtmlFormat; parent.send :register_set_format, Card::Format::HtmlFormat, s
     "#{action} #{humanized_attachment_name}..."
   end
 
-  view :editor do
+  view :input do
     if card.web? || card.no_upload?
       return text_field(:content, class: "d0-card-content")
     end

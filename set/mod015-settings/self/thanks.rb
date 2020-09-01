@@ -7,6 +7,8 @@ extend Card::Set
 def self.source_location; "/Users/ethan/dev/decko/gem/card/mod/settings/set/self/thanks.rb"; end
 extend Card::Setting
 setting_opts group: :other, position: 3, rule_type_editable: false,
-             help_text: "destination after card is created"
+             short_help_text: "destination after card is created",
+             help_text: "Destination after card is created. "\
+                        "[[http://decko.org/Custom_thank_you_messages_for_forms|more]]"
 end;end;end;end;
 # ~~ generated from /Users/ethan/dev/decko/gem/card/mod/settings/set/self/thanks.rb ~~

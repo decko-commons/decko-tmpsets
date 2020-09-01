@@ -2,7 +2,8 @@
 # Set Pattern: TypePlusRight
 #
 # Patterned field names on a specific type
-class Card::Set::TypePlusRight < Card::Set::Pattern::Abstract
+class Card::Set::TypePlusRight < Card::Set::Pattern::Base
+extend Card::Set::Pattern::Helper
 cattr_accessor :options
 class << self
 
@@ -22,6 +23,10 @@ def short_label name
   %(all "+#{name.tag}" on "#{name.left}s")
 end
 
+def generic_label
+  "given field cards on a given type"
+end
+
 def prototype_args anchor
   {
     name: "+#{anchor.tag}",
@@ -30,8 +35,7 @@ def prototype_args anchor
 end
 
 def anchor_name card
-  type_name = card.left(new: {})&.type_name || Card.default_type_id.cardname
-  "#{type_name}+#{card.name.tag}"
+  "#{left_type(card)}+#{card.name.tag}"
 end
               end
               register "TypePlusRight".underscore.to_sym, (options || {})

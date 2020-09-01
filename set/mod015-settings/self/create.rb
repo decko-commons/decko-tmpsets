@@ -7,6 +7,7 @@ extend Card::Set
 def self.source_location; "/Users/ethan/dev/decko/gem/card/mod/settings/set/self/create.rb"; end
 extend Card::Setting
 setting_opts group: :permission, position: 1, rule_type_editable: false,
-             help_text: "who can create cards"
+             short_help_text: "who can create cards",
+             help_text: "Who can create new cards"
 end;end;end;end;
 # ~~ generated from /Users/ethan/dev/decko/gem/card/mod/settings/set/self/create.rb ~~

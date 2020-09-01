@@ -28,14 +28,13 @@ def followed_field? field_card
   follow_field_rule.item_names(context: self).find do |item|
     case item.to_name.key
     when field_card.key         then true
-    when :includes.cardname.key then nested_card?(field_card)
+    when :nests.cardname.key then nested_card?(field_card)
     end
   end
 end
 
 def nested_card? card
-  @nested_ids ||= includee_ids
-  @nested_ids.include? card.id
+  nestee_ids.include? card.id
 end
 
 ## the following methods all handle _explicit_ (direct) follow rules (not fields)

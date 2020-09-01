@@ -40,16 +40,17 @@ end
 
 # phase_method :attach_subcard, before: :store do |name_or_card, args=nil|
 # TODO: handle differently in different stages
-def attach_subcard name_or_card, args={}
+def add_subcard name_or_card, args={}
   subcards.add name_or_card, args
 end
-alias_method :add_subcard, :attach_subcard
+alias_method :attach_subcard, :add_subcard
 
-def attach_subcard! name_or_card, args={}
+def add_subcard! name_or_card, args={}
   subcard = subcards.add name_or_card, args
   subcard.director.reset_stage
   subcard
 end
+alias_method :attach_subcard!, :add_subcard!
 
 # phase_method :attach_subfield, before: :approve do |name_or_card, args=nil|
 def attach_subfield name_or_card, args={}
@@ -77,8 +78,18 @@ def clear_subcards
   subcards.clear
 end
 
+# ensures subfield is present
+# does NOT override subfield content if already present
+def ensure_subfield field_name, args={}
+  if subfield_present? field_name
+    subfield field_name
+  else
+    add_subfield field_name, args
+  end
+end
+
 def subfield_present? field_name
-  (field_card = subfield(field_name)) && field_card.content.present?
+  subfield(field_name)&.content&.present?
 end
 
 def deep_clear_subcards
@@ -105,6 +116,18 @@ event :reject_empty_subcards, :prepare_to_validate do
     remove_subcard(key)
     director.subdirectors.delete(subcard)
   end
+end
+
+# check when deleting field that left has not also been deleted
+def trashed_left?
+  l = left
+  !l || l.trash
+end
+
+# check when renaming field that it is not actually the same field
+# (eg on a renamed trunk)
+def same_field?
+  (left_id == left_id_before_act) && (right_id == right_id_before_act)
 end
 end;end;end;end;
 # ~~ generated from /Users/ethan/dev/decko/gem/card/mod/core/set/all/subcards.rb ~~

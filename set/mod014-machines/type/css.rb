@@ -57,7 +57,7 @@ module Format; parent.send :register_set_format, Card::Format, self; extend Card
 end
 
 module HtmlFormat; parent.send :register_set_format, Card::Format::HtmlFormat, self; extend Card::Set::AbstractFormat
-  def editor
+  def input_type
     :ace_editor
   end
 

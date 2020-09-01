@@ -7,7 +7,9 @@ extend Card::Set
 def self.source_location; "/Users/ethan/dev/decko/gem/card/mod/basic_formats/set/all/head.rb"; end
 module Format; parent.send :register_set_format, Card::Format, self; extend Card::Set::AbstractFormat
   view :page_title, unknown: true, perms: :none do
-    [(safe_name if card.name.present?), Card.global_setting(:title)].compact.join " - "
+    title_parts = [Card::Rule.global_setting(:title)]
+    title_parts.unshift safe_name if card.name.present?
+    title_parts.join " - "
   end
 end
 
@@ -133,7 +135,7 @@ module HtmlFormat; parent.send :register_set_format, Card::Format::HtmlFormat, s
 
   def mod_js_configs
     mod_js_config.map do |codename, js_decko_function|
-      config_json = escape_javascript Card.global_setting(codename)
+      config_json = escape_javascript Card::Rule.global_setting(codename)
       "decko.#{js_decko_function}('#{config_json}')"
     end
   end

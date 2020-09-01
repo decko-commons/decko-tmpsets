@@ -17,6 +17,10 @@ def content
 end
 
 module HtmlFormat; parent.send :register_set_format, Card::Format::HtmlFormat, self; extend Card::Set::AbstractFormat
+  view :input do
+    "Content is managed by code and cannot be edited"
+  end
+
   def haml_locals
     {}
   end

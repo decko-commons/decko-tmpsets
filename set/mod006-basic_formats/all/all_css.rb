@@ -24,7 +24,7 @@ module CssFormat; parent.send :register_set_format, Card::Format::CssFormat, sel
     _render_core
   end
 
-  view :missing do
+  view :unknown do
     major_comment "MISSING Style Card: #{card.name}"
   end
 

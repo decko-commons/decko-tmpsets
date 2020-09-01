@@ -55,7 +55,7 @@ module HtmlFormat; parent.send :register_set_format, Card::Format::HtmlFormat, s
     frame_and_form :update, hidden: { success: "_self",
                                       card: { update_all_users: false } } do
       [
-        _render_content_formgroup,
+        _render_content_formgroups,
         _render_confirm_update_all,
         _render_edit_buttons
       ]

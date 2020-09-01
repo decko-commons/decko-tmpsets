@@ -2,25 +2,23 @@
 class Card; module Set; class TypePlusRight; module User;
 # Set: All "+Follow" cards on "User" cards
 #
-# a virtual pointer to the sets that a user is following.
 module Follow;
 extend Card::Set
 def self.source_location; "/Users/ethan/dev/decko/gem/card/mod/follow/set/type_plus_right/user/follow.rb"; end
+FOLLOW_TABS = { "Follow" => "follow_tab", "Ignore" => "ignore_tab" }.freeze
+
+# a virtual pointer to the sets that a user is following.
 # (data is stored in preferences: `[Set]+[User]+:follow`)
 
 include_set Abstract::Pointer
 def virtual?
-  !real?
+  new?
 end
-
-# def content
-#   item_names.map { |name| "[[#{name}]]" }
-# end
 
 # overrides pointer default
 def item_names _args={}
   if (user = left)
-    Card.preference_names user.name, "follow"
+    Card::Rule.preference_names user.name, "follow"
   else
     []
   end
@@ -35,7 +33,7 @@ def current_user?
 end
 
 module HtmlFormat; parent.send :register_set_format, Card::Format::HtmlFormat, self; extend Card::Set::AbstractFormat
-  view :closed_content do
+  view :one_line_content do
     ""
   end
 
@@ -45,8 +43,7 @@ module HtmlFormat; parent.send :register_set_format, Card::Format::HtmlFormat, s
 
   # renders follow tab and ignore tab
   view :core do
-    lazy_loading_tabs({ "follow_tab" => "Follow", "ignore_tab" => "Ignore" },
-                      "follow_tab") do
+    tabs FOLLOW_TABS, "follow_tab", load: :lazy do
       render_follow_tab
     end
   end

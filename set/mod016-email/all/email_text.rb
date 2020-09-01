@@ -7,11 +7,11 @@ extend Card::Set
 def self.source_location; "/Users/ethan/dev/decko/gem/card/mod/email/set/all/email_text.rb"; end
 
 module EmailTextFormat; parent.send :register_set_format, Card::Format::EmailTextFormat, self; extend Card::Set::AbstractFormat
-  view :missing do
+  view :unknown do
     ""
   end
 
-  view :closed_missing do
+  view :compact_missing do
     ""
   end
 

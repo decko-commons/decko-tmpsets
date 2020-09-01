@@ -18,18 +18,15 @@ module HtmlFormat; parent.send :register_set_format, Card::Format::HtmlFormat, s
 end
 
 def content
-  return "" unless left
-
-  item_names.map { |item| "[[#{item}]]" }.join "\n"
+  left ? item_names.to_pointer_content : ""
 end
 
 def item_names _args={}
-  return [] unless left
-  left.follow_set_card.prototype.follower_names
+  left ? left.follow_set_card.prototype.follower_names : []
 end
 
 def virtual?
-  !real?
+  new?
 end
 end;end;end;end;
 # ~~ generated from /Users/ethan/dev/decko/gem/card/mod/follow/set/right/followers.rb ~~

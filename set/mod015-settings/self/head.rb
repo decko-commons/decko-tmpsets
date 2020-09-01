@@ -6,6 +6,8 @@ module Head;
 extend Card::Set
 def self.source_location; "/Users/ethan/dev/decko/gem/card/mod/settings/set/self/head.rb"; end
 extend Card::Setting
-setting_opts group: :webpage, position: 1, rule_type_editable: false
+setting_opts group: :webpage, position: 1, rule_type_editable: false,
+             short_help_text: "head tag content",
+             help_text: "head tag content"
 end;end;end;end;
 # ~~ generated from /Users/ethan/dev/decko/gem/card/mod/settings/set/self/head.rb ~~

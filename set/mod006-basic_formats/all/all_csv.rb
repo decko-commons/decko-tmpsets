@@ -33,7 +33,7 @@ module CsvFormat; parent.send :register_set_format, Card::Format::CsvFormat, sel
     # strip is because search already joins with newlines
   end
 
-  view :missing do
+  view :unknown do
     ""
   end
 
@@ -42,7 +42,7 @@ module CsvFormat; parent.send :register_set_format, Card::Format::CsvFormat, sel
   end
 
   def name_with_fields_row
-    nested_fields.each_with_object([card.name]) do |(field_name, _options), row|
+    nested_field_names.each_with_object([card.name]) do |field_name, row|
       row << nest(field_name)
     end
   end
@@ -60,11 +60,7 @@ module CsvFormat; parent.send :register_set_format, Card::Format::CsvFormat, sel
   end
 
   def columns
-    columns = []
-    csv_structure_card.format.each_nested_field do |chunk|
-      columns << chunk.referee_name.tag
-    end
-    columns
+    csv_structure_card.format.nested_field_names.map(&:tag)
   end
 
   def csv_structure_card

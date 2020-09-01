@@ -61,8 +61,8 @@ module MachineClassMethods
   end
 end
 
-card_accessor :machine_output, type: :file
-card_accessor :machine_input, type: :pointer
+card_accessor :machine_output, type: FileID
+card_accessor :machine_input, type: PointerID
 
 def before_engine
 end
@@ -145,7 +145,7 @@ def run_machine joint="\n"
 end
 
 def direct_machine_input? input_card
-  !input_card.is_a?(Card::Set::Type::Pointer) ||
+  !input_card.collection? ||
     input_card.respond_to?(:machine_input)
 end
 
@@ -173,7 +173,7 @@ def make_machine_output_coded mod=:machines
   Card::Auth.as_bot do
     ENV["STORE_CODED_FILES"] = "true"
     machine_output_card.update! storage_type: :coded, mod: mod,
-                                           codename: machine_output_codename
+                                codename: machine_output_codename
     ENV["STORE_CODED_FILES"] = nil
   end
 end

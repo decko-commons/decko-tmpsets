@@ -83,9 +83,11 @@ alias unreal? new?
 
 # has not been edited directly by human users.  bleep blorp.
 def pristine?
-  new_card? || !actions.joins(:act).where(
-    "card_acts.actor_id != ?", Card::WagnBotID
-  ).exists?
+  new_card? || !user_changes?
+end
+
+def user_changes?
+  actions.joins(:act).where("card_acts.actor_id != ?", WagnBotID).exists?
 end
 end;end;end;end;
 # ~~ generated from /Users/ethan/dev/decko/gem/card/mod/core/set/all/states.rb ~~

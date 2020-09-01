@@ -6,7 +6,7 @@ module Content;
 extend Card::Set
 def self.source_location; "/Users/ethan/dev/decko/gem/card/mod/core/set/all/content.rb"; end
 def content= value
-  self.db_content = value
+  self.db_content = standardize_content(value)
 end
 
 def content
@@ -22,13 +22,73 @@ def standard_content
   db_content || (new_card? && template.db_content)
 end
 
+def standardize_content value
+  value.is_a?(Array) ? value.join("\n") : value
+end
+
 def structured_content
   structure && template.db_content
 end
 
 module Format; parent.send :register_set_format, Card::Format, self; extend Card::Set::AbstractFormat
+  ONE_LINE_CHARACTER_LIMIT = 60
+
   def chunk_list # override to customize by set
     :default
+  end
+
+  view :one_line_content do
+    with_nest_mode :compact do
+      one_line_content
+    end
+  end
+
+  # DEPRECATED
+  view :closed_content, :one_line_content
+
+  view :raw_one_line_content do
+    raw_one_line_content
+  end
+
+  view :label do
+    card.label.to_s
+  end
+
+  view :smart_label, cache: :never, unknown: true do
+    label_with_description render_label, label_description
+  end
+
+  def label_with_description label, description
+    return label unless description
+
+    "#{label} #{popover_link description}"
+  end
+
+  # TODO: move this into a nest once popovers are stub safe
+  def label_description
+    return unless (desc = card.field :description)
+
+    desc.format.render_core
+  end
+
+  def raw_one_line_content
+    cut_with_ellipsis render_raw
+  end
+
+  def one_line_content
+    Card::Content.smart_truncate render_core
+  end
+
+  def cut_with_ellipsis text, limit=one_line_character_limit
+    if text.size <= limit
+      text
+    else
+      text[0..(limit - 3)] + "..."
+    end
+  end
+
+  def one_line_character_limit
+    voo.size || ONE_LINE_CHARACTER_LIMIT
   end
 end
 
@@ -38,6 +98,9 @@ module HtmlFormat; parent.send :register_set_format, Card::Format::HtmlFormat, s
   end
 end
 
+# seems like this should be moved to format so we can fall back on title
+# rather than name. (In fact, name, title, AND label is a bit much.
+# Trim to 2?)
 def label
   name
 end
@@ -66,7 +129,6 @@ event :set_content, :store, on: :save do
   self.db_content = prepare_db_content
   @selected_action_id = @selected_content = nil
   clear_drafts
-  reset_patterns_if_rule true
 end
 
 event :save_draft, :store, on: :update, when: :draft? do

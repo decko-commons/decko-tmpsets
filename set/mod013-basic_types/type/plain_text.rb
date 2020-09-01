@@ -6,7 +6,7 @@ module PlainText;
 extend Card::Set
 def self.source_location; "/Users/ethan/dev/decko/gem/card/mod/basic_types/set/type/plain_text.rb"; end
 module HtmlFormat; parent.send :register_set_format, Card::Format::HtmlFormat, self; extend Card::Set::AbstractFormat
-  def editor
+  def input_type
     :text_area
   end
 

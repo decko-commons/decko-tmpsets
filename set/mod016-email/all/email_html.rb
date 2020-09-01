@@ -6,11 +6,11 @@ module EmailHtml;
 extend Card::Set
 def self.source_location; "/Users/ethan/dev/decko/gem/card/mod/email/set/all/email_html.rb"; end
 module EmailHtmlFormat; parent.send :register_set_format, Card::Format::EmailHtmlFormat, self; extend Card::Set::AbstractFormat
-  view :missing do
+  view :unknown do
     ""
   end
 
-  view :closed_missing do
+  view :compact_missing do
     ""
   end
 end

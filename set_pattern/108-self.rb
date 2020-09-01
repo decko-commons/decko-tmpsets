@@ -1,7 +1,8 @@
 # -*- encoding : utf-8 -*-
 # Set Pattern: Self
 #
-class Card::Set::Self < Card::Set::Pattern::Abstract
+class Card::Set::Self < Card::Set::Pattern::Base
+extend Card::Set::Pattern::Helper
 cattr_accessor :options
 class << self
 def label name
@@ -10,6 +11,10 @@ end
 
 def short_label name
   name
+end
+
+def generic_label
+  "a single card"
 end
 
 def prototype_args anchor

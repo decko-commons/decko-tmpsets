@@ -33,7 +33,7 @@ module Format; parent.send :register_set_format, Card::Format, self; extend Card
     end
   end
 
-  view :followed, perms: :none, closed: true do
+  view :followed, perms: :none, compact: true do
     if (set_card = followed_set_card) && (option_card = follow_option_card)
       option_card.description set_card
     else
@@ -41,20 +41,18 @@ module Format; parent.send :register_set_format, Card::Format, self; extend Card
     end
   end
 
-  view :follower, perms: :none, closed: true do
+  view :follower, perms: :none, compact: true do
     active_notice(:follower) || "follower"
   end
 
   view :last_action_verb, cache: :never do
-    return unless notification_act
-
-    "#{notification_act.main_action.action_type}d"
+    "#{notification_act&.main_action&.action_type || 'edite'}d"
   end
 
-  view :unfollow_url, perms: :none, closed: true, cache: :never do
+  view :unfollow_url, perms: :none, compact: true, cache: :never do
     return "" unless (rule_name = live_follow_rule_name)
 
-    card_url path(mark: "#{active_notice(:follower)}+#{Card[:follow].name}",
+    card_url path(mark: "#{active_notice(:follower)}+#{:follow.cardname}",
                   action: :update,
                   card: { subcards: { rule_name => Card[:never].name } })
   end
@@ -96,7 +94,6 @@ module Format; parent.send :register_set_format, Card::Format, self; extend Card
 
   def edit_info_for field, action
     return nil unless (value = action.value field)
-
     value = action.previous_value if action.action_type == :delete
     wrap_list_item "  #{notification_action_label action} #{field}: #{value}"
   end

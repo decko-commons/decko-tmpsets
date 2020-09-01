@@ -8,7 +8,7 @@ def self.source_location; "/Users/ethan/dev/decko/gem/card/mod/basic_formats/set
 module JsonFormat; parent.send :register_set_format, Card::Format::JsonFormat, self; extend Card::Set::AbstractFormat
   # because card.item_cards returns "[[#{self}]]"
   def item_cards
-    uniq_nested_cards
+    nested_cards
   end
 
   def default_nest_view

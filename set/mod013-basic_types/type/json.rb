@@ -23,12 +23,16 @@ def item_names _args={}
   parse_content.keys
 end
 
+def item_values
+  parse_content.values
+end
+
 module HtmlFormat; parent.send :register_set_format, Card::Format::HtmlFormat, self; extend Card::Set::AbstractFormat
   view :core do
     process_content ::CodeRay.scan(_render_raw, :json).div
   end
 
-  def editor
+  def input_type
     :ace_editor
   end
 

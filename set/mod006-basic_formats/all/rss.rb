@@ -50,7 +50,7 @@ module RssFormat; parent.send :register_set_format, Card::Format::RssFormat, sel
   end
 
   view :feed_title do
-    Card.global_setting(:title) + " : " + card.name.gsub(/^\*/, "")
+    Card::Rule.global_setting(:title) + " : " + card.name.gsub(/^\*/, "")
   end
 
   view :feed_item do

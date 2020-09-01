@@ -14,8 +14,8 @@ def diff_args
 end
 
 module Format; parent.send :register_set_format, Card::Format, self; extend Card::Set::AbstractFormat
-  view :closed_content do
-    ""
+  view :one_line_content do
+    raw_one_line_content
   end
 
   def chunk_list
@@ -24,8 +24,12 @@ module Format; parent.send :register_set_format, Card::Format, self; extend Card
 end
 
 module HtmlFormat; parent.send :register_set_format, Card::Format::HtmlFormat, self; extend Card::Set::AbstractFormat
-  def editor
+  def input_type
     :ace_editor
+  end
+
+  view :one_line_content, wrap: {} do
+    raw_one_line_content
   end
 end
 end;end;end;end;

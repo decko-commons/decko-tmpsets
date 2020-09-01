@@ -38,10 +38,10 @@ module HtmlFormat; parent.send :register_set_format, Card::Format::HtmlFormat, s
   view :core, cache: :never do
     return super() unless card.new_card?
     @denied_view = :core
-    _render_missing
+    _render_unknown
   end
 
-  view :missing, cache: :never do
+  view :unknown, cache: :never do
     if @card.new_card? && (l = @card.left) && l.solid_cache?
       l.update_solid_cache
       @card = Card.fetch card.name
@@ -51,7 +51,7 @@ module HtmlFormat; parent.send :register_set_format, Card::Format::HtmlFormat, s
     end
   end
 
-  view :new, :missing
+  view :new, :unknown
 end
 end;end;end;end;
 # ~~ generated from /Users/ethan/dev/decko/gem/card/mod/solid_cache/set/right/solid_cache.rb ~~

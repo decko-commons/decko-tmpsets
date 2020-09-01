@@ -8,7 +8,7 @@ extend Card::Set
 def self.source_location; "/Users/ethan/dev/decko/gem/card/mod/virtual/set/abstract/virtual_cache.rb"; end
 
 def virtual?
-  true
+  new?
 end
 
 def history?

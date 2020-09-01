@@ -50,7 +50,6 @@ module HtmlFormat; parent.send :register_set_format, Card::Format::HtmlFormat, s
 
   view :paging, cache: :never do
     return "" unless paging_needed?
-
     <<-HTML
       <nav>
         <ul class="pagination paging">

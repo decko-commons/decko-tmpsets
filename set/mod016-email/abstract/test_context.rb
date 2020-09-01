@@ -14,7 +14,7 @@ module HtmlFormat; parent.send :register_set_format, Card::Format::HtmlFormat, s
   end
 
   def test_context_card
-    card.left.fetch(trait: :test_context)&.item_card
+    card.left.fetch(:test_context)&.item_card
   end
 end
 

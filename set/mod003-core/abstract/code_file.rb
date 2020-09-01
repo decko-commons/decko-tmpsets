@@ -62,7 +62,7 @@ def content
 end
 
 module HtmlFormat; parent.send :register_set_format, Card::Format::HtmlFormat, self; extend Card::Set::AbstractFormat
-  view :editor do
+  view :input do
     "Content is stored in file and can't be edited."
   end
 

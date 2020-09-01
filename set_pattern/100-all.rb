@@ -1,7 +1,8 @@
 # -*- encoding : utf-8 -*-
 # Set Pattern: All
 #
-class Card::Set::All < Card::Set::Pattern::Abstract
+class Card::Set::All < Card::Set::Pattern::Base
+extend Card::Set::Pattern::Helper
 cattr_accessor :options
 class << self
 def label _name

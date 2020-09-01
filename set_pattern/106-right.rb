@@ -1,7 +1,8 @@
 # -*- encoding : utf-8 -*-
 # Set Pattern: Right
 #
-class Card::Set::Right < Card::Set::Pattern::Abstract
+class Card::Set::Right < Card::Set::Pattern::Base
+extend Card::Set::Pattern::Helper
 cattr_accessor :options
 class << self
 @@options = {
@@ -15,6 +16,10 @@ end
 
 def short_label name
   %(all "+#{name}s")
+end
+
+def generic_label
+  "given field cards"
 end
 
 def prototype_args anchor

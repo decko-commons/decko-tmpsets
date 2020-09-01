@@ -7,7 +7,7 @@ extend Card::Set
 def self.source_location; "/Users/ethan/dev/decko/gem/card/mod/carrierwave/set/all/file_utils.rb"; end
 module ClassMethods
   def update_all_storage_locations
-    Card.search(type_id: ["in", FileID, ImageID])
+    Card.search(type_id: ["in", Card::FileID, Card::ImageID])
         .each(&:update_storage_location!)
   end
 
@@ -40,6 +40,10 @@ module ClassMethods
         "WHERE cards.type_id IN (#{Card::FileID}, #{Card::ImageID}) "\
         "AND card_actions.draft = true"
     )
+  end
+
+  def count_cards_with_attachment
+    Card.search type_id: ["in", Card::FileID, Card::ImageID], return: :count
   end
 end
 end;end;end;end;

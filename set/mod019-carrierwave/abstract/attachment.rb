@@ -5,8 +5,6 @@ class Card; module Set; class Abstract
 module Attachment;
 extend Card::Set
 def self.source_location; "/Users/ethan/dev/decko/gem/card/mod/carrierwave/set/abstract/attachment.rb"; end
-require "carrier_wave/cardmount"
-
 attr_writer :empty_ok
 
 def self.included host_class
@@ -19,8 +17,7 @@ end
 
 # we need a card id for the path so we have to update db_content when we have
 # an id
-event :correct_identifier, :finalize,
-      on: :create, when: proc { |c| !c.web? } do
+event :correct_identifier, :finalize, on: :create, when: proc { |c| !c.web? } do
   update_column(:db_content, attachment.db_content)
   expire
 end
@@ -30,7 +27,7 @@ event :save_original_filename, :prepare_to_store, on: :save, when: :file_ready_t
   @current_action.update! comment: original_filename
 end
 
-event :validate_file_exist, :validate, on: :save do
+event :validate_file_exist, :validate, on: :create do
   return if empty_ok?
   if will_be_stored_as == :web
     errors.add "url is missing" if content.blank?
@@ -105,7 +102,7 @@ def revision action, before_action=false
 end
 
 def attachment_format ext
-  if ext.present? && attachment && (original_ext = attachment.extension)
+  if ext.present? && attachment && (original_ext = attachment.extension.sub(/^\./, ""))
     if ["file", original_ext].member? ext
       original_ext
     elsif (exts = MIME::Types[attachment.content_type])

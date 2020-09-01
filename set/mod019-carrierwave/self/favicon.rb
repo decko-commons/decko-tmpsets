@@ -15,6 +15,11 @@ module HtmlFormat; parent.send :register_set_format, Card::Format::HtmlFormat, s
     return unless (source = render :source, size: :small)
     tag :link, rel: "shortcut icon", href: source
   end
+
+  def raw_help_text
+    "A favicon (or shortcut icon) is a small image used by browsers to help identify "\
+    "your website. [[http://www.decko.org/favicon|How to customize your favicon]]"
+  end
 end
 end;end;end;end;
 # ~~ generated from /Users/ethan/dev/decko/gem/card/mod/carrierwave/set/self/favicon.rb ~~

@@ -29,10 +29,10 @@ module HtmlFormat; parent.send :register_set_format, Card::Format::HtmlFormat, s
     :bar
   end
 
-  view :editor, template: :haml
+  view :input, template: :haml
 
   def themes
-    card.rule_card(:options).item_cards
+    card.rule_card(:content_options).item_cards
   end
 
   def selectable_themes

@@ -6,27 +6,26 @@ module Debug;
 extend Card::Set
 def self.source_location; "/Users/ethan/dev/decko/gem/card/mod/developer/set/right/debug.rb"; end
 def virtual?
-  true
+  new?
 end
 
 module HtmlFormat; parent.send :register_set_format, Card::Format::HtmlFormat, self; extend Card::Set::AbstractFormat
   view :core do
-    subject = card.left
+    core_section_config(card.left).map do |item|
+      section(*item)
+    end
+  end
 
-    output [
-      ["Sets",
-       static_tabs("set modules" => set_modules_accordion(subject),
+  def core_section_config subject
+    [["Sets", tabs("set modules" => set_modules_accordion(subject),
                    "all modules" => singleton_modules_list(subject),
-                   "patterns" => set_patterns_breadcrumb(subject))],
-      ["Views",
-       static_tabs("by format" => subformat(subject)._render_views_by_format,
-                   "by name" => subformat(subject)._render_views_by_name)],
-      ["Events",
-       static_tabs(create: "<pre>#{subject.events(:create)}</pre>",
-                   update: "<pre>#{subject.events(:update)}</pre>",
-                   delete: "<pre>#{subject.events(:delete)}</pre>")],
-      ["Cache/DB Comparison", cache_comparison_table(subject)]
-    ].map { |item| section(*item) }
+                   "patterns"    => set_patterns_breadcrumb(subject))],
+     ["Views", tabs("by format" => subformat(subject)._render_views_by_format,
+                    "by name" => subformat(subject)._render_views_by_name)],
+     ["Events", tabs(create: "<pre>#{subject.events(:create)}</pre>",
+                     update: "<pre>#{subject.events(:update)}</pre>",
+                     delete: "<pre>#{subject.events(:delete)}</pre>")],
+     ["Cache/DB Comparison", cache_comparison_table(subject)]]
   end
 
   # rubocop:disable AccessorMethodName

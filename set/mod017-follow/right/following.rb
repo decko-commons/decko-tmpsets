@@ -6,7 +6,7 @@ module Following;
 extend Card::Set
 def self.source_location; "/Users/ethan/dev/decko/gem/card/mod/follow/set/right/following.rb"; end
 def virtual?
-  !real?
+  new?
 end
 
 module HtmlFormat; parent.send :register_set_format, Card::Format::HtmlFormat, self; extend Card::Set::AbstractFormat
@@ -30,7 +30,7 @@ module HtmlFormat; parent.send :register_set_format, Card::Format::HtmlFormat, s
     end
   end
 
-  view :closed_content do
+  view :one_line_content do
     ""
   end
 
