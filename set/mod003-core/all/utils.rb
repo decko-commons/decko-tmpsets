@@ -86,7 +86,7 @@ def measure desc
 end
 # rubocop:enable Style/GlobalVars
 
-module Format; parent.send :register_set_format, Card::Format, self; extend Card::Set::AbstractFormat
+module Format; module_parent.send :register_set_format, Card::Format, self; extend Card::Set::AbstractFormat
   delegate :measure, to: :card
 end
 end;end;end;end;

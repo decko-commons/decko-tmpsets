@@ -15,7 +15,7 @@ end
 
 event :expire_related, :finalize do
   reset_patterns
-  structuree_names.each { |name| ActManager.expirees << name } if is_structure?
+  structuree_names.each { |name| Director.expirees << name } if is_structure?
 end
 end;end;end;end;
 # ~~ generated from /Users/ethan/dev/decko/gem/card/mod/core/set/all/update_read_rules.rb ~~

@@ -10,7 +10,7 @@ def tr key, args={}
   ::I18n.t key, args.reverse_merge(scope: Card::Set.scope(caller))
 end
 
-module Format; parent.send :register_set_format, Card::Format, self; extend Card::Set::AbstractFormat
+module Format; module_parent.send :register_set_format, Card::Format, self; extend Card::Set::AbstractFormat
   def tr key, args={}
     ::I18n.t key, args.reverse_merge(scope: Card::Set.scope(caller))
   end

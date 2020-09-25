@@ -33,7 +33,9 @@ def source_dir
 end
 
 def find_file filename
-  mod_path = Card::Mod.dirs.path file_content_mod_name
+  modname = file_content_mod_name
+  modname = $1 if modname =~ /^card-mod-(\w*)/
+  mod_path = Card::Mod.dirs.path modname
   file_path = File.join(mod_path, source_dir, filename)
   unless File.exist?(file_path)
     Rails.logger.info "couldn't locate file #{filename} at #{file_path}"
@@ -61,7 +63,7 @@ def content
   end.compact.join "\n"
 end
 
-module HtmlFormat; parent.send :register_set_format, Card::Format::HtmlFormat, self; extend Card::Set::AbstractFormat
+module HtmlFormat; module_parent.send :register_set_format, Card::Format::HtmlFormat, self; extend Card::Set::AbstractFormat
   view :input do
     "Content is stored in file and can't be edited."
   end

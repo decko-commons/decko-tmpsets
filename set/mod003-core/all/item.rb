@@ -72,7 +72,7 @@ def insert_id index, id
   insert_item index, "~#{id}"
 end
 
-module Format; parent.send :register_set_format, Card::Format, self; extend Card::Set::AbstractFormat
+module Format; module_parent.send :register_set_format, Card::Format, self; extend Card::Set::AbstractFormat
   def item_links _args={}
     raw(render_core).split(/[,\n]/)
   end
@@ -124,7 +124,7 @@ module Format; parent.send :register_set_format, Card::Format, self; extend Card
   end
 end
 
-module HtmlFormat; parent.send :register_set_format, Card::Format::HtmlFormat, self; extend Card::Set::AbstractFormat
+module HtmlFormat; module_parent.send :register_set_format, Card::Format::HtmlFormat, self; extend Card::Set::AbstractFormat
   def wrap_item rendered, item_view
     %(<div class="item-#{item_view}">#{rendered}</div>)
   end

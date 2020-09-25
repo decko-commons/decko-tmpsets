@@ -5,7 +5,7 @@ class Card; module Set; class All
 module Tabs;
 extend Card::Set
 def self.source_location; "/Users/ethan/dev/decko/gem/card/mod/core/set/all/tabs.rb"; end
-module HtmlFormat; parent.send :register_set_format, Card::Format::HtmlFormat, self; extend Card::Set::AbstractFormat
+module HtmlFormat; module_parent.send :register_set_format, Card::Format::HtmlFormat, self; extend Card::Set::AbstractFormat
   view :tabs do
     construct_tabs "tabs"
   end

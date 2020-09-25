@@ -34,7 +34,7 @@ def each_item_name_with_options content=nil
   end
 end
 
-module Format; parent.send :register_set_format, Card::Format, self; extend Card::Set::AbstractFormat
+module Format; module_parent.send :register_set_format, Card::Format, self; extend Card::Set::AbstractFormat
   def nest_chunks content=nil
     content ||= _render_raw
     card.nest_chunks content

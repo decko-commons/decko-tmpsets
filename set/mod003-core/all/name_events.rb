@@ -62,7 +62,7 @@ end
 # STAGE: store
 
 event :expire_old_name, :store, changed: :name, on: :update do
-  ActManager.expirees << name_before_act
+  Director.expirees << name_before_act
 end
 
 event :update_lexicon_on_create, :finalize, changed: :name, on: :create do
@@ -101,7 +101,7 @@ end
 def prepare_new_side side, side_id, sidename
   return unless side_id == -1 || !Card[side_id]&.real?
 
-  sidecard = ActManager.card(sidename) || add_subcard(sidename)
+  sidecard = Director.card(sidename) || add_subcard(sidename)
   send "#{side}_id=", sidecard
 end
 

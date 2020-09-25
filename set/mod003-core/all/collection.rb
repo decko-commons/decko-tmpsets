@@ -15,7 +15,7 @@ module ClassMethods
     results
   end
 
-  def count_by_wql spec
+  def count_by_cql spec
     spec = spec.clone
     spec.delete(:offset)
     search spec.merge(return: "count")
@@ -45,13 +45,13 @@ def collection?
   item_cards != [self]
 end
 
-module Format; parent.send :register_set_format, Card::Format, self; extend Card::Set::AbstractFormat
+module Format; module_parent.send :register_set_format, Card::Format, self; extend Card::Set::AbstractFormat
   view :count do
     card.item_names.size
   end
 end
 
-module HtmlFormat; parent.send :register_set_format, Card::Format::HtmlFormat, self; extend Card::Set::AbstractFormat
+module HtmlFormat; module_parent.send :register_set_format, Card::Format::HtmlFormat, self; extend Card::Set::AbstractFormat
   view :carousel do
     bs_carousel unique_id, 0 do
       nest_item_array.each do |rendered_item|

@@ -5,7 +5,7 @@ class Card; module Set; class All
 module LocationHistory;
 extend Card::Set
 def self.source_location; "/Users/ethan/dev/decko/gem/card/mod/core/set/all/location_history.rb"; end
-event :discard_deleted_locations, in: :finalize, on: :delete do
+event :discard_deleted_locations, :finalize, on: :delete do
   Env.discard_locations_for self
   configure_successful_deletion if success.target == self
 end

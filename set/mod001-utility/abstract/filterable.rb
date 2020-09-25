@@ -5,7 +5,7 @@ class Card; module Set; class Abstract
 module Filterable;
 extend Card::Set
 def self.source_location; "/Users/ethan/dev/decko/gem/card/mod/utility/set/abstract/filterable.rb"; end
-module HtmlFormat; parent.send :register_set_format, Card::Format::HtmlFormat, self; extend Card::Set::AbstractFormat
+module HtmlFormat; module_parent.send :register_set_format, Card::Format::HtmlFormat, self; extend Card::Set::AbstractFormat
   def filterable filter_hash={}, html_opts={}
     add_class html_opts, "_filterable _noFilterUrlUpdates"
     html_opts[:data] ||= {}

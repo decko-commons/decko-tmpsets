@@ -5,7 +5,7 @@ class Card; module Set; class All
 module Haml;
 extend Card::Set
 def self.source_location; "/Users/ethan/dev/decko/gem/card/mod/core/set/all/haml.rb"; end
-module Format; parent.send :register_set_format, Card::Format, self; extend Card::Set::AbstractFormat
+module Format; module_parent.send :register_set_format, Card::Format, self; extend Card::Set::AbstractFormat
   include Card::Set::Format::HamlPaths
 
   define_method :the_scope do

@@ -22,7 +22,7 @@ def clean_html?
   false
 end
 
-module HtmlFormat; parent.send :register_set_format, Card::Format::HtmlFormat, self; extend Card::Set::AbstractFormat
+module HtmlFormat; module_parent.send :register_set_format, Card::Format::HtmlFormat, self; extend Card::Set::AbstractFormat
   view :core do
     warnings = card.warnings.map do |warning|
       card.send("#{warning}?") ? send("#{warning}_message") : nil

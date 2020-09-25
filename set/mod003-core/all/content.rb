@@ -30,7 +30,11 @@ def structured_content
   structure && template.db_content
 end
 
-module Format; parent.send :register_set_format, Card::Format, self; extend Card::Set::AbstractFormat
+def refresh_content
+  self.content = Card.find(id)&.db_content
+end
+
+module Format; module_parent.send :register_set_format, Card::Format, self; extend Card::Set::AbstractFormat
   ONE_LINE_CHARACTER_LIMIT = 60
 
   def chunk_list # override to customize by set
@@ -92,7 +96,7 @@ module Format; parent.send :register_set_format, Card::Format, self; extend Card
   end
 end
 
-module HtmlFormat; parent.send :register_set_format, Card::Format::HtmlFormat, self; extend Card::Set::AbstractFormat
+module HtmlFormat; module_parent.send :register_set_format, Card::Format::HtmlFormat, self; extend Card::Set::AbstractFormat
   view :hidden_content_field, unknown: true, cache: :never do
     hidden_field :content, class: "d0-card-content"
   end
