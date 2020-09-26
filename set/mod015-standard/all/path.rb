@@ -149,8 +149,6 @@ module Format; module_parent.send :register_set_format, Card::Format, self; exte
   end
 end
 
-public
-
 module JsonFormat; module_parent.send :register_set_format, Card::Format::JsonFormat, self; extend Card::Set::AbstractFormat
   def add_unknown_name_to_opts name, opts
     # noop
