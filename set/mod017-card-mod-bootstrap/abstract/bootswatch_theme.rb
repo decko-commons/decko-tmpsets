@@ -23,7 +23,7 @@ class Card; module Set; class Abstract
 # For the original bootswatch themes all those parts are hard-coded and the content
 module BootswatchTheme;
 extend Card::Set
-def self.source_location; "/Users/ezl5238/dev/decko/gem/card-mod-bootstrap/set/abstract/bootswatch_theme.rb"; end
+def self.source_location; "/Users/ethan/dev/decko/gem/card-mod-bootstrap/set/abstract/bootswatch_theme.rb"; end
 # is taken from files.
 # The bootswatch theme content is taken directly from the files in the bootswatch
 # submodule. For the rest we use code file cards.
@@ -163,4 +163,4 @@ def source_dir
   )
 end
 end;end;end;end;
-# ~~ generated from /Users/ezl5238/dev/decko/gem/card-mod-bootstrap/set/abstract/bootswatch_theme.rb ~~
+# ~~ generated from /Users/ethan/dev/decko/gem/card-mod-bootstrap/set/abstract/bootswatch_theme.rb ~~

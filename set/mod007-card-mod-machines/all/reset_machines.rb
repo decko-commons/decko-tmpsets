@@ -4,7 +4,7 @@ class Card; module Set; class All
 #
 module ResetMachines;
 extend Card::Set
-def self.source_location; "/Users/ezl5238/dev/decko/gem/card-mod-machines/set/all/reset_machines.rb"; end
+def self.source_location; "/Users/ethan/dev/decko/gem/card-mod-machines/set/all/reset_machines.rb"; end
 module ClassMethods
   def reset_script_machine
     Auth.as_bot do
@@ -28,4 +28,4 @@ module ClassMethods
   end
 end
 end;end;end;end;
-# ~~ generated from /Users/ezl5238/dev/decko/gem/card-mod-machines/set/all/reset_machines.rb ~~
+# ~~ generated from /Users/ethan/dev/decko/gem/card-mod-machines/set/all/reset_machines.rb ~~

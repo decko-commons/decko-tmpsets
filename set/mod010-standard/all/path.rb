@@ -4,7 +4,7 @@ class Card; module Set; class All
 #
 module Path;
 extend Card::Set
-def self.source_location; "/Users/ezl5238/dev/decko/gem/card/mod/standard/set/all/path.rb"; end
+def self.source_location; "/Users/ethan/dev/decko/gem/card/mod/standard/set/all/path.rb"; end
 module Format; module_parent.send :register_set_format, Card::Format, self; extend Card::Set::AbstractFormat
   # Decko uses "path" a bit unusually.  In most formats, it returns a full url.  In HTML,
   # it provides everything after the domain/port.
@@ -181,4 +181,4 @@ module EmailHtmlFormat; module_parent.send :register_set_format, Card::Format::E
   end
 end
 end;end;end;end;
-# ~~ generated from /Users/ezl5238/dev/decko/gem/card/mod/standard/set/all/path.rb ~~
+# ~~ generated from /Users/ethan/dev/decko/gem/card/mod/standard/set/all/path.rb ~~

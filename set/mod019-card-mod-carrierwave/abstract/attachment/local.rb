@@ -4,7 +4,7 @@ class Card; module Set; class Abstract; module Attachment;
 #
 module Local;
 extend Card::Set
-def self.source_location; "/Users/ezl5238/dev/decko/gem/card-mod-carrierwave/set/abstract/attachment/local.rb"; end
+def self.source_location; "/Users/ethan/dev/decko/gem/card-mod-carrierwave/set/abstract/attachment/local.rb"; end
 
 event :update_public_link_on_create, :integrate, on: :create, when: :local? do
   update_public_link
@@ -46,4 +46,4 @@ def remove_public_links
   FileUtils.rm_rf symlink_dir
 end
 end;end;end;end;end;
-# ~~ generated from /Users/ezl5238/dev/decko/gem/card-mod-carrierwave/set/abstract/attachment/local.rb ~~
+# ~~ generated from /Users/ethan/dev/decko/gem/card-mod-carrierwave/set/abstract/attachment/local.rb ~~

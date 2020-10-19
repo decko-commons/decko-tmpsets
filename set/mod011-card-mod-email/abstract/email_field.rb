@@ -4,7 +4,7 @@ class Card; module Set; class Abstract
 #
 module EmailField;
 extend Card::Set
-def self.source_location; "/Users/ezl5238/dev/decko/gem/card-mod-email/set/abstract/email_field.rb"; end
+def self.source_location; "/Users/ethan/dev/decko/gem/card-mod-email/set/abstract/email_field.rb"; end
 
 module Format; module_parent.send :register_set_format, Card::Format, self; extend Card::Set::AbstractFormat
   # turn off autodetection of uri's
@@ -47,4 +47,4 @@ module EmailTextFormat; module_parent.send :register_set_format, Card::Format::E
   end
 end
 end;end;end;end;
-# ~~ generated from /Users/ezl5238/dev/decko/gem/card-mod-email/set/abstract/email_field.rb ~~
+# ~~ generated from /Users/ethan/dev/decko/gem/card-mod-email/set/abstract/email_field.rb ~~

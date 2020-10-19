@@ -4,7 +4,7 @@ class Card; module Set; class All; module RichHtml;; module HtmlViews;
 #
 module Guide;
 extend Card::Set
-def self.source_location; "/Users/ezl5238/dev/decko/gem/card/mod/standard/set/all/rich_html/html_views/guide.rb"; end
+def self.source_location; "/Users/ethan/dev/decko/gem/card/mod/standard/set/all/rich_html/html_views/guide.rb"; end
 def guide_card
   guide_card = rule_card(:guide)
   return unless guide_card
@@ -57,4 +57,4 @@ module HtmlFormat; module_parent.send :register_set_format, Card::Format::HtmlFo
   end
 end
 end;end;end;end;end;end;
-# ~~ generated from /Users/ezl5238/dev/decko/gem/card/mod/standard/set/all/rich_html/html_views/guide.rb ~~
+# ~~ generated from /Users/ethan/dev/decko/gem/card/mod/standard/set/all/rich_html/html_views/guide.rb ~~

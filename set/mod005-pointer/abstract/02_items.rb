@@ -6,7 +6,7 @@ class Card; module Set; class Abstract
 
 module Items;
 extend Card::Set
-def self.source_location; "/Users/ezl5238/dev/decko/gem/card/mod/pointer/set/abstract/02_items.rb"; end
+def self.source_location; "/Users/ethan/dev/decko/gem/card/mod/pointer/set/abstract/02_items.rb"; end
 # While each of the three main methods for returning lists of items can handle arguments,
 # they are most commonly used without them.
 
@@ -204,4 +204,4 @@ def strip_item item
   item.gsub(/\[\[|\]\]/, "").strip
 end
 end;end;end;end;
-# ~~ generated from /Users/ezl5238/dev/decko/gem/card/mod/pointer/set/abstract/02_items.rb ~~
+# ~~ generated from /Users/ethan/dev/decko/gem/card/mod/pointer/set/abstract/02_items.rb ~~

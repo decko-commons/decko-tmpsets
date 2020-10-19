@@ -24,4 +24,4 @@ end
               register "Star".underscore.to_sym, (options || {})
             end
 
-# ~~ generated from /Users/ezl5238/dev/decko/gem/card/mod/core/set_pattern/04_star.rb ~~
+# ~~ generated from /Users/ethan/dev/decko/gem/card/mod/core/set_pattern/04_star.rb ~~

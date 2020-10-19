@@ -4,7 +4,7 @@ class Card; module Set; class All; module Bootstrap;
 #
 module Dropdown;
 extend Card::Set
-def self.source_location; "/Users/ezl5238/dev/decko/gem/card-mod-bootstrap/set/all/bootstrap/dropdown.rb"; end
+def self.source_location; "/Users/ethan/dev/decko/gem/card-mod-bootstrap/set/all/bootstrap/dropdown.rb"; end
 module HtmlFormat; module_parent.send :register_set_format, Card::Format::HtmlFormat, self; extend Card::Set::AbstractFormat
   def dropdown_button name, items_or_opts={}, opts={}
     items = block_given? ? yield : items_or_opts
@@ -92,4 +92,4 @@ module HtmlFormat; module_parent.send :register_set_format, Card::Format::HtmlFo
   end
 end
 end;end;end;end;end;
-# ~~ generated from /Users/ezl5238/dev/decko/gem/card-mod-bootstrap/set/all/bootstrap/dropdown.rb ~~
+# ~~ generated from /Users/ethan/dev/decko/gem/card-mod-bootstrap/set/all/bootstrap/dropdown.rb ~~

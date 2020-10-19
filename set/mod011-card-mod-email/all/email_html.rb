@@ -4,7 +4,7 @@ class Card; module Set; class All
 #
 module EmailHtml;
 extend Card::Set
-def self.source_location; "/Users/ezl5238/dev/decko/gem/card-mod-email/set/all/email_html.rb"; end
+def self.source_location; "/Users/ethan/dev/decko/gem/card-mod-email/set/all/email_html.rb"; end
 module EmailHtmlFormat; module_parent.send :register_set_format, Card::Format::EmailHtmlFormat, self; extend Card::Set::AbstractFormat
   view :unknown do
     ""
@@ -15,4 +15,4 @@ module EmailHtmlFormat; module_parent.send :register_set_format, Card::Format::E
   end
 end
 end;end;end;end;
-# ~~ generated from /Users/ezl5238/dev/decko/gem/card-mod-email/set/all/email_html.rb ~~
+# ~~ generated from /Users/ethan/dev/decko/gem/card-mod-email/set/all/email_html.rb ~~

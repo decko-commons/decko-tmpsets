@@ -5,7 +5,7 @@ class Card; module Set; class Type
 # -*- encoding : utf-8 -*-
 module CoffeeScript;
 extend Card::Set
-def self.source_location; "/Users/ezl5238/dev/decko/gem/card-mod-machines/set/type/coffee_script.rb"; end
+def self.source_location; "/Users/ethan/dev/decko/gem/card-mod-machines/set/type/coffee_script.rb"; end
 
 require "coffee-script"
 
@@ -31,4 +31,4 @@ module Format; module_parent.send :register_set_format, Card::Format, self; exte
   end
 end
 end;end;end;end;
-# ~~ generated from /Users/ezl5238/dev/decko/gem/card-mod-machines/set/type/coffee_script.rb ~~
+# ~~ generated from /Users/ethan/dev/decko/gem/card-mod-machines/set/type/coffee_script.rb ~~

@@ -4,7 +4,7 @@ class Card; module Set; class Abstract; module Pointer;
 #
 module Events;
 extend Card::Set
-def self.source_location; "/Users/ezl5238/dev/decko/gem/card/mod/pointer/set/abstract/02_pointer/events.rb"; end
+def self.source_location; "/Users/ethan/dev/decko/gem/card/mod/pointer/set/abstract/02_pointer/events.rb"; end
 event :add_and_drop_items, :prepare_to_validate, on: :save do
   adds = Env.params["add_item"]
   drops = Env.params["drop_item"]
@@ -77,4 +77,4 @@ def added_item_cards
   all_item_cards item_names: added_item_names
 end
 end;end;end;end;end;
-# ~~ generated from /Users/ezl5238/dev/decko/gem/card/mod/pointer/set/abstract/02_pointer/events.rb ~~
+# ~~ generated from /Users/ethan/dev/decko/gem/card/mod/pointer/set/abstract/02_pointer/events.rb ~~

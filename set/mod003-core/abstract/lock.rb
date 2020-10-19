@@ -4,7 +4,7 @@ class Card; module Set; class Abstract
 #
 module Lock;
 extend Card::Set
-def self.source_location; "/Users/ezl5238/dev/decko/gem/card/mod/core/set/abstract/lock.rb"; end
+def self.source_location; "/Users/ethan/dev/decko/gem/card/mod/core/set/abstract/lock.rb"; end
 def lock
   was_already_locked = locked?
   return if was_already_locked
@@ -32,4 +32,4 @@ def unlock!
   Card.cache.write lock_cache_key, false
 end
 end;end;end;end;
-# ~~ generated from /Users/ezl5238/dev/decko/gem/card/mod/core/set/abstract/lock.rb ~~
+# ~~ generated from /Users/ethan/dev/decko/gem/card/mod/core/set/abstract/lock.rb ~~

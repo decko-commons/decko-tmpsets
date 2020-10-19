@@ -4,7 +4,7 @@ class Card; module Set; class All; module RichHtml;; module HtmlViews;
 #
 module Help;
 extend Card::Set
-def self.source_location; "/Users/ezl5238/dev/decko/gem/card/mod/standard/set/all/rich_html/html_views/help.rb"; end
+def self.source_location; "/Users/ethan/dev/decko/gem/card/mod/standard/set/all/rich_html/html_views/help.rb"; end
 def help_rule_card
   help_card = rule_card(:help)
   help_card if help_card&.ok?(:read)
@@ -55,4 +55,4 @@ module HtmlFormat; module_parent.send :register_set_format, Card::Format::HtmlFo
   end
 end
 end;end;end;end;end;end;
-# ~~ generated from /Users/ezl5238/dev/decko/gem/card/mod/standard/set/all/rich_html/html_views/help.rb ~~
+# ~~ generated from /Users/ethan/dev/decko/gem/card/mod/standard/set/all/rich_html/html_views/help.rb ~~

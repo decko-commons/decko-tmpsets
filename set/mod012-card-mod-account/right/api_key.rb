@@ -4,7 +4,7 @@ class Card; module Set; class Right
 #
 module ApiKey;
 extend Card::Set
-def self.source_location; "/Users/ezl5238/dev/decko/gem/card-mod-account/set/right/api_key.rb"; end
+def self.source_location; "/Users/ethan/dev/decko/gem/card-mod-account/set/right/api_key.rb"; end
 include_set Abstract::AccountField
 
 # DURATIONS = "second|minute|hour|day|week|month|year".freeze
@@ -54,4 +54,4 @@ end
 #   number.to_i.send unit
 # end
 end;end;end;end;
-# ~~ generated from /Users/ezl5238/dev/decko/gem/card-mod-account/set/right/api_key.rb ~~
+# ~~ generated from /Users/ethan/dev/decko/gem/card-mod-account/set/right/api_key.rb ~~

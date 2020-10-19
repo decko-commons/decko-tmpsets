@@ -4,7 +4,7 @@ class Card; module Set; class Right
 #
 module HtmlMessage;
 extend Card::Set
-def self.source_location; "/Users/ezl5238/dev/decko/gem/card-mod-email/set/right/html_message.rb"; end
+def self.source_location; "/Users/ethan/dev/decko/gem/card-mod-email/set/right/html_message.rb"; end
 include_set Abstract::TestContext
 
 def clean_html?
@@ -19,4 +19,4 @@ module EmailHtmlFormat; module_parent.send :register_set_format, Card::Format::E
   end
 end
 end;end;end;end;
-# ~~ generated from /Users/ezl5238/dev/decko/gem/card-mod-email/set/right/html_message.rb ~~
+# ~~ generated from /Users/ethan/dev/decko/gem/card-mod-email/set/right/html_message.rb ~~

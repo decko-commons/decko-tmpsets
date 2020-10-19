@@ -11,7 +11,7 @@ class Card; module Set; class All
 #   etc. But we don't store all these cards in the database; we generate them dynamically
 module States;
 extend Card::Set
-def self.source_location; "/Users/ezl5238/dev/decko/gem/card/mod/core/set/all/states.rb"; end
+def self.source_location; "/Users/ethan/dev/decko/gem/card/mod/core/set/all/states.rb"; end
 #   based on the names.
 # - *unknown* cards are everything else.
 #
@@ -90,4 +90,4 @@ def user_changes?
   actions.joins(:act).where("card_acts.actor_id != ?", WagnBotID).exists?
 end
 end;end;end;end;
-# ~~ generated from /Users/ezl5238/dev/decko/gem/card/mod/core/set/all/states.rb ~~
+# ~~ generated from /Users/ethan/dev/decko/gem/card/mod/core/set/all/states.rb ~~

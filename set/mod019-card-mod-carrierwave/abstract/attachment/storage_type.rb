@@ -4,7 +4,7 @@ class Card; module Set; class Abstract; module Attachment;
 #
 module StorageType;
 extend Card::Set
-def self.source_location; "/Users/ezl5238/dev/decko/gem/card-mod-carrierwave/set/abstract/attachment/storage_type.rb"; end
+def self.source_location; "/Users/ethan/dev/decko/gem/card-mod-carrierwave/set/abstract/attachment/storage_type.rb"; end
 attr_writer :bucket, :storage_type
 
 event :storage_type_change, :store, on: :update, when: :storage_type_changed? do
@@ -176,4 +176,4 @@ def known_storage_type? type=storage_type
   type.in? CarrierWave::FileCardUploader::STORAGE_TYPES
 end
 end;end;end;end;end;
-# ~~ generated from /Users/ezl5238/dev/decko/gem/card-mod-carrierwave/set/abstract/attachment/storage_type.rb ~~
+# ~~ generated from /Users/ethan/dev/decko/gem/card-mod-carrierwave/set/abstract/attachment/storage_type.rb ~~

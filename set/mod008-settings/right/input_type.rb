@@ -4,7 +4,7 @@ class Card; module Set; class Right
 #
 module InputType;
 extend Card::Set
-def self.source_location; "/Users/ezl5238/dev/decko/gem/card/mod/settings/set/right/input_type.rb"; end
+def self.source_location; "/Users/ethan/dev/decko/gem/card/mod/settings/set/right/input_type.rb"; end
 module HtmlFormat; module_parent.send :register_set_format, Card::Format::HtmlFormat, self; extend Card::Set::AbstractFormat
   def quick_editor
     @submit_on_change = true
@@ -41,4 +41,4 @@ def supports_content_option_view?
   item_name.in? ["checkbox", "radio", "filtered list"]
 end
 end;end;end;end;
-# ~~ generated from /Users/ezl5238/dev/decko/gem/card/mod/settings/set/right/input_type.rb ~~
+# ~~ generated from /Users/ethan/dev/decko/gem/card/mod/settings/set/right/input_type.rb ~~

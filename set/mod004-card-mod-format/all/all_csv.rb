@@ -4,7 +4,7 @@ class Card; module Set; class All
 #
 module AllCsv;
 extend Card::Set
-def self.source_location; "/Users/ezl5238/dev/decko/gem/card-mod-format/set/all/all_csv.rb"; end
+def self.source_location; "/Users/ethan/dev/decko/gem/card-mod-format/set/all/all_csv.rb"; end
 require "csv"
 
 module CsvFormat; module_parent.send :register_set_format, Card::Format::CsvFormat, self; extend Card::Set::AbstractFormat
@@ -99,4 +99,4 @@ module CsvFormat; module_parent.send :register_set_format, Card::Format::CsvForm
   end
 end
 end;end;end;end;
-# ~~ generated from /Users/ezl5238/dev/decko/gem/card-mod-format/set/all/all_csv.rb ~~
+# ~~ generated from /Users/ethan/dev/decko/gem/card-mod-format/set/all/all_csv.rb ~~

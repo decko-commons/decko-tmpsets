@@ -5,7 +5,7 @@ class Card; module Set; class All
 # shared methods for card collections (Pointers, Searches, Sets, etc.)
 module Collection;
 extend Card::Set
-def self.source_location; "/Users/ezl5238/dev/decko/gem/card/mod/core/set/all/collection.rb"; end
+def self.source_location; "/Users/ethan/dev/decko/gem/card/mod/core/set/all/collection.rb"; end
 module ClassMethods
   def search spec, comment=nil
     results = ::Card::Query.run(spec, comment)
@@ -61,4 +61,4 @@ module HtmlFormat; module_parent.send :register_set_format, Card::Format::HtmlFo
   end
 end
 end;end;end;end;
-# ~~ generated from /Users/ezl5238/dev/decko/gem/card/mod/core/set/all/collection.rb ~~
+# ~~ generated from /Users/ethan/dev/decko/gem/card/mod/core/set/all/collection.rb ~~

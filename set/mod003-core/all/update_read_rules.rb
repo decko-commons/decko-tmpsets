@@ -4,7 +4,7 @@ class Card; module Set; class All
 #
 module UpdateReadRules;
 extend Card::Set
-def self.source_location; "/Users/ezl5238/dev/decko/gem/card/mod/core/set/all/update_read_rules.rb"; end
+def self.source_location; "/Users/ethan/dev/decko/gem/card/mod/core/set/all/update_read_rules.rb"; end
 
 # FIXME: the following don't really belong here, but they have to come after
 # the reference stuff.  we need to organize a bit!
@@ -18,4 +18,4 @@ event :expire_related, :finalize do
   structuree_names.each { |name| Director.expirees << name } if is_structure?
 end
 end;end;end;end;
-# ~~ generated from /Users/ezl5238/dev/decko/gem/card/mod/core/set/all/update_read_rules.rb ~~
+# ~~ generated from /Users/ethan/dev/decko/gem/card/mod/core/set/all/update_read_rules.rb ~~

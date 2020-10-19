@@ -4,11 +4,11 @@ class Card; module Set; class Type
 #
 module Phrase;
 extend Card::Set
-def self.source_location; "/Users/ezl5238/dev/decko/gem/card/mod/standard/set/type/phrase.rb"; end
+def self.source_location; "/Users/ethan/dev/decko/gem/card/mod/standard/set/type/phrase.rb"; end
 module HtmlFormat; module_parent.send :register_set_format, Card::Format::HtmlFormat, self; extend Card::Set::AbstractFormat
   def input_type
     :text_field
   end
 end
 end;end;end;end;
-# ~~ generated from /Users/ezl5238/dev/decko/gem/card/mod/standard/set/type/phrase.rb ~~
+# ~~ generated from /Users/ethan/dev/decko/gem/card/mod/standard/set/type/phrase.rb ~~

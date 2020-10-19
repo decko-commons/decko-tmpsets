@@ -4,7 +4,7 @@ class Card; module Set; class Self
 #
 module Codenames;
 extend Card::Set
-def self.source_location; "/Users/ezl5238/dev/decko/gem/card/mod/standard/set/self/codenames.rb"; end
+def self.source_location; "/Users/ethan/dev/decko/gem/card/mod/standard/set/self/codenames.rb"; end
 
 end;end;end;end;
-# ~~ generated from /Users/ezl5238/dev/decko/gem/card/mod/standard/set/self/codenames.rb ~~
+# ~~ generated from /Users/ethan/dev/decko/gem/card/mod/standard/set/self/codenames.rb ~~

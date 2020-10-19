@@ -4,7 +4,7 @@ class Card; module Set; class Rule
 #
 module RuleForm;
 extend Card::Set
-def self.source_location; "/Users/ezl5238/dev/decko/gem/card-mod-rules/set/rule/rule_form.rb"; end
+def self.source_location; "/Users/ethan/dev/decko/gem/card-mod-rules/set/rule/rule_form.rb"; end
 module HtmlFormat; module_parent.send :register_set_format, Card::Format::HtmlFormat, self; extend Card::Set::AbstractFormat
   view :rule_form, cache: :never, unknown: true do
     @success_view ||= :open
@@ -63,4 +63,4 @@ module HtmlFormat; module_parent.send :register_set_format, Card::Format::HtmlFo
   end
 end
 end;end;end;end;
-# ~~ generated from /Users/ezl5238/dev/decko/gem/card-mod-rules/set/rule/rule_form.rb ~~
+# ~~ generated from /Users/ethan/dev/decko/gem/card-mod-rules/set/rule/rule_form.rb ~~

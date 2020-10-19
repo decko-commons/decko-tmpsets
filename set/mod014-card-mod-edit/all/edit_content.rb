@@ -4,7 +4,7 @@ class Card; module Set; class All
 #
 module EditContent;
 extend Card::Set
-def self.source_location; "/Users/ezl5238/dev/decko/gem/card-mod-edit/set/all/edit_content.rb"; end
+def self.source_location; "/Users/ethan/dev/decko/gem/card-mod-edit/set/all/edit_content.rb"; end
 module HtmlFormat; module_parent.send :register_set_format, Card::Format::HtmlFormat, self; extend Card::Set::AbstractFormat
   view :edit_form, wrap: :slot do
     voo.show :edit_type_row
@@ -66,4 +66,4 @@ module HtmlFormat; module_parent.send :register_set_format, Card::Format::HtmlFo
   end
 end
 end;end;end;end;
-# ~~ generated from /Users/ezl5238/dev/decko/gem/card-mod-edit/set/all/edit_content.rb ~~
+# ~~ generated from /Users/ethan/dev/decko/gem/card-mod-edit/set/all/edit_content.rb ~~

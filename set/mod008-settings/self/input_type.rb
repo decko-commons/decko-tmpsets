@@ -4,7 +4,7 @@ class Card; module Set; class Self
 #
 module InputType;
 extend Card::Set
-def self.source_location; "/Users/ezl5238/dev/decko/gem/card/mod/settings/set/self/input_type.rb"; end
+def self.source_location; "/Users/ethan/dev/decko/gem/card/mod/settings/set/self/input_type.rb"; end
 extend Card::Setting
 setting_opts group: :editing,
              position: 3,
@@ -19,4 +19,4 @@ module HtmlFormat; module_parent.send :register_set_format, Card::Format::HtmlFo
   end
 end
 end;end;end;end;
-# ~~ generated from /Users/ezl5238/dev/decko/gem/card/mod/settings/set/self/input_type.rb ~~
+# ~~ generated from /Users/ethan/dev/decko/gem/card/mod/settings/set/self/input_type.rb ~~

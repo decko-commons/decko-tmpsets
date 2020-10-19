@@ -4,7 +4,7 @@ class Card; module Set; class All; module RichHtml;
 #
 module Modal;
 extend Card::Set
-def self.source_location; "/Users/ezl5238/dev/decko/gem/card/mod/standard/set/all/rich_html/modal.rb"; end
+def self.source_location; "/Users/ethan/dev/decko/gem/card/mod/standard/set/all/rich_html/modal.rb"; end
 module HtmlFormat; module_parent.send :register_set_format, Card::Format::HtmlFormat, self; extend Card::Set::AbstractFormat
   MODAL_SIZE = { small: "sm", medium: nil, large: "lg", full: "full" }.freeze
   MODAL_CLOSE_OPTS = { "data-dismiss": "modal",
@@ -125,4 +125,4 @@ module HtmlFormat; module_parent.send :register_set_format, Card::Format::HtmlFo
   end
 end
 end;end;end;end;end;
-# ~~ generated from /Users/ezl5238/dev/decko/gem/card/mod/standard/set/all/rich_html/modal.rb ~~
+# ~~ generated from /Users/ethan/dev/decko/gem/card/mod/standard/set/all/rich_html/modal.rb ~~

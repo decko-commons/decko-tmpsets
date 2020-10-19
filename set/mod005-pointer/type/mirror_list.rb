@@ -4,7 +4,7 @@ class Card; module Set; class Type
 #
 module MirrorList;
 extend Card::Set
-def self.source_location; "/Users/ezl5238/dev/decko/gem/card/mod/pointer/set/type/mirror_list.rb"; end
+def self.source_location; "/Users/ethan/dev/decko/gem/card/mod/pointer/set/type/mirror_list.rb"; end
 include_set Abstract::Pointer
 
 event :validate_listed_by_name, :validate, on: :save, changing: :name do
@@ -99,4 +99,4 @@ def unfilled?
   false
 end
 end;end;end;end;
-# ~~ generated from /Users/ezl5238/dev/decko/gem/card/mod/pointer/set/type/mirror_list.rb ~~
+# ~~ generated from /Users/ethan/dev/decko/gem/card/mod/pointer/set/type/mirror_list.rb ~~

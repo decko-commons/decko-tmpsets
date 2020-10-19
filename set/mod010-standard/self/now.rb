@@ -4,7 +4,7 @@ class Card; module Set; class Self
 #
 module Now;
 extend Card::Set
-def self.source_location; "/Users/ezl5238/dev/decko/gem/card/mod/standard/set/self/now.rb"; end
+def self.source_location; "/Users/ethan/dev/decko/gem/card/mod/standard/set/self/now.rb"; end
 
 def content
   I18n.localize(Time.now, format: :card_dayofwk_min_tz)
@@ -12,4 +12,4 @@ end
 
 # view :core, :raw
 end;end;end;end;
-# ~~ generated from /Users/ezl5238/dev/decko/gem/card/mod/standard/set/self/now.rb ~~
+# ~~ generated from /Users/ethan/dev/decko/gem/card/mod/standard/set/self/now.rb ~~

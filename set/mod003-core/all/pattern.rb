@@ -4,7 +4,7 @@ class Card; module Set; class All
 #
 module Pattern;
 extend Card::Set
-def self.source_location; "/Users/ezl5238/dev/decko/gem/card/mod/core/set/all/pattern.rb"; end
+def self.source_location; "/Users/ethan/dev/decko/gem/card/mod/core/set/all/pattern.rb"; end
 def patterns?
   defined? @patterns
 end
@@ -60,4 +60,4 @@ def include_module? set
   singleton_class&.include? set
 end
 end;end;end;end;
-# ~~ generated from /Users/ezl5238/dev/decko/gem/card/mod/core/set/all/pattern.rb ~~
+# ~~ generated from /Users/ethan/dev/decko/gem/card/mod/core/set/all/pattern.rb ~~

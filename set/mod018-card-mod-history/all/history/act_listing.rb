@@ -4,7 +4,7 @@ class Card; module Set; class All; module History;
 #
 module ActListing;
 extend Card::Set
-def self.source_location; "/Users/ezl5238/dev/decko/gem/card-mod-history/set/all/history/act_listing.rb"; end
+def self.source_location; "/Users/ethan/dev/decko/gem/card-mod-history/set/all/history/act_listing.rb"; end
 ACTS_PER_PAGE = Card.config.acts_per_page
 
 module HtmlFormat; module_parent.send :register_set_format, Card::Format::HtmlFormat, self; extend Card::Set::AbstractFormat
@@ -130,4 +130,4 @@ module HtmlFormat; module_parent.send :register_set_format, Card::Format::HtmlFo
   end
 end
 end;end;end;end;end;
-# ~~ generated from /Users/ezl5238/dev/decko/gem/card-mod-history/set/all/history/act_listing.rb ~~
+# ~~ generated from /Users/ethan/dev/decko/gem/card-mod-history/set/all/history/act_listing.rb ~~

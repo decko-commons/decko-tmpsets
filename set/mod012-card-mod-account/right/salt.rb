@@ -4,7 +4,7 @@ class Card; module Set; class Right
 #
 module Salt;
 extend Card::Set
-def self.source_location; "/Users/ezl5238/dev/decko/gem/card-mod-account/set/right/salt.rb"; end
+def self.source_location; "/Users/ethan/dev/decko/gem/card-mod-account/set/right/salt.rb"; end
 include_set Abstract::AccountField
 
 def generate
@@ -19,4 +19,4 @@ view :raw do
   tr :private_data
 end
 end;end;end;end;
-# ~~ generated from /Users/ezl5238/dev/decko/gem/card-mod-account/set/right/salt.rb ~~
+# ~~ generated from /Users/ethan/dev/decko/gem/card-mod-account/set/right/salt.rb ~~

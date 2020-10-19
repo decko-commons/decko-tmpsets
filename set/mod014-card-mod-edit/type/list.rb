@@ -4,7 +4,7 @@ class Card; module Set; class Type
 #
 module List;
 extend Card::Set
-def self.source_location; "/Users/ezl5238/dev/decko/gem/card-mod-edit/set/type/list.rb"; end
+def self.source_location; "/Users/ethan/dev/decko/gem/card-mod-edit/set/type/list.rb"; end
 def input_type_content_options
   ["multiselect", "checkbox", "autocompleted list", "filtered list"]
 end
@@ -21,4 +21,4 @@ def field_settings
   %i[default help input_type content_options content_option_view]
 end
 end;end;end;end;
-# ~~ generated from /Users/ezl5238/dev/decko/gem/card-mod-edit/set/type/list.rb ~~
+# ~~ generated from /Users/ethan/dev/decko/gem/card-mod-edit/set/type/list.rb ~~

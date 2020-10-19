@@ -4,7 +4,7 @@ class Card; module Set; class All; module Follow;
 #
 module FollowLinkViews;
 extend Card::Set
-def self.source_location; "/Users/ezl5238/dev/decko/gem/card-mod-follow/set/all/follow/follow_link_views.rb"; end
+def self.source_location; "/Users/ethan/dev/decko/gem/card-mod-follow/set/all/follow/follow_link_views.rb"; end
 module Format; module_parent.send :register_set_format, Card::Format, self; extend Card::Set::AbstractFormat
   def follow_link_class
     card.followed? ? StopFollowLink : StartFollowLink
@@ -35,4 +35,4 @@ module HtmlFormat; module_parent.send :register_set_format, Card::Format::HtmlFo
   end
 end
 end;end;end;end;end;
-# ~~ generated from /Users/ezl5238/dev/decko/gem/card-mod-follow/set/all/follow/follow_link_views.rb ~~
+# ~~ generated from /Users/ethan/dev/decko/gem/card-mod-follow/set/all/follow/follow_link_views.rb ~~

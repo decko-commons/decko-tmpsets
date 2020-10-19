@@ -4,7 +4,7 @@ class Card; module Set; class Abstract
 #
 module Paging;
 extend Card::Set
-def self.source_location; "/Users/ezl5238/dev/decko/gem/card/mod/pointer/set/abstract/01_paging.rb"; end
+def self.source_location; "/Users/ethan/dev/decko/gem/card/mod/pointer/set/abstract/01_paging.rb"; end
 include_set Abstract::PagingParams
 
 module Format; module_parent.send :register_set_format, Card::Format, self; extend Card::Set::AbstractFormat
@@ -153,4 +153,4 @@ module JsonFormat; module_parent.send :register_set_format, Card::Format::JsonFo
   end
 end
 end;end;end;end;
-# ~~ generated from /Users/ezl5238/dev/decko/gem/card/mod/pointer/set/abstract/01_paging.rb ~~
+# ~~ generated from /Users/ethan/dev/decko/gem/card/mod/pointer/set/abstract/01_paging.rb ~~

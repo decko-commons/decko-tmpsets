@@ -4,7 +4,7 @@ class Card; module Set; class Type
 #
 module Scss;
 extend Card::Set
-def self.source_location; "/Users/ezl5238/dev/decko/gem/card-mod-machines/set/type/scss.rb"; end
+def self.source_location; "/Users/ethan/dev/decko/gem/card-mod-machines/set/type/scss.rb"; end
 include_set Type::Css
 
 module Format; module_parent.send :register_set_format, Card::Format, self; extend Card::Set::AbstractFormat
@@ -27,4 +27,4 @@ module HtmlFormat; module_parent.send :register_set_format, Card::Format::HtmlFo
   end
 end
 end;end;end;end;
-# ~~ generated from /Users/ezl5238/dev/decko/gem/card-mod-machines/set/type/scss.rb ~~
+# ~~ generated from /Users/ethan/dev/decko/gem/card-mod-machines/set/type/scss.rb ~~

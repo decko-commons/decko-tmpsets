@@ -5,7 +5,7 @@ class Card; module Set; class Abstract
 #! no set module
 
 module Paging;
-def self.source_location; "/Users/ezl5238/dev/decko/gem/card/mod/pointer/set/abstract/01_paging/paging_links.rb"; end
+def self.source_location; "/Users/ethan/dev/decko/gem/card/mod/pointer/set/abstract/01_paging/paging_links.rb"; end
 # render paging links
 class PagingLinks
   def initialize total_pages, current_page
@@ -95,4 +95,4 @@ class PagingLinks
   end
 end
 end;end;end;end;
-# ~~ generated from /Users/ezl5238/dev/decko/gem/card/mod/pointer/set/abstract/01_paging/paging_links.rb ~~
+# ~~ generated from /Users/ethan/dev/decko/gem/card/mod/pointer/set/abstract/01_paging/paging_links.rb ~~

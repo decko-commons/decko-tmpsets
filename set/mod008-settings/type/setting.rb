@@ -5,7 +5,7 @@ class Card; module Set; class Type
 # require "json"
 module Setting;
 extend Card::Set
-def self.source_location; "/Users/ezl5238/dev/decko/gem/card/mod/settings/set/type/setting.rb"; end
+def self.source_location; "/Users/ethan/dev/decko/gem/card/mod/settings/set/type/setting.rb"; end
 
 def self.member_names
   @@member_names ||= begin
@@ -85,4 +85,4 @@ module JsonFormat; module_parent.send :register_set_format, Card::Format::JsonFo
   end
 end
 end;end;end;end;
-# ~~ generated from /Users/ezl5238/dev/decko/gem/card/mod/settings/set/type/setting.rb ~~
+# ~~ generated from /Users/ethan/dev/decko/gem/card/mod/settings/set/type/setting.rb ~~

@@ -4,7 +4,7 @@ class Card; module Set; class All
 #
 module History;
 extend Card::Set
-def self.source_location; "/Users/ezl5238/dev/decko/gem/card-mod-history/set/all/history.rb"; end
+def self.source_location; "/Users/ethan/dev/decko/gem/card-mod-history/set/all/history.rb"; end
 event :update_ancestor_timestamps, :integrate do
   ids = history_ancestor_ids
   return unless ids.present?
@@ -115,4 +115,4 @@ def requiring_id
   id ? yield : (return [])
 end
 end;end;end;end;
-# ~~ generated from /Users/ezl5238/dev/decko/gem/card-mod-history/set/all/history.rb ~~
+# ~~ generated from /Users/ethan/dev/decko/gem/card-mod-history/set/all/history.rb ~~

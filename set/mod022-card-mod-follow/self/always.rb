@@ -4,7 +4,7 @@ class Card; module Set; class Self
 #
 module Always;
 extend Card::Set
-def self.source_location; "/Users/ezl5238/dev/decko/gem/card-mod-follow/set/self/always.rb"; end
+def self.source_location; "/Users/ethan/dev/decko/gem/card-mod-follow/set/self/always.rb"; end
 include_set Abstract::FollowOption
 
 follow_opts position: 2
@@ -19,4 +19,4 @@ def label
   "follow"
 end
 end;end;end;end;
-# ~~ generated from /Users/ezl5238/dev/decko/gem/card-mod-follow/set/self/always.rb ~~
+# ~~ generated from /Users/ethan/dev/decko/gem/card-mod-follow/set/self/always.rb ~~

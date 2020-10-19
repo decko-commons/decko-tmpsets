@@ -11,7 +11,7 @@ class Card; module Set; class Self
 # PLAN:
 module FollowDefaults;
 extend Card::Set
-def self.source_location; "/Users/ezl5238/dev/decko/gem/card-mod-follow/set/self/follow_defaults.rb"; end
+def self.source_location; "/Users/ethan/dev/decko/gem/card-mod-follow/set/self/follow_defaults.rb"; end
 # - actual defaults should be handled as much as possible with something like
 #   the *defaults rule
 # - on the *admin page, we can have a link so sharks can update all the pristine cards
@@ -94,4 +94,4 @@ module HtmlFormat; module_parent.send :register_set_format, Card::Format::HtmlFo
   end
 end
 end;end;end;end;
-# ~~ generated from /Users/ezl5238/dev/decko/gem/card-mod-follow/set/self/follow_defaults.rb ~~
+# ~~ generated from /Users/ethan/dev/decko/gem/card-mod-follow/set/self/follow_defaults.rb ~~

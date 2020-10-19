@@ -4,9 +4,9 @@ class Card; module Set; class Right
 #
 module Mates;
 extend Card::Set
-def self.source_location; "/Users/ezl5238/dev/decko/gem/card-mod-search/set/right/mates.rb"; end
+def self.source_location; "/Users/ethan/dev/decko/gem/card-mod-search/set/right/mates.rb"; end
 def raw_helo_text
   "If there is a card named \"X+{{_left|name}}\", then X is a mate of {{_left|name}}."
 end
 end;end;end;end;
-# ~~ generated from /Users/ezl5238/dev/decko/gem/card-mod-search/set/right/mates.rb ~~
+# ~~ generated from /Users/ethan/dev/decko/gem/card-mod-search/set/right/mates.rb ~~

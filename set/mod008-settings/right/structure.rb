@@ -4,7 +4,7 @@ class Card; module Set; class Right
 #
 module Structure;
 extend Card::Set
-def self.source_location; "/Users/ezl5238/dev/decko/gem/card/mod/settings/set/right/structure.rb"; end
+def self.source_location; "/Users/ethan/dev/decko/gem/card/mod/settings/set/right/structure.rb"; end
 include_set Abstract::TemplatedNests
 
 module RssFormat; module_parent.send :register_set_format, Card::Format::RssFormat, self; extend Card::Set::AbstractFormat
@@ -78,4 +78,4 @@ def structuree_query args={}
   set_card.fetch_query args
 end
 end;end;end;end;
-# ~~ generated from /Users/ezl5238/dev/decko/gem/card/mod/settings/set/right/structure.rb ~~
+# ~~ generated from /Users/ethan/dev/decko/gem/card/mod/settings/set/right/structure.rb ~~

@@ -5,7 +5,7 @@ class Card; module Set; class Abstract
 # -*- encoding : utf-8 -*-
 module Script;
 extend Card::Set
-def self.source_location; "/Users/ezl5238/dev/decko/gem/card-mod-machines/set/abstract/script.rb"; end
+def self.source_location; "/Users/ethan/dev/decko/gem/card-mod-machines/set/abstract/script.rb"; end
 
 require "uglifier"
 
@@ -90,4 +90,4 @@ def diff_args
   { diff_format: :text }
 end
 end;end;end;end;
-# ~~ generated from /Users/ezl5238/dev/decko/gem/card-mod-machines/set/abstract/script.rb ~~
+# ~~ generated from /Users/ethan/dev/decko/gem/card-mod-machines/set/abstract/script.rb ~~

@@ -4,7 +4,7 @@ class Card; module Set; class Abstract
 #
 module Attachment;
 extend Card::Set
-def self.source_location; "/Users/ezl5238/dev/decko/gem/card-mod-carrierwave/set/abstract/attachment.rb"; end
+def self.source_location; "/Users/ethan/dev/decko/gem/card-mod-carrierwave/set/abstract/attachment.rb"; end
 attr_writer :empty_ok
 
 def self.included host_class
@@ -118,4 +118,4 @@ rescue => e
   nil
 end
 end;end;end;end;
-# ~~ generated from /Users/ezl5238/dev/decko/gem/card-mod-carrierwave/set/abstract/attachment.rb ~~
+# ~~ generated from /Users/ethan/dev/decko/gem/card-mod-carrierwave/set/abstract/attachment.rb ~~

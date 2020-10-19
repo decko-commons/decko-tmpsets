@@ -4,7 +4,7 @@ class Card; module Set; class Abstract; module Pointer;; module HtmlViews;
 #
 module Filter;
 extend Card::Set
-def self.source_location; "/Users/ezl5238/dev/decko/gem/card/mod/pointer/set/abstract/02_pointer/html_views/filter.rb"; end
+def self.source_location; "/Users/ethan/dev/decko/gem/card/mod/pointer/set/abstract/02_pointer/html_views/filter.rb"; end
 module HtmlFormat; module_parent.send :register_set_format, Card::Format::HtmlFormat, self; extend Card::Set::AbstractFormat
   view :filtered_list, unknown: true do
     filtered_list_input
@@ -68,4 +68,4 @@ module HtmlFormat; module_parent.send :register_set_format, Card::Format::HtmlFo
   end
 end
 end;end;end;end;end;end;
-# ~~ generated from /Users/ezl5238/dev/decko/gem/card/mod/pointer/set/abstract/02_pointer/html_views/filter.rb ~~
+# ~~ generated from /Users/ethan/dev/decko/gem/card/mod/pointer/set/abstract/02_pointer/html_views/filter.rb ~~

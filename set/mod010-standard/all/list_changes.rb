@@ -5,7 +5,7 @@ class Card; module Set; class All
 # -*- encoding : utf-8 -*-
 module ListChanges;
 extend Card::Set
-def self.source_location; "/Users/ezl5238/dev/decko/gem/card/mod/standard/set/all/list_changes.rb"; end
+def self.source_location; "/Users/ethan/dev/decko/gem/card/mod/standard/set/all/list_changes.rb"; end
 
 def list_fields
   Card.search({ left: name, type_id: Card::MirroredListID }, "list fields")
@@ -55,4 +55,4 @@ event :cardtype_of_list_item_changed, :validate,
   end
 end
 end;end;end;end;
-# ~~ generated from /Users/ezl5238/dev/decko/gem/card/mod/standard/set/all/list_changes.rb ~~
+# ~~ generated from /Users/ethan/dev/decko/gem/card/mod/standard/set/all/list_changes.rb ~~

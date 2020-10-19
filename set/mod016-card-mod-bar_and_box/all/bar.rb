@@ -4,7 +4,7 @@ class Card; module Set; class All
 #
 module Bar;
 extend Card::Set
-def self.source_location; "/Users/ezl5238/dev/decko/gem/card-mod-bar_and_box/set/all/bar.rb"; end
+def self.source_location; "/Users/ethan/dev/decko/gem/card-mod-bar_and_box/set/all/bar.rb"; end
 include_set Abstract::BsBadge
 
 module HtmlFormat; module_parent.send :register_set_format, Card::Format::HtmlFormat, self; extend Card::Set::AbstractFormat
@@ -111,4 +111,4 @@ module HtmlFormat; module_parent.send :register_set_format, Card::Format::HtmlFo
   end
 end
 end;end;end;end;
-# ~~ generated from /Users/ezl5238/dev/decko/gem/card-mod-bar_and_box/set/all/bar.rb ~~
+# ~~ generated from /Users/ethan/dev/decko/gem/card-mod-bar_and_box/set/all/bar.rb ~~

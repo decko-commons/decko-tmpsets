@@ -4,11 +4,11 @@ class Card; module Set; class Self
 #
 module Structure;
 extend Card::Set
-def self.source_location; "/Users/ezl5238/dev/decko/gem/card/mod/settings/set/self/structure.rb"; end
+def self.source_location; "/Users/ethan/dev/decko/gem/card/mod/settings/set/self/structure.rb"; end
 extend Card::Setting
 setting_opts group: :templating, position: 2, rule_type_editable: true,
              short_help_text: "control card's content / structure",
              help_text: "Controls cards' content / structure. "\
                         "[[http://decko.org/formatting|more]]"
 end;end;end;end;
-# ~~ generated from /Users/ezl5238/dev/decko/gem/card/mod/settings/set/self/structure.rb ~~
+# ~~ generated from /Users/ethan/dev/decko/gem/card/mod/settings/set/self/structure.rb ~~

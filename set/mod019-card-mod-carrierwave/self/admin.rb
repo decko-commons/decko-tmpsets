@@ -4,7 +4,7 @@ class Card; module Set; class Self
 #
 module Admin;
 extend Card::Set
-def self.source_location; "/Users/ezl5238/dev/decko/gem/card-mod-carrierwave/set/self/admin.rb"; end
+def self.source_location; "/Users/ethan/dev/decko/gem/card-mod-carrierwave/set/self/admin.rb"; end
 add_to_basket(
   :tasks,
   name: :update_file_storage_locations,
@@ -29,4 +29,4 @@ add_to_basket(
   }
 )
 end;end;end;end;
-# ~~ generated from /Users/ezl5238/dev/decko/gem/card-mod-carrierwave/set/self/admin.rb ~~
+# ~~ generated from /Users/ethan/dev/decko/gem/card-mod-carrierwave/set/self/admin.rb ~~
