@@ -4,7 +4,7 @@ class Card; module Set; class All
 #
 module Codename;
 extend Card::Set
-def self.source_location; "/Users/ethan/dev/decko/gem/card/mod/core/set/all/codename.rb"; end
+def self.source_location; "/Users/ezl5238/dev/decko/gem/card/mod/core/set/all/codename.rb"; end
 def codename
   super&.to_sym
 end
@@ -35,4 +35,4 @@ def validate_codename_uniqueness
   errors.add :codename, tr(:error_code_in_use, codename: codename)
 end
 end;end;end;end;
-# ~~ generated from /Users/ethan/dev/decko/gem/card/mod/core/set/all/codename.rb ~~
+# ~~ generated from /Users/ezl5238/dev/decko/gem/card/mod/core/set/all/codename.rb ~~

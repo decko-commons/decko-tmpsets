@@ -4,7 +4,7 @@ class Card; module Set; class Self
 #
 module AdminInfo;
 extend Card::Set
-def self.source_location; "/Users/ethan/dev/decko/gem/card/mod/admin/set/self/admin_info.rb"; end
+def self.source_location; "/Users/ezl5238/dev/decko/gem/card/mod/admin/set/self/admin_info.rb"; end
 basket :warnings
 
 # For each warning in the basket (eg :my_warning), the core view
@@ -54,4 +54,4 @@ module HtmlFormat; module_parent.send :register_set_format, Card::Format::HtmlFo
   end
 end
 end;end;end;end;
-# ~~ generated from /Users/ethan/dev/decko/gem/card/mod/admin/set/self/admin_info.rb ~~
+# ~~ generated from /Users/ezl5238/dev/decko/gem/card/mod/admin/set/self/admin_info.rb ~~

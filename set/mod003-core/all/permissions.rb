@@ -4,7 +4,7 @@ class Card; module Set; class All
 #
 module Permissions;
 extend Card::Set
-def self.source_location; "/Users/ethan/dev/decko/gem/card/mod/core/set/all/permissions.rb"; end
+def self.source_location; "/Users/ezl5238/dev/decko/gem/card/mod/core/set/all/permissions.rb"; end
 module ClassMethods
   def repair_all_permissions
     Card.where("(read_rule_class is null or read_rule_id is null) and trash is false")
@@ -239,4 +239,4 @@ def track_permission_errors
   result
 end
 end;end;end;end;
-# ~~ generated from /Users/ethan/dev/decko/gem/card/mod/core/set/all/permissions.rb ~~
+# ~~ generated from /Users/ezl5238/dev/decko/gem/card/mod/core/set/all/permissions.rb ~~

@@ -4,7 +4,7 @@ class Card; module Set; class All
 #
 module Rules;
 extend Card::Set
-def self.source_location; "/Users/ethan/dev/decko/gem/card/mod/core/set/all/rules.rb"; end
+def self.source_location; "/Users/ezl5238/dev/decko/gem/card/mod/core/set/all/rules.rb"; end
 def rule setting_code
   rule_card(setting_code, skip_modules: true)&.db_content
 end
@@ -87,4 +87,4 @@ def rule_id_lookup lookup_hash, cache_suffix, fallback_suffix=nil
   nil
 end
 end;end;end;end;
-# ~~ generated from /Users/ethan/dev/decko/gem/card/mod/core/set/all/rules.rb ~~
+# ~~ generated from /Users/ezl5238/dev/decko/gem/card/mod/core/set/all/rules.rb ~~

@@ -4,7 +4,7 @@ class Card; module Set; class All
 #
 module Actify;
 extend Card::Set
-def self.source_location; "/Users/ethan/dev/decko/gem/card/mod/core/set/all/actify.rb"; end
+def self.source_location; "/Users/ezl5238/dev/decko/gem/card/mod/core/set/all/actify.rb"; end
 def act options={}, &block
   if act_card
     add_to_act options, &block
@@ -74,4 +74,4 @@ def add_to_act options={}
   yield
 end
 end;end;end;end;
-# ~~ generated from /Users/ethan/dev/decko/gem/card/mod/core/set/all/actify.rb ~~
+# ~~ generated from /Users/ezl5238/dev/decko/gem/card/mod/core/set/all/actify.rb ~~

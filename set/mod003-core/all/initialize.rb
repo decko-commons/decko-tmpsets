@@ -4,7 +4,7 @@ class Card; module Set; class All
 #
 module Initialize;
 extend Card::Set
-def self.source_location; "/Users/ethan/dev/decko/gem/card/mod/core/set/all/initialize.rb"; end
+def self.source_location; "/Users/ezl5238/dev/decko/gem/card/mod/core/set/all/initialize.rb"; end
 JUNK_INIT_ARGS = %w[missing skip_virtual id].freeze
 
 module ClassMethods
@@ -82,4 +82,4 @@ def uncacheable?
   @uncacheable == true
 end
 end;end;end;end;
-# ~~ generated from /Users/ethan/dev/decko/gem/card/mod/core/set/all/initialize.rb ~~
+# ~~ generated from /Users/ezl5238/dev/decko/gem/card/mod/core/set/all/initialize.rb ~~

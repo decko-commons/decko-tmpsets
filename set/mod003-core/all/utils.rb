@@ -4,7 +4,7 @@ class Card; module Set; class All
 #
 module Utils;
 extend Card::Set
-def self.source_location; "/Users/ethan/dev/decko/gem/card/mod/core/set/all/utils.rb"; end
+def self.source_location; "/Users/ezl5238/dev/decko/gem/card/mod/core/set/all/utils.rb"; end
 module ClassMethods
   def merge_list attribs, opts={}
     unmerged = []
@@ -86,8 +86,16 @@ def measure desc
 end
 # rubocop:enable Style/GlobalVars
 
+def mod_root modname
+  if (spec = Gem::Specification.find_by_name "card-mod-#{modname}")
+    spec.full_gem_path
+  else
+    "#{Cardio.gem_root}/mod/#{modname}"
+  end
+end
+
 module Format; module_parent.send :register_set_format, Card::Format, self; extend Card::Set::AbstractFormat
   delegate :measure, to: :card
 end
 end;end;end;end;
-# ~~ generated from /Users/ethan/dev/decko/gem/card/mod/core/set/all/utils.rb ~~
+# ~~ generated from /Users/ezl5238/dev/decko/gem/card/mod/core/set/all/utils.rb ~~

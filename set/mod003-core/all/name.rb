@@ -4,7 +4,7 @@ class Card; module Set; class All
 #
 module Name;
 extend Card::Set
-def self.source_location; "/Users/ethan/dev/decko/gem/card/mod/core/set/all/name.rb"; end
+def self.source_location; "/Users/ezl5238/dev/decko/gem/card/mod/core/set/all/name.rb"; end
 require "uuid"
 
 module ClassMethods
@@ -245,4 +245,4 @@ def with_id_after_store subcard
   subcard.director.after_store { |card| yield card.id }
 end
 end;end;end;end;
-# ~~ generated from /Users/ethan/dev/decko/gem/card/mod/core/set/all/name.rb ~~
+# ~~ generated from /Users/ezl5238/dev/decko/gem/card/mod/core/set/all/name.rb ~~

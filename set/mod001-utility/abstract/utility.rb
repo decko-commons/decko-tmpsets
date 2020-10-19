@@ -4,7 +4,7 @@ class Card; module Set; class Abstract
 #
 module Utility;
 extend Card::Set
-def self.source_location; "/Users/ethan/dev/decko/gem/card/mod/utility/set/abstract/utility.rb"; end
+def self.source_location; "/Users/ezl5238/dev/decko/gem/card/mod/utility/set/abstract/utility.rb"; end
 
 def fetch_params params
   Env.params.select { |key, val| val && params.include?(key) }
@@ -19,4 +19,4 @@ def param_to_i key, default
   end
 end
 end;end;end;end;
-# ~~ generated from /Users/ethan/dev/decko/gem/card/mod/utility/set/abstract/utility.rb ~~
+# ~~ generated from /Users/ezl5238/dev/decko/gem/card/mod/utility/set/abstract/utility.rb ~~

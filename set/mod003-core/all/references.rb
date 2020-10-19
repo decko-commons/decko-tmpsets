@@ -7,7 +7,7 @@ class Card; module Set; class All
 # Cards can refer to other cards in their content, eg via links and nests.
 module References;
 extend Card::Set
-def self.source_location; "/Users/ethan/dev/decko/gem/card/mod/core/set/all/references.rb"; end
+def self.source_location; "/Users/ezl5238/dev/decko/gem/card/mod/core/set/all/references.rb"; end
 # The card that refers is the "referer", the card that is referred to is
 # the "referee". The reference itself has its own class (Card::Reference),
 # which handles id-based reference tracking.
@@ -90,17 +90,12 @@ end
 # { referee1_key: [referee1_id, referee1_type2],
 #   referee2_key...
 # }
-def interpret_reference ref_hash, referee_name, ref_type
-  return unless referee_name # eg commented nest has no referee_name
-  referee_name = referee_name.to_name
-  referee_key = referee_name.key
-  return if referee_key == key # don't create self reference
-
-  referee_id = Card::Lexicon.id referee_name
-  ref_hash[referee_key] ||= [referee_id]
-  ref_hash[referee_key] << ref_type
-
-  interpret_partial_references ref_hash, referee_name unless referee_id
+def interpret_reference ref_hash, raw_referee_name, ref_type
+  with_normalized_referee raw_referee_name do |referee_name, referee_key, referee_id|
+    ref_hash[referee_key] ||= [referee_id]
+    ref_hash[referee_key] << ref_type
+    interpret_partial_references ref_hash, referee_name unless referee_id
+  end
 end
 
 # Partial references are needed to track references to virtual cards.
@@ -191,5 +186,15 @@ end
 def not_update_referers
   !update_referers
 end
+
+private
+
+def with_normalized_referee referee_name
+  return unless referee_name # eg commented nest has no referee_name
+  referee_name = referee_name.to_name
+  referee_key = referee_name.key
+  return if referee_key == key # don't create self reference
+  yield referee_name, referee_key, Card::Lexicon.id(referee_name)
+end
 end;end;end;end;
-# ~~ generated from /Users/ethan/dev/decko/gem/card/mod/core/set/all/references.rb ~~
+# ~~ generated from /Users/ezl5238/dev/decko/gem/card/mod/core/set/all/references.rb ~~

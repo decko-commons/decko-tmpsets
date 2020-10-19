@@ -4,7 +4,7 @@ class Card; module Set; class All
 #
 module Observer;
 extend Card::Set
-def self.source_location; "/Users/ethan/dev/decko/gem/card/mod/core/set/all/observer.rb"; end
+def self.source_location; "/Users/ezl5238/dev/decko/gem/card/mod/core/set/all/observer.rb"; end
 %i[create update delete].each do |action|
   event "observer_#{action}".to_sym, :integrate, on: action do
     execute_card_events on: action
@@ -28,4 +28,4 @@ def event_cards setting
     []
 end
 end;end;end;end;
-# ~~ generated from /Users/ethan/dev/decko/gem/card/mod/core/set/all/observer.rb ~~
+# ~~ generated from /Users/ezl5238/dev/decko/gem/card/mod/core/set/all/observer.rb ~~

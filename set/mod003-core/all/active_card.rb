@@ -4,7 +4,7 @@ class Card; module Set; class All
 #
 module ActiveCard;
 extend Card::Set
-def self.source_location; "/Users/ethan/dev/decko/gem/card/mod/core/set/all/active_card.rb"; end
+def self.source_location; "/Users/ezl5238/dev/decko/gem/card/mod/core/set/all/active_card.rb"; end
 
 # FIXME: -this needs a better home!
 def format opts={}
@@ -12,4 +12,4 @@ def format opts={}
   Card::Format.new self, opts
 end
 end;end;end;end;
-# ~~ generated from /Users/ethan/dev/decko/gem/card/mod/core/set/all/active_card.rb ~~
+# ~~ generated from /Users/ezl5238/dev/decko/gem/card/mod/core/set/all/active_card.rb ~~

@@ -4,7 +4,7 @@ class Card; module Set; class All
 #
 module EventConditions;
 extend Card::Set
-def self.source_location; "/Users/ethan/dev/decko/gem/card/mod/core/set/all/event_conditions.rb"; end
+def self.source_location; "/Users/ezl5238/dev/decko/gem/card/mod/core/set/all/event_conditions.rb"; end
 Card.action_specific_attributes +=
   %i[skip_hash full_skip_hash trigger_hash full_trigger_hash]
 
@@ -178,4 +178,4 @@ def hash_with_value array, value
   end
 end
 end;end;end;end;
-# ~~ generated from /Users/ethan/dev/decko/gem/card/mod/core/set/all/event_conditions.rb ~~
+# ~~ generated from /Users/ezl5238/dev/decko/gem/card/mod/core/set/all/event_conditions.rb ~~

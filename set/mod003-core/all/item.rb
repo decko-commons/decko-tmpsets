@@ -4,7 +4,7 @@ class Card; module Set; class All
 #
 module Item;
 extend Card::Set
-def self.source_location; "/Users/ethan/dev/decko/gem/card/mod/core/set/all/item.rb"; end
+def self.source_location; "/Users/ezl5238/dev/decko/gem/card/mod/core/set/all/item.rb"; end
 def item_names _args={}
   format._render_raw.split(/[,\n]/)
 end
@@ -56,6 +56,12 @@ def insert_item index, name
   new_names.delete name
   new_names.insert index, name
   items_to_content new_names
+end
+
+def replace_item old, new
+  return unless include_item? old
+  drop_item old
+  add_item new
 end
 
 # I think the following should work as add_item...
@@ -130,4 +136,4 @@ module HtmlFormat; module_parent.send :register_set_format, Card::Format::HtmlFo
   end
 end
 end;end;end;end;
-# ~~ generated from /Users/ethan/dev/decko/gem/card/mod/core/set/all/item.rb ~~
+# ~~ generated from /Users/ezl5238/dev/decko/gem/card/mod/core/set/all/item.rb ~~

@@ -4,7 +4,7 @@ class Card; module Set; class All
 #
 module Content;
 extend Card::Set
-def self.source_location; "/Users/ethan/dev/decko/gem/card/mod/core/set/all/content.rb"; end
+def self.source_location; "/Users/ezl5238/dev/decko/gem/card/mod/core/set/all/content.rb"; end
 def content= value
   self.db_content = standardize_content(value)
 end
@@ -184,4 +184,4 @@ def blank_comment?
   comment.blank? || comment.strip.blank?
 end
 end;end;end;end;
-# ~~ generated from /Users/ethan/dev/decko/gem/card/mod/core/set/all/content.rb ~~
+# ~~ generated from /Users/ezl5238/dev/decko/gem/card/mod/core/set/all/content.rb ~~

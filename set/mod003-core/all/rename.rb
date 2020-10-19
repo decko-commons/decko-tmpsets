@@ -4,7 +4,7 @@ class Card; module Set; class All
 #
 module Rename;
 extend Card::Set
-def self.source_location; "/Users/ethan/dev/decko/gem/card/mod/core/set/all/rename.rb"; end
+def self.source_location; "/Users/ezl5238/dev/decko/gem/card/mod/core/set/all/rename.rb"; end
 event :rename_in_trash, after: :expire_old_name, on: :update do
   existing_card = Card.find_by_key_and_trash name.key, true
   return if !existing_card || existing_card == self
@@ -39,4 +39,4 @@ def detect_illegal_compound_names
   errors.add :name, "illegal name change; existing names end in +#{name_before_act}"
 end
 end;end;end;end;
-# ~~ generated from /Users/ethan/dev/decko/gem/card/mod/core/set/all/rename.rb ~~
+# ~~ generated from /Users/ezl5238/dev/decko/gem/card/mod/core/set/all/rename.rb ~~
