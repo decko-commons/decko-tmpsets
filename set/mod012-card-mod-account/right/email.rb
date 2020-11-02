@@ -5,7 +5,7 @@ class Card; module Set; class Right
 # -*- encoding : utf-8 -*-
 module Email;
 extend Card::Set
-def self.source_location; "/Users/ethan/dev/decko/gem/card-mod-account/set/right/email.rb"; end
+def self.source_location; "/Users/ezl5238/dev/decko/gem/card-mod-account/set/right/email.rb"; end
 
 include_set Abstract::AccountField
 
@@ -49,4 +49,4 @@ def own_email?
   name.part_names[0].key == Auth.as_card.key
 end
 end;end;end;end;
-# ~~ generated from /Users/ethan/dev/decko/gem/card-mod-account/set/right/email.rb ~~
+# ~~ generated from /Users/ezl5238/dev/decko/gem/card-mod-account/set/right/email.rb ~~

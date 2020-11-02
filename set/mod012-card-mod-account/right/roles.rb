@@ -4,7 +4,7 @@ class Card; module Set; class Right
 #
 module Roles;
 extend Card::Set
-def self.source_location; "/Users/ethan/dev/decko/gem/card-mod-account/set/right/roles.rb"; end
+def self.source_location; "/Users/ezl5238/dev/decko/gem/card-mod-account/set/right/roles.rb"; end
 event :validate_permission_to_assign_roles, :validate, on: :save do
   return unless (fr = forbidden_roles).present?
 
@@ -33,4 +33,4 @@ ensure
   self.content = new_content
 end
 end;end;end;end;
-# ~~ generated from /Users/ethan/dev/decko/gem/card-mod-account/set/right/roles.rb ~~
+# ~~ generated from /Users/ezl5238/dev/decko/gem/card-mod-account/set/right/roles.rb ~~

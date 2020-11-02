@@ -4,13 +4,7 @@ class Card; module Set; class Type
 #
 module Cardtype;
 extend Card::Set
-def self.source_location; "/Users/ethan/dev/decko/gem/card/mod/standard/set/type/cardtype.rb"; end
-include_set Abstract::CqlSearch
-
-def cql_content
-  { type_id: id, sort: :name }
-end
-
+def self.source_location; "/Users/ezl5238/dev/decko/gem/card/mod/standard/set/type/cardtype.rb"; end
 def related_sets with_self=false
   sets = []
   sets << ["#{name}+*type", Card::Set::Type.label(name)] if known?
@@ -133,4 +127,4 @@ event :validate_cardtype_name, :validate, on: :save, changed: :name do
   end
 end
 end;end;end;end;
-# ~~ generated from /Users/ethan/dev/decko/gem/card/mod/standard/set/type/cardtype.rb ~~
+# ~~ generated from /Users/ezl5238/dev/decko/gem/card/mod/standard/set/type/cardtype.rb ~~

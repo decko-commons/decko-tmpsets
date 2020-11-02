@@ -1,0 +1,46 @@
+# -*- encoding : utf-8 -*-
+class Card; module Set; class All; module Bridge;
+# Set: All cards (Bridge, FollowSection)
+#
+module FollowSection;
+extend Card::Set
+def self.source_location; "/Users/ezl5238/dev/decko/gem/card-mod-edit/set/all/bridge/follow_section.rb"; end
+module HtmlFormat; module_parent.send :register_set_format, Card::Format::HtmlFormat, self; extend Card::Set::AbstractFormat
+  def follow_section
+    return unless show_follow?
+
+    wrap_with :div, class: "mb-3" do
+      [follow_button_group, followers_bridge_link, follow_overview_button]
+    end
+  end
+
+  def follow_button_group
+    wrap_with :div, class: "btn-group btn-group-sm follow-btn-group" do
+      [follow_button, follow_advanced]
+    end
+  end
+
+  def follow_overview_button
+    link_to_card [Auth.current, :follow], "all followed cards",
+                 bridge_link_opts(class: "btn btn-sm btn-secondary",
+                                  "data-cy": "follow-overview")
+  end
+
+  def follow_advanced
+    opts = bridge_link_opts(class: "btn btn-sm btn-primary",
+                            path: { view: :overlay_rule },
+                            "data-cy": "follow-advanced")
+    opts[:path].delete :layout
+    link_to_card card.follow_rule_card(Auth.current.name, new: {}),
+                 icon_tag("more_horiz"), opts
+  end
+
+  def followers_bridge_link
+    cnt = card.followers_count
+    link_to_card card.name.field(:followers), "#{cnt} follower#{'s' unless cnt == 1}",
+                 bridge_link_opts(class: "btn btn-sm ml-2 btn-secondary slotter",
+                                  remote: true, "data-cy": "followers")
+  end
+end
+end;end;end;end;end;
+# ~~ generated from /Users/ezl5238/dev/decko/gem/card-mod-edit/set/all/bridge/follow_section.rb ~~
