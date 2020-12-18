@@ -5,7 +5,7 @@ class Card; module Set; class All
 # STAGE: validate
 module NameEvents;
 extend Card::Set
-def self.source_location; "/Users/ezl5238/dev/decko/gem/card/mod/core/set/all/name_events.rb"; end
+def self.source_location; "/Users/ethan/dev/decko/gem/card/mod/core/set/all/name_events.rb"; end
 
 event :validate_name, :validate, on: :save, changed: :name, when: :no_autoname? do
   validate_legality_of_name
@@ -52,7 +52,7 @@ end
 
 event :set_autoname, :prepare_to_store, on: :create, when: :autoname? do
   self.name = autoname rule(:autoname)
-  rule_card(:autoname).update! content: name
+  rule_card(:autoname).update_column :db_content, name
   pull_from_trash!
   Card.write_to_soft_cache self
 end
@@ -149,4 +149,4 @@ def clear_name name
   # Card::Lexicon.delete id, key
 end
 end;end;end;end;
-# ~~ generated from /Users/ezl5238/dev/decko/gem/card/mod/core/set/all/name_events.rb ~~
+# ~~ generated from /Users/ethan/dev/decko/gem/card/mod/core/set/all/name_events.rb ~~

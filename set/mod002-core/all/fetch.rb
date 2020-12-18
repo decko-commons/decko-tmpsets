@@ -6,7 +6,7 @@ class Card; module Set; class All
 #
 module Fetch;
 extend Card::Set
-def self.source_location; "/Users/ezl5238/dev/decko/gem/card/mod/core/set/all/fetch.rb"; end
+def self.source_location; "/Users/ethan/dev/decko/gem/card/mod/core/set/all/fetch.rb"; end
 # A multipurpose retrieval operator that integrates caching, database lookups,
 # and "virtual" card construction
 module ClassMethods
@@ -128,4 +128,4 @@ def refresh force=false
   fresh_card
 end
 end;end;end;end;
-# ~~ generated from /Users/ezl5238/dev/decko/gem/card/mod/core/set/all/fetch.rb ~~
+# ~~ generated from /Users/ethan/dev/decko/gem/card/mod/core/set/all/fetch.rb ~~

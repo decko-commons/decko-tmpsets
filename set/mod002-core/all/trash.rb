@@ -4,7 +4,7 @@ class Card; module Set; class All
 #
 module Trash;
 extend Card::Set
-def self.source_location; "/Users/ezl5238/dev/decko/gem/card/mod/core/set/all/trash.rb"; end
+def self.source_location; "/Users/ethan/dev/decko/gem/card/mod/core/set/all/trash.rb"; end
 Self::Admin.add_to_basket(
   :tasks,
   name: :empty_trash,
@@ -133,4 +133,4 @@ def delete_as_subcard subcard
   add_subcard subcard
 end
 end;end;end;end;
-# ~~ generated from /Users/ezl5238/dev/decko/gem/card/mod/core/set/all/trash.rb ~~
+# ~~ generated from /Users/ethan/dev/decko/gem/card/mod/core/set/all/trash.rb ~~

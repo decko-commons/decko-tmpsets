@@ -7,7 +7,7 @@ class Card; module Set; class All
 # Cards can refer to other cards in their content, eg via links and nests.
 module References;
 extend Card::Set
-def self.source_location; "/Users/ezl5238/dev/decko/gem/card/mod/core/set/all/references.rb"; end
+def self.source_location; "/Users/ethan/dev/decko/gem/card/mod/core/set/all/references.rb"; end
 # The card that refers is the "referer", the card that is referred to is
 # the "referee". The reference itself has its own class (Card::Reference),
 # which handles id-based reference tracking.
@@ -197,4 +197,4 @@ def with_normalized_referee referee_name
   yield referee_name, referee_key, Card::Lexicon.id(referee_name)
 end
 end;end;end;end;
-# ~~ generated from /Users/ezl5238/dev/decko/gem/card/mod/core/set/all/references.rb ~~
+# ~~ generated from /Users/ethan/dev/decko/gem/card/mod/core/set/all/references.rb ~~

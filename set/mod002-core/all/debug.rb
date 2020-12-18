@@ -4,7 +4,7 @@ class Card; module Set; class All
 #
 module Debug;
 extend Card::Set
-def self.source_location; "/Users/ezl5238/dev/decko/gem/card/mod/core/set/all/debug.rb"; end
+def self.source_location; "/Users/ethan/dev/decko/gem/card/mod/core/set/all/debug.rb"; end
 def to_s
   "#<#{self.class.name}[#{debug_type}]#{attributes['name']}>"
 end
@@ -29,4 +29,4 @@ def debug_type
   "#{type_code || ''}:#{type_id}"
 end
 end;end;end;end;
-# ~~ generated from /Users/ezl5238/dev/decko/gem/card/mod/core/set/all/debug.rb ~~
+# ~~ generated from /Users/ethan/dev/decko/gem/card/mod/core/set/all/debug.rb ~~

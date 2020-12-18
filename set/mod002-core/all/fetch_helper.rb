@@ -4,7 +4,7 @@ class Card; module Set; class All
 #
 module FetchHelper;
 extend Card::Set
-def self.source_location; "/Users/ezl5238/dev/decko/gem/card/mod/core/set/all/fetch_helper.rb"; end
+def self.source_location; "/Users/ethan/dev/decko/gem/card/mod/core/set/all/fetch_helper.rb"; end
 module ClassMethods
   # a fetch method to support the needs of the card controller.
   # should be in Decko?
@@ -41,4 +41,4 @@ module ClassMethods
   end
 end
 end;end;end;end;
-# ~~ generated from /Users/ezl5238/dev/decko/gem/card/mod/core/set/all/fetch_helper.rb ~~
+# ~~ generated from /Users/ethan/dev/decko/gem/card/mod/core/set/all/fetch_helper.rb ~~

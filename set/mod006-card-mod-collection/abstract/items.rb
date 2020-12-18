@@ -6,7 +6,7 @@ class Card; module Set; class Abstract
 
 module Items;
 extend Card::Set
-def self.source_location; "/Users/ezl5238/dev/decko/gem/card-mod-collection/set/abstract/items.rb"; end
+def self.source_location; "/Users/ethan/dev/decko/gem/card-mod-collection/set/abstract/items.rb"; end
 # While each of the three main methods for returning lists of items can handle arguments,
 # they are most commonly used without them.
 
@@ -37,6 +37,10 @@ end
 
 def first_code
   first_card&.codename
+end
+
+def first_id
+  first_card&.id
 end
 
 # @return [Array] list of integers (card ids of items)
@@ -204,4 +208,4 @@ def strip_item item
   item.gsub(/\[\[|\]\]/, "").strip
 end
 end;end;end;end;
-# ~~ generated from /Users/ezl5238/dev/decko/gem/card-mod-collection/set/abstract/items.rb ~~
+# ~~ generated from /Users/ethan/dev/decko/gem/card-mod-collection/set/abstract/items.rb ~~

@@ -4,7 +4,7 @@ class Card; module Set; class All
 #
 module Name;
 extend Card::Set
-def self.source_location; "/Users/ezl5238/dev/decko/gem/card/mod/core/set/all/name.rb"; end
+def self.source_location; "/Users/ethan/dev/decko/gem/card/mod/core/set/all/name.rb"; end
 require "uuid"
 
 module ClassMethods
@@ -62,10 +62,10 @@ end
 
 def superize_name cardname
   return cardname unless @supercard
-  @raw_name = cardname.s
+
   @supercard.subcards.rename key, cardname.key
   update_superleft cardname
-  cardname.absolute_name @supercard.name
+  @supercard.name.relative? ? cardname : cardname.absolute_name(@supercard.name)
 end
 
 def update_superleft cardname
@@ -128,17 +128,7 @@ def autoname name
 end
 
 # FIXME: use delegations and include all name functions
-def simple?
-  name.simple?
-end
-
-def junction?
-  name.junction?
-end
-
-def raw_name
-  @raw_name || name
-end
+delegate :simple?, :compound?, :junction?, to: :name
 
 def left *args
   case
@@ -245,4 +235,4 @@ def with_id_after_store subcard
   subcard.director.after_store { |card| yield card.id }
 end
 end;end;end;end;
-# ~~ generated from /Users/ezl5238/dev/decko/gem/card/mod/core/set/all/name.rb ~~
+# ~~ generated from /Users/ethan/dev/decko/gem/card/mod/core/set/all/name.rb ~~

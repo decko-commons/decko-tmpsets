@@ -4,7 +4,7 @@ class Card; module Set; class All
 #
 module Abort;
 extend Card::Set
-def self.source_location; "/Users/ezl5238/dev/decko/gem/card/mod/core/set/all/abort.rb"; end
+def self.source_location; "/Users/ethan/dev/decko/gem/card/mod/core/set/all/abort.rb"; end
 
 # The Card#abort method is for cleanly exiting an action without continuing
 # to process any further events.
@@ -82,4 +82,4 @@ def success
   Env.success(name)
 end
 end;end;end;end;
-# ~~ generated from /Users/ezl5238/dev/decko/gem/card/mod/core/set/all/abort.rb ~~
+# ~~ generated from /Users/ethan/dev/decko/gem/card/mod/core/set/all/abort.rb ~~

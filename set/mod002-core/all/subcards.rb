@@ -4,7 +4,7 @@ class Card; module Set; class All
 #
 module Subcards;
 extend Card::Set
-def self.source_location; "/Users/ezl5238/dev/decko/gem/card/mod/core/set/all/subcards.rb"; end
+def self.source_location; "/Users/ethan/dev/decko/gem/card/mod/core/set/all/subcards.rb"; end
 def field tag, opts={}
   Card.fetch name.field(tag), opts
 end
@@ -93,16 +93,17 @@ end
 
 def handle_subcard_errors
   subcards.each do |subcard|
-    subcard.errors.each do |field, err|
-      subcard_error subcard, field, err
+    subcard.errors.each do |error|
+      subcard_error subcard, error
     end
     subcard.errors.clear
   end
 end
 
-def subcard_error subcard, field, err
-  err = "#{field} #{err}" unless %i[content abort].member? field
-  errors.add subcard.name.from(name), err
+def subcard_error subcard, error
+  msg = error.message
+  msg = "#{error.attribute} #{msg}" unless %i[content abort].member? error.attribute
+  errors.add subcard.name.from(name), msg
 end
 
 event :reject_empty_subcards, :prepare_to_validate do
@@ -125,4 +126,4 @@ def same_field?
   (left_id == left_id_before_act) && (right_id == right_id_before_act)
 end
 end;end;end;end;
-# ~~ generated from /Users/ezl5238/dev/decko/gem/card/mod/core/set/all/subcards.rb ~~
+# ~~ generated from /Users/ethan/dev/decko/gem/card/mod/core/set/all/subcards.rb ~~

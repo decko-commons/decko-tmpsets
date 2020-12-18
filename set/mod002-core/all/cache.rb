@@ -4,7 +4,7 @@ class Card; module Set; class All
 #
 module Cache;
 extend Card::Set
-def self.source_location; "/Users/ezl5238/dev/decko/gem/card/mod/core/set/all/cache.rb"; end
+def self.source_location; "/Users/ethan/dev/decko/gem/card/mod/core/set/all/cache.rb"; end
 module ClassMethods
   def retrieve_from_cache cache_key, local_only=false
     return unless cache
@@ -115,4 +115,4 @@ def expire_id cache
   cache.delete "~#{id}"
 end
 end;end;end;end;
-# ~~ generated from /Users/ezl5238/dev/decko/gem/card/mod/core/set/all/cache.rb ~~
+# ~~ generated from /Users/ethan/dev/decko/gem/card/mod/core/set/all/cache.rb ~~
