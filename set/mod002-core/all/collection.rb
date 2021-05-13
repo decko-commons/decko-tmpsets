@@ -7,11 +7,9 @@ module Collection;
 extend Card::Set
 def self.source_location; "/Users/ethan/dev/decko/gem/card/mod/core/set/all/collection.rb"; end
 module ClassMethods
-  def search spec, comment=nil
+  def search spec, comment=nil, &block
     results = ::Card::Query.run(spec, comment)
-    if block_given? && results.is_a?(Array)
-      results.each { |result| yield result }
-    end
+    results.each(&block) if block_given? && results.is_a?(Array)
     results
   end
 
@@ -21,11 +19,11 @@ module ClassMethods
     search spec.merge(return: "count")
   end
 
-  def find_each options={}
+  def find_each options={}, &block
     # this is a copy from rails (3.2.16) and is needed because this
     # is performed by a relation (ActiveRecord::Relation)
     find_in_batches(options) do |records|
-      records.each { |record| yield record }
+      records.each(&block)
     end
   end
 

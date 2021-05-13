@@ -48,7 +48,7 @@ module ClassMethods
 
   def resolve_file_attributes! attribs
     %i[image file].each do |attach|
-      next unless attribs[attach] && attribs[attach].is_a?(String)
+      next unless attribs[attach].is_a?(String)
 
       attribs[attach] = ::File.open(attribs[attach])
     end
@@ -94,7 +94,10 @@ def mod_root modname
   end
 end
 
+delegate :t, to: Cardio
+
 module Format; module_parent.send :register_set_format, Card::Format, self; extend Card::Set::AbstractFormat
+  delegate :t, to: Cardio
   delegate :measure, to: :card
 end
 end;end;end;end;

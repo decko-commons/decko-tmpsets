@@ -3,7 +3,6 @@
 #
 # Patterned field names on a specific type
 class Card::Set::TypePlusRight < Card::Set::Pattern::Base
-extend Card::Set::Pattern::Helper
 cattr_accessor :options
 class << self
 

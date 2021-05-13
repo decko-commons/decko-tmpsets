@@ -2,7 +2,6 @@
 # Set Pattern: All
 #
 class Card::Set::All < Card::Set::Pattern::Base
-extend Card::Set::Pattern::Helper
 cattr_accessor :options
 class << self
 def label _name

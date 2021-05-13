@@ -22,10 +22,8 @@ module Format; module_parent.send :register_set_format, Card::Format, self; exte
     card.context_card
   end
 
-  def with_context context_card
-    card.with_context context_card do
-      yield
-    end
+  def with_context context_card, &block
+    card.with_context context_card, &block
   end
 
   def contextual_content context_card, options={}

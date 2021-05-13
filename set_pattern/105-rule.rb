@@ -2,7 +2,6 @@
 # Set Pattern: Rule
 #
 class Card::Set::Rule < Card::Set::Pattern::Base
-extend Card::Set::Pattern::Helper
 cattr_accessor :options
 class << self
 @@options = { junction_only: true }
@@ -20,7 +19,7 @@ def prototype_args _anchor
 end
 
 def pattern_applies? card
-  card.is_rule?
+  card.rule?
 end
               end
               register "Rule".underscore.to_sym, (options || {})

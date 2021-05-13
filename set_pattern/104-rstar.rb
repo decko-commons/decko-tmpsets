@@ -2,7 +2,6 @@
 # Set Pattern: Rstar
 #
 class Card::Set::Rstar < Card::Set::Pattern::Base
-extend Card::Set::Pattern::Helper
 cattr_accessor :options
 class << self
 @@options = { junction_only: true }

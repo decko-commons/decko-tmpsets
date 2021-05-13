@@ -2,15 +2,14 @@
 class Card; module Set; class All
 # Set: All cards (Abort)
 #
-module Abort;
-extend Card::Set
-def self.source_location; "/Users/ethan/dev/decko/gem/card/mod/core/set/all/abort.rb"; end
-
 # The Card#abort method is for cleanly exiting an action without continuing
 # to process any further events.
 #
 # Three statuses are supported:
 #
+module Abort;
+extend Card::Set
+def self.source_location; "/Users/ethan/dev/decko/gem/card/mod/core/set/all/abort.rb"; end
 #   failure: adds an error, returns false on save
 #   success: no error, returns true on save
 #   triumph: similar to success, but if called on a subcard
@@ -40,9 +39,10 @@ end
 private
 
 def handle_abort_error e
-  if e.status == :triumph
+  case e.status
+  when :triumph
     @supercard ? raise(e) : true
-  elsif e.status == :success
+  when :success
     abort_success
   end
 end
@@ -58,12 +58,12 @@ end
 
 # this is an override of standard rails behavior that rescues abort
 # makes it so that :success abortions do not rollback
-def with_transaction_returning_status
+def with_transaction_returning_status &block
   status = nil
   self.class.transaction do
     add_to_transaction
     remember_transaction_record_state
-    status = abortable { yield }
+    status = abortable(&block)
     raise ActiveRecord::Rollback unless status
   end
   status

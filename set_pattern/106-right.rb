@@ -2,7 +2,6 @@
 # Set Pattern: Right
 #
 class Card::Set::Right < Card::Set::Pattern::Base
-extend Card::Set::Pattern::Helper
 cattr_accessor :options
 class << self
 @@options = {

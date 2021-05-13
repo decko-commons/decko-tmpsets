@@ -2,7 +2,6 @@
 # Set Pattern: Type
 #
 class Card::Set::Type < Card::Set::Pattern::Base
-extend Card::Set::Pattern::Helper
 cattr_accessor :options
 class << self
 load "card/set/type.rb" # "load" not "require" so pattern reloads properly
