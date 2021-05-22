@@ -5,7 +5,7 @@ class Card; module Set; class Right; module Account;
 #### ON CREATE
 module Events;
 extend Card::Set
-def self.source_location; "/Users/ethan/dev/decko/gem/card-mod-account/set/right/account/events.rb"; end
+def self.source_location; "/Users/ezl5238/dev/decko/gem/mod/account/set/right/account/events.rb"; end
 
 event :set_default_salt, :prepare_to_validate, on: :create do
   add_subfield(:salt).generate
@@ -105,4 +105,4 @@ def reset_password_failure error_message
   errors.add :content, t(:account_sorry_email_reset, error_msg: error_message)
 end
 end;end;end;end;end;
-# ~~ generated from /Users/ethan/dev/decko/gem/card-mod-account/set/right/account/events.rb ~~
+# ~~ generated from /Users/ezl5238/dev/decko/gem/mod/account/set/right/account/events.rb ~~

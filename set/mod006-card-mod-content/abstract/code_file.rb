@@ -4,7 +4,7 @@ class Card; module Set; class Abstract
 #
 module CodeFile;
 extend Card::Set
-def self.source_location; "/Users/ethan/dev/decko/gem/card-mod-content/set/abstract/code_file.rb"; end
+def self.source_location; "/Users/ezl5238/dev/decko/gem/mod/content/set/abstract/code_file.rb"; end
 class << self
   def included host_class
     track_mod_name host_class, caller
@@ -105,4 +105,4 @@ def scss_files files
   files.map { |f| "style_#{f}.scss" }
 end
 end;end;end;end;
-# ~~ generated from /Users/ethan/dev/decko/gem/card-mod-content/set/abstract/code_file.rb ~~
+# ~~ generated from /Users/ezl5238/dev/decko/gem/mod/content/set/abstract/code_file.rb ~~

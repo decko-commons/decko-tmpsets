@@ -4,7 +4,7 @@ class Card; module Set; class All
 #
 module RichBootstrap;
 extend Card::Set
-def self.source_location; "/Users/ethan/dev/decko/gem/card-mod-bootstrap/set/all/rich_bootstrap.rb"; end
+def self.source_location; "/Users/ezl5238/dev/decko/gem/mod/bootstrap/set/all/rich_bootstrap.rb"; end
 def read_bootstrap_variables
   path = ::File.expand_path(
     "#{mod_root :bootstrap}/vendor/bootstrap/scss/_variables.scss", __FILE__
@@ -21,4 +21,4 @@ module HtmlFormat; module_parent.send :register_set_format, Card::Format::HtmlFo
   include Bootstrapper
 end
 end;end;end;end;
-# ~~ generated from /Users/ethan/dev/decko/gem/card-mod-bootstrap/set/all/rich_bootstrap.rb ~~
+# ~~ generated from /Users/ezl5238/dev/decko/gem/mod/bootstrap/set/all/rich_bootstrap.rb ~~

@@ -5,7 +5,7 @@ class Card; module Set; class All; module ReferenceEditor;
 #! no set module
 
 module LinkEditor;
-def self.source_location; "/Users/ethan/dev/decko/gem/card-mod-tinymce_editor/set/all/reference_editor/link_editor/link_parser.rb"; end
+def self.source_location; "/Users/ezl5238/dev/decko/gem/mod/tinymce_editor/set/all/reference_editor/link_editor/link_parser.rb"; end
 # Extracts all information needed to generate the link editor form
 # from a link syntax string
 class LinkParser
@@ -40,4 +40,4 @@ class LinkParser
   end
 end
 end;end;end;end;end;
-# ~~ generated from /Users/ethan/dev/decko/gem/card-mod-tinymce_editor/set/all/reference_editor/link_editor/link_parser.rb ~~
+# ~~ generated from /Users/ezl5238/dev/decko/gem/mod/tinymce_editor/set/all/reference_editor/link_editor/link_parser.rb ~~

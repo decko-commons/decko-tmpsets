@@ -5,7 +5,7 @@ class Card; module Set; class All; module History;
 # must be called on all actions and before :set_name, :process_subcards and
 module Events;
 extend Card::Set
-def self.source_location; "/Users/ethan/dev/decko/gem/card-mod-history/set/all/history/events.rb"; end
+def self.source_location; "/Users/ezl5238/dev/decko/gem/mod/history/set/all/history/events.rb"; end
 # :validate_delete_children
 event :assign_action, :initialize, when: :actionable? do
   act = director.need_act
@@ -106,4 +106,4 @@ def remove_empty_act?
   act_card? && Director.act&.ar_actions&.reload&.empty?
 end
 end;end;end;end;end;
-# ~~ generated from /Users/ethan/dev/decko/gem/card-mod-history/set/all/history/events.rb ~~
+# ~~ generated from /Users/ezl5238/dev/decko/gem/mod/history/set/all/history/events.rb ~~

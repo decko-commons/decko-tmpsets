@@ -4,7 +4,7 @@ class Card; module Set; class Abstract
 #
 module CodePointer;
 extend Card::Set
-def self.source_location; "/Users/ethan/dev/decko/gem/card-mod-list/set/abstract/code_pointer.rb"; end
+def self.source_location; "/Users/ezl5238/dev/decko/gem/mod/list/set/abstract/code_pointer.rb"; end
 include_set Abstract::Pointer
 
 abstract_basket :item_codenames
@@ -41,4 +41,4 @@ def content
   end.compact.to_pointer_content
 end
 end;end;end;end;
-# ~~ generated from /Users/ethan/dev/decko/gem/card-mod-list/set/abstract/code_pointer.rb ~~
+# ~~ generated from /Users/ezl5238/dev/decko/gem/mod/list/set/abstract/code_pointer.rb ~~

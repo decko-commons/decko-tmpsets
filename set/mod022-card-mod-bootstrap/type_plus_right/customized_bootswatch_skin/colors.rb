@@ -4,7 +4,7 @@ class Card; module Set; class TypePlusRight; module CustomizedBootswatchSkin;
 #
 module Colors;
 extend Card::Set
-def self.source_location; "/Users/ethan/dev/decko/gem/card-mod-bootstrap/set/type_plus_right/customized_bootswatch_skin/colors.rb"; end
+def self.source_location; "/Users/ezl5238/dev/decko/gem/mod/bootstrap/set/type_plus_right/customized_bootswatch_skin/colors.rb"; end
 VARIABLE_NAMES = {
   colors: %i[blue indigo purple pink red orange yellow green teal cyan
              white gray-100 gray-200 gray-300 gray-400 gray-500 gray-600 gray-700 gray-800
@@ -120,4 +120,4 @@ def variable_values_from_params group
   Env.params[group]&.slice(*VARIABLE_NAMES[group]) || {}
 end
 end;end;end;end;end;
-# ~~ generated from /Users/ethan/dev/decko/gem/card-mod-bootstrap/set/type_plus_right/customized_bootswatch_skin/colors.rb ~~
+# ~~ generated from /Users/ezl5238/dev/decko/gem/mod/bootstrap/set/type_plus_right/customized_bootswatch_skin/colors.rb ~~

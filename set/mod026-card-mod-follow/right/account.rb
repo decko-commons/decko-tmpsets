@@ -4,7 +4,7 @@ class Card; module Set; class Right
 #
 module Account;
 extend Card::Set
-def self.source_location; "/Users/ethan/dev/decko/gem/card-mod-follow/set/right/account.rb"; end
+def self.source_location; "/Users/ezl5238/dev/decko/gem/mod/follow/set/right/account.rb"; end
 def send_change_notice act, followed_set, follow_option
   return unless email.present? && changes_visible?(act)
 
@@ -16,9 +16,9 @@ end
 def notify_of_act act
   Auth.as(left.id) do
     Card[:follower_notification_email].deliver(
-      act.card, { to: email }, auth: left, active_notice: yield
+      act.card, { to: email }, { auth: left, active_notice: yield }
     )
   end
 end
 end;end;end;end;
-# ~~ generated from /Users/ethan/dev/decko/gem/card-mod-follow/set/right/account.rb ~~
+# ~~ generated from /Users/ezl5238/dev/decko/gem/mod/follow/set/right/account.rb ~~

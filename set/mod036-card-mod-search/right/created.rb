@@ -4,9 +4,9 @@ class Card; module Set; class Right
 #
 module Created;
 extend Card::Set
-def self.source_location; "/Users/ethan/dev/decko/gem/card-mod-search/set/right/created.rb"; end
+def self.source_location; "/Users/ezl5238/dev/decko/gem/mod/search/set/right/created.rb"; end
 def raw_help_text
   "Cards created by {{_left|name}}."
 end
 end;end;end;end;
-# ~~ generated from /Users/ethan/dev/decko/gem/card-mod-search/set/right/created.rb ~~
+# ~~ generated from /Users/ezl5238/dev/decko/gem/mod/search/set/right/created.rb ~~

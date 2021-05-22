@@ -21,7 +21,7 @@ class Card; module Set; class Abstract
 # The default machine:
 module Machine;
 extend Card::Set
-def self.source_location; "/Users/ethan/dev/decko/gem/card-mod-machines/set/abstract/machine.rb"; end
+def self.source_location; "/Users/ezl5238/dev/decko/gem/mod/machines/set/abstract/machine.rb"; end
 #
 #  -  uses its item cards as input cards or the card itself if there are no
 # item cards;
@@ -227,4 +227,4 @@ def machine_output_path
   machine_output_card.file.path
 end
 end;end;end;end;
-# ~~ generated from /Users/ethan/dev/decko/gem/card-mod-machines/set/abstract/machine.rb ~~
+# ~~ generated from /Users/ezl5238/dev/decko/gem/mod/machines/set/abstract/machine.rb ~~

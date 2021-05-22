@@ -4,7 +4,7 @@ class Card; module Set; class Type
 #
 module Image;
 extend Card::Set
-def self.source_location; "/Users/ethan/dev/decko/gem/card-mod-bar_and_box/set/type/image.rb"; end
+def self.source_location; "/Users/ezl5238/dev/decko/gem/mod/bar_and_box/set/type/image.rb"; end
 IMAGE_BOX_SIZE_MAP = {
   icon: :icon, small: :small, medium: :small, large: :medium, xlarge: :medium
 }.freeze
@@ -44,4 +44,4 @@ module HtmlFormat; module_parent.send :register_set_format, Card::Format::HtmlFo
   end
 end
 end;end;end;end;
-# ~~ generated from /Users/ethan/dev/decko/gem/card-mod-bar_and_box/set/type/image.rb ~~
+# ~~ generated from /Users/ezl5238/dev/decko/gem/mod/bar_and_box/set/type/image.rb ~~

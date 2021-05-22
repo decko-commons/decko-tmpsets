@@ -4,11 +4,11 @@ class Card; module Set; class Self
 #
 module Sidebar;
 extend Card::Set
-def self.source_location; "/Users/ethan/dev/decko/gem/card-mod-layout/set/self/sidebar.rb"; end
+def self.source_location; "/Users/ezl5238/dev/decko/gem/mod/layout/set/self/sidebar.rb"; end
 def raw_help_text
   <<-TEXT
     Sidebar content of [[Layouts]] with sidebar. [[http://decko.org/sidebar|more]]
   TEXT
 end
 end;end;end;end;
-# ~~ generated from /Users/ethan/dev/decko/gem/card-mod-layout/set/self/sidebar.rb ~~
+# ~~ generated from /Users/ezl5238/dev/decko/gem/mod/layout/set/self/sidebar.rb ~~

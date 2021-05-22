@@ -4,7 +4,7 @@ class Card; module Set; class Rstar
 #
 module RuleUser;
 extend Card::Set
-def self.source_location; "/Users/ethan/dev/decko/gem/card-mod-rules/set/rstar/rule_user.rb"; end
+def self.source_location; "/Users/ezl5238/dev/decko/gem/mod/rules/set/rstar/rule_user.rb"; end
 def rule_user_name
   preference? ? name.trunk_name.tag : nil
 end
@@ -13,4 +13,4 @@ def rule_user
   preference? ? self[-2] : nil
 end
 end;end;end;end;
-# ~~ generated from /Users/ethan/dev/decko/gem/card-mod-rules/set/rstar/rule_user.rb ~~
+# ~~ generated from /Users/ezl5238/dev/decko/gem/mod/rules/set/rstar/rule_user.rb ~~

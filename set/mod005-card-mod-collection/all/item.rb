@@ -4,7 +4,7 @@ class Card; module Set; class All
 #
 module Item;
 extend Card::Set
-def self.source_location; "/Users/ethan/dev/decko/gem/card-mod-collection/set/all/item.rb"; end
+def self.source_location; "/Users/ezl5238/dev/decko/gem/mod/collection/set/all/item.rb"; end
 def item_names _args={}
   format._render_raw.split(/[,\n]/)
 end
@@ -142,4 +142,4 @@ module HtmlFormat; module_parent.send :register_set_format, Card::Format::HtmlFo
   end
 end
 end;end;end;end;
-# ~~ generated from /Users/ethan/dev/decko/gem/card-mod-collection/set/all/item.rb ~~
+# ~~ generated from /Users/ezl5238/dev/decko/gem/mod/collection/set/all/item.rb ~~

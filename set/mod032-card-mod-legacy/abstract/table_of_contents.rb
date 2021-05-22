@@ -4,7 +4,7 @@ class Card; module Set; class Abstract
 #
 module TableOfContents;
 extend Card::Set
-def self.source_location; "/Users/ethan/dev/decko/gem/card-mod-legacy/set/abstract/table_of_contents.rb"; end
+def self.source_location; "/Users/ezl5238/dev/decko/gem/mod/legacy/set/abstract/table_of_contents.rb"; end
 module HtmlFormat; module_parent.send :register_set_format, Card::Format::HtmlFormat, self; extend Card::Set::AbstractFormat
   view :open_content do
     with_table_of_contents _render_core
@@ -73,4 +73,4 @@ module HtmlFormat; module_parent.send :register_set_format, Card::Format::HtmlFo
   end
 end
 end;end;end;end;
-# ~~ generated from /Users/ethan/dev/decko/gem/card-mod-legacy/set/abstract/table_of_contents.rb ~~
+# ~~ generated from /Users/ezl5238/dev/decko/gem/mod/legacy/set/abstract/table_of_contents.rb ~~

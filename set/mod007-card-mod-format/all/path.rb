@@ -4,7 +4,7 @@ class Card; module Set; class All
 #
 module Path;
 extend Card::Set
-def self.source_location; "/Users/ethan/dev/decko/gem/card-mod-format/set/all/path.rb"; end
+def self.source_location; "/Users/ezl5238/dev/decko/gem/mod/format/set/all/path.rb"; end
 module Format; module_parent.send :register_set_format, Card::Format, self; extend Card::Set::AbstractFormat
   # Decko uses the term "path" a bit unusually.
   #
@@ -85,4 +85,4 @@ module EmailHtmlFormat; module_parent.send :register_set_format, Card::Format::E
   end
 end
 end;end;end;end;
-# ~~ generated from /Users/ethan/dev/decko/gem/card-mod-format/set/all/path.rb ~~
+# ~~ generated from /Users/ezl5238/dev/decko/gem/mod/format/set/all/path.rb ~~

@@ -4,7 +4,7 @@ class Card; module Set; class All
 #
 module Base;
 extend Card::Set
-def self.source_location; "/Users/ethan/dev/decko/gem/card-mod-format/set/all/base.rb"; end
+def self.source_location; "/Users/ezl5238/dev/decko/gem/mod/format/set/all/base.rb"; end
 module Format; module_parent.send :register_set_format, Card::Format, self; extend Card::Set::AbstractFormat
   def show view, args
     view ||= :core
@@ -145,4 +145,4 @@ module Format; module_parent.send :register_set_format, Card::Format, self; exte
   end
 end
 end;end;end;end;
-# ~~ generated from /Users/ethan/dev/decko/gem/card-mod-format/set/all/base.rb ~~
+# ~~ generated from /Users/ezl5238/dev/decko/gem/mod/format/set/all/base.rb ~~

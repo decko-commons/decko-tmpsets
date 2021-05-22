@@ -4,7 +4,7 @@ class Card; module Set; class All
 #
 module ViewViz;
 extend Card::Set
-def self.source_location; "/Users/ethan/dev/decko/gem/card-mod-monkey/set/all/view_viz.rb"; end
+def self.source_location; "/Users/ezl5238/dev/decko/gem/mod/monkey/set/all/view_viz.rb"; end
 module HtmlFormat; module_parent.send :register_set_format, Card::Format::HtmlFormat, self; extend Card::Set::AbstractFormat
   view :views_by_format do
     format_views =
@@ -31,4 +31,4 @@ module HtmlFormat; module_parent.send :register_set_format, Card::Format::HtmlFo
   end
 end
 end;end;end;end;
-# ~~ generated from /Users/ethan/dev/decko/gem/card-mod-monkey/set/all/view_viz.rb ~~
+# ~~ generated from /Users/ezl5238/dev/decko/gem/mod/monkey/set/all/view_viz.rb ~~

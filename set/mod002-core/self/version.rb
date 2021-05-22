@@ -5,7 +5,7 @@ class Card; module Set; class Self
 # -*- encoding : utf-8 -*-
 module Version;
 extend Card::Set
-def self.source_location; "/Users/ethan/dev/decko/gem/card/mod/core/set/self/version.rb"; end
+def self.source_location; "/Users/ezl5238/dev/decko/gem/card/mod/core/set/self/version.rb"; end
 
 def ok_to_read
   true
@@ -15,4 +15,4 @@ def content
   Card::Version.release
 end
 end;end;end;end;
-# ~~ generated from /Users/ethan/dev/decko/gem/card/mod/core/set/self/version.rb ~~
+# ~~ generated from /Users/ezl5238/dev/decko/gem/card/mod/core/set/self/version.rb ~~

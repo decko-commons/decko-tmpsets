@@ -4,7 +4,7 @@ class Card; module Set; class Self
 #
 module ContentOptionView;
 extend Card::Set
-def self.source_location; "/Users/ethan/dev/decko/gem/card-mod-list/set/self/content_option_view.rb"; end
+def self.source_location; "/Users/ezl5238/dev/decko/gem/mod/list/set/self/content_option_view.rb"; end
 setting_opts group: :editing, position: 6,
              restricted_to_type: %i[list pointer session],
              rule_type_editable: false,
@@ -15,4 +15,4 @@ setting_opts group: :editing, position: 6,
                           prototype.rule_card(:input_type)&.supports_content_option_view?
                       }
 end;end;end;end;
-# ~~ generated from /Users/ethan/dev/decko/gem/card-mod-list/set/self/content_option_view.rb ~~
+# ~~ generated from /Users/ezl5238/dev/decko/gem/mod/list/set/self/content_option_view.rb ~~

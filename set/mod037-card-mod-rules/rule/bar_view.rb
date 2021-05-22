@@ -4,7 +4,7 @@ class Card; module Set; class Rule
 #
 module BarView;
 extend Card::Set
-def self.source_location; "/Users/ethan/dev/decko/gem/card-mod-rules/set/rule/bar_view.rb"; end
+def self.source_location; "/Users/ezl5238/dev/decko/gem/mod/rules/set/rule/bar_view.rb"; end
 module HtmlFormat; module_parent.send :register_set_format, Card::Format::HtmlFormat, self; extend Card::Set::AbstractFormat
   bar_cols 6, 6
   info_bar_cols 5, 4, 3
@@ -61,8 +61,9 @@ module HtmlFormat; module_parent.send :register_set_format, Card::Format::HtmlFo
   def rule_short_content
     return "" unless existing_rule_card
 
-    nest existing_rule_card, { view: :one_line_content },
-         set_context: card.name.trunk_name
+    nest existing_rule_card,
+         { view: :one_line_content },
+         { set_context: card.name.trunk_name }
   end
 
   def bar_title
@@ -98,4 +99,4 @@ module HtmlFormat; module_parent.send :register_set_format, Card::Format::HtmlFo
   end
 end
 end;end;end;end;
-# ~~ generated from /Users/ethan/dev/decko/gem/card-mod-rules/set/rule/bar_view.rb ~~
+# ~~ generated from /Users/ezl5238/dev/decko/gem/mod/rules/set/rule/bar_view.rb ~~

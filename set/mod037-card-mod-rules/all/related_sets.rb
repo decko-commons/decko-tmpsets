@@ -4,7 +4,7 @@ class Card; module Set; class All
 #
 module RelatedSets;
 extend Card::Set
-def self.source_location; "/Users/ethan/dev/decko/gem/card-mod-rules/set/all/related_sets.rb"; end
+def self.source_location; "/Users/ezl5238/dev/decko/gem/mod/rules/set/all/related_sets.rb"; end
 def related_sets with_self=false
   # refers to sets that users may configure from the current card -
   # NOT to sets to which the current card belongs
@@ -31,4 +31,4 @@ def right_set_label
   Card::Set::Right.label name
 end
 end;end;end;end;
-# ~~ generated from /Users/ethan/dev/decko/gem/card-mod-rules/set/all/related_sets.rb ~~
+# ~~ generated from /Users/ezl5238/dev/decko/gem/mod/rules/set/all/related_sets.rb ~~

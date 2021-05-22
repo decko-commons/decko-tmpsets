@@ -4,7 +4,7 @@ class Card; module Set; class Self
 #
 module ScriptBootstrap;
 extend Card::Set
-def self.source_location; "/Users/ethan/dev/decko/gem/card-mod-bootstrap/set/self/script_bootstrap.rb"; end
+def self.source_location; "/Users/ezl5238/dev/decko/gem/mod/bootstrap/set/self/script_bootstrap.rb"; end
 include_set Abstract::CodeFile
 Self::ScriptLibraries.add_item :script_bootstrap
 
@@ -18,4 +18,4 @@ def source_files
      vendor/bootstrap-colorpicker/dist/js/bootstrap-colorpicker.min.js]
 end
 end;end;end;end;
-# ~~ generated from /Users/ethan/dev/decko/gem/card-mod-bootstrap/set/self/script_bootstrap.rb ~~
+# ~~ generated from /Users/ezl5238/dev/decko/gem/mod/bootstrap/set/self/script_bootstrap.rb ~~

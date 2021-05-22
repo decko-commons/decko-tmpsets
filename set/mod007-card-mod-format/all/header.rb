@@ -5,7 +5,7 @@ class Card; module Set; class All
 # LOCALIZE first item
 module Header;
 extend Card::Set
-def self.source_location; "/Users/ethan/dev/decko/gem/card-mod-format/set/all/header.rb"; end
+def self.source_location; "/Users/ezl5238/dev/decko/gem/mod/format/set/all/header.rb"; end
 TOGGLE_MAP = { close: %w[open open], open: %w[close closed] }.freeze
 
 module HtmlFormat; module_parent.send :register_set_format, Card::Format::HtmlFormat, self; extend Card::Set::AbstractFormat
@@ -68,4 +68,4 @@ module HtmlFormat; module_parent.send :register_set_format, Card::Format::HtmlFo
   end
 end
 end;end;end;end;
-# ~~ generated from /Users/ethan/dev/decko/gem/card-mod-format/set/all/header.rb ~~
+# ~~ generated from /Users/ezl5238/dev/decko/gem/mod/format/set/all/header.rb ~~

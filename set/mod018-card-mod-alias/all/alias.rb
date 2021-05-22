@@ -5,7 +5,7 @@ class Card; module Set; class All
 # triggerable event to auto-add an alias upon renaming a card
 module Alias;
 extend Card::Set
-def self.source_location; "/Users/ethan/dev/decko/gem/card-mod-alias/set/all/alias.rb"; end
+def self.source_location; "/Users/ezl5238/dev/decko/gem/mod/alias/set/all/alias.rb"; end
 event :create_alias_upon_rename, :finalize,
       on: :update, changed: :name, trigger: :required do
   add_subcard name_before_act, type_code: :alias, content: name
@@ -27,4 +27,4 @@ module HtmlFormat; module_parent.send :register_set_format, Card::Format::HtmlFo
   end
 end
 end;end;end;end;
-# ~~ generated from /Users/ethan/dev/decko/gem/card-mod-alias/set/all/alias.rb ~~
+# ~~ generated from /Users/ezl5238/dev/decko/gem/mod/alias/set/all/alias.rb ~~

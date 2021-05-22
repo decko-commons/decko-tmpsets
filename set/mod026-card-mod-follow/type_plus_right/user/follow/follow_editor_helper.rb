@@ -6,7 +6,7 @@ class Card; module Set; class TypePlusRight; module User;; module Follow;
 
 module FollowEditorHelper;
 extend Card::Set
-def self.source_location; "/Users/ethan/dev/decko/gem/card-mod-follow/set/type_plus_right/user/follow/follow_editor_helper.rb"; end
+def self.source_location; "/Users/ezl5238/dev/decko/gem/mod/follow/set/type_plus_right/user/follow/follow_editor_helper.rb"; end
 # TODO: these object representations are complex enough for their own class
 
 module HtmlFormat; module_parent.send :register_set_format, Card::Format::HtmlFormat, self; extend Card::Set::AbstractFormat
@@ -127,4 +127,4 @@ module HtmlFormat; module_parent.send :register_set_format, Card::Format::HtmlFo
   end
 end
 end;end;end;end;end;end;
-# ~~ generated from /Users/ethan/dev/decko/gem/card-mod-follow/set/type_plus_right/user/follow/follow_editor_helper.rb ~~
+# ~~ generated from /Users/ezl5238/dev/decko/gem/mod/follow/set/type_plus_right/user/follow/follow_editor_helper.rb ~~

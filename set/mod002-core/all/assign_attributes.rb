@@ -4,7 +4,7 @@ class Card; module Set; class All
 #
 module AssignAttributes;
 extend Card::Set
-def self.source_location; "/Users/ethan/dev/decko/gem/card/mod/core/set/all/assign_attributes.rb"; end
+def self.source_location; "/Users/ezl5238/dev/decko/gem/card/mod/core/set/all/assign_attributes.rb"; end
 include Card::Subcards::Args
 
 def assign_attributes args={}
@@ -116,4 +116,4 @@ def set_specific
   @set_specific ||= {}
 end
 end;end;end;end;
-# ~~ generated from /Users/ethan/dev/decko/gem/card/mod/core/set/all/assign_attributes.rb ~~
+# ~~ generated from /Users/ezl5238/dev/decko/gem/card/mod/core/set/all/assign_attributes.rb ~~

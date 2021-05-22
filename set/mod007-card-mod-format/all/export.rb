@@ -4,7 +4,7 @@ class Card; module Set; class All
 #
 module Export;
 extend Card::Set
-def self.source_location; "/Users/ethan/dev/decko/gem/card-mod-format/set/all/export.rb"; end
+def self.source_location; "/Users/ezl5238/dev/decko/gem/mod/format/set/all/export.rb"; end
 module JsonFormat; module_parent.send :register_set_format, Card::Format::JsonFormat, self; extend Card::Set::AbstractFormat
   # returns an array of Hashes (each in export_item view)
   view :export, cache: :never do
@@ -76,4 +76,4 @@ module JsonFormat; module_parent.send :register_set_format, Card::Format::JsonFo
   end
 end
 end;end;end;end;
-# ~~ generated from /Users/ethan/dev/decko/gem/card-mod-format/set/all/export.rb ~~
+# ~~ generated from /Users/ezl5238/dev/decko/gem/mod/format/set/all/export.rb ~~

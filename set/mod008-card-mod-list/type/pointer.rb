@@ -4,7 +4,7 @@ class Card; module Set; class Type
 #
 module Pointer;
 extend Card::Set
-def self.source_location; "/Users/ethan/dev/decko/gem/card-mod-list/set/type/pointer.rb"; end
+def self.source_location; "/Users/ezl5238/dev/decko/gem/mod/list/set/type/pointer.rb"; end
 include_set Abstract::Pointer
 
 module HtmlFormat; module_parent.send :register_set_format, Card::Format::HtmlFormat, self; extend Card::Set::AbstractFormat
@@ -16,4 +16,4 @@ module HtmlFormat; module_parent.send :register_set_format, Card::Format::HtmlFo
   end
 end
 end;end;end;end;
-# ~~ generated from /Users/ethan/dev/decko/gem/card-mod-list/set/type/pointer.rb ~~
+# ~~ generated from /Users/ezl5238/dev/decko/gem/mod/list/set/type/pointer.rb ~~

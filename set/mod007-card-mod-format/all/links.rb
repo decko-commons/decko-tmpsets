@@ -4,7 +4,7 @@ class Card; module Set; class All
 #
 module Links;
 extend Card::Set
-def self.source_location; "/Users/ethan/dev/decko/gem/card-mod-format/set/all/links.rb"; end
+def self.source_location; "/Users/ezl5238/dev/decko/gem/mod/format/set/all/links.rb"; end
 RESOURCE_TYPE_REGEXP = /^([a-zA-Z][\-+.a-zA-Z\d]*):/
 
 # The #link_to methods support smart formatting of links in multiple formats.
@@ -70,16 +70,17 @@ module Format; module_parent.send :register_set_format, Card::Format, self; exte
 
   def resource_type resource
     case resource
-    when /^https?:/          then "external-link"
+    when /^https?:/           then "external-link"
     when %r{^/}               then "internal-link"
-    when /^mailto:/          then "email-link"
+    when /^mailto:/           then "email-link"
     when RESOURCE_TYPE_REGEXP then "#{Regexp.last_match(1)}-link"
     end
   end
 
   def clean_resource resource, resource_type
     if resource_type == "internal-link"
-      contextualize_path resource[1..-1]
+      # remove initial slash; #contextualize_path handles relative root
+      contextualize_path resource.sub(%r{^/}, "")
     else
       resource
     end
@@ -156,4 +157,4 @@ module HtmlFormat; module_parent.send :register_set_format, Card::Format::HtmlFo
   end
 end
 end;end;end;end;
-# ~~ generated from /Users/ethan/dev/decko/gem/card-mod-format/set/all/links.rb ~~
+# ~~ generated from /Users/ezl5238/dev/decko/gem/mod/format/set/all/links.rb ~~

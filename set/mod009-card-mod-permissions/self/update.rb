@@ -4,9 +4,9 @@ class Card; module Set; class Self
 #
 module Update;
 extend Card::Set
-def self.source_location; "/Users/ethan/dev/decko/gem/card-mod-permissions/set/self/update.rb"; end
+def self.source_location; "/Users/ezl5238/dev/decko/gem/mod/permissions/set/self/update.rb"; end
 setting_opts group: :permission, position: 3, rule_type_editable: false,
              short_help_text: "who can update cards",
              help_text: "Who can update cards"
 end;end;end;end;
-# ~~ generated from /Users/ethan/dev/decko/gem/card-mod-permissions/set/self/update.rb ~~
+# ~~ generated from /Users/ezl5238/dev/decko/gem/mod/permissions/set/self/update.rb ~~

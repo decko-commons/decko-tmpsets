@@ -4,7 +4,7 @@ class Card; module Set; class All
 #
 module ContextualContent;
 extend Card::Set
-def self.source_location; "/Users/ethan/dev/decko/gem/card/mod/core/set/all/contextual_content.rb"; end
+def self.source_location; "/Users/ezl5238/dev/decko/gem/mod/content/set/all/contextual_content.rb"; end
 def context_card
   @context_card || self
 end
@@ -18,13 +18,7 @@ ensure
 end
 
 module Format; module_parent.send :register_set_format, Card::Format, self; extend Card::Set::AbstractFormat
-  def context_card
-    card.context_card
-  end
-
-  def with_context context_card, &block
-    card.with_context context_card, &block
-  end
+  delegate :context_card, :with_context, to: :card
 
   def contextual_content context_card, options={}
     view = options.delete(:view) || :core
@@ -32,4 +26,4 @@ module Format; module_parent.send :register_set_format, Card::Format, self; exte
   end
 end
 end;end;end;end;
-# ~~ generated from /Users/ethan/dev/decko/gem/card/mod/core/set/all/contextual_content.rb ~~
+# ~~ generated from /Users/ezl5238/dev/decko/gem/mod/content/set/all/contextual_content.rb ~~

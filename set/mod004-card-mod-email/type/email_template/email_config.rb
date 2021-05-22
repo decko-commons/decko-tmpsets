@@ -4,7 +4,7 @@ class Card; module Set; class Type; module EmailTemplate;
 #
 module EmailConfig;
 extend Card::Set
-def self.source_location; "/Users/ethan/dev/decko/gem/card-mod-email/set/type/email_template/email_config.rb"; end
+def self.source_location; "/Users/ezl5238/dev/decko/gem/mod/email/set/type/email_template/email_config.rb"; end
 EMAIL_FIELDS =
   %i[to from cc bcc attach subject text_message html_message].freeze
 
@@ -89,4 +89,4 @@ def configured_from_name_and_email raw_string
   end
 end
 end;end;end;end;end;
-# ~~ generated from /Users/ethan/dev/decko/gem/card-mod-email/set/type/email_template/email_config.rb ~~
+# ~~ generated from /Users/ezl5238/dev/decko/gem/mod/email/set/type/email_template/email_config.rb ~~

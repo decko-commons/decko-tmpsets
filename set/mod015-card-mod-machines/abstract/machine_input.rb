@@ -4,7 +4,7 @@ class Card; module Set; class Abstract
 #
 module MachineInput;
 extend Card::Set
-def self.source_location; "/Users/ethan/dev/decko/gem/card-mod-machines/set/abstract/machine_input.rb"; end
+def self.source_location; "/Users/ezl5238/dev/decko/gem/mod/machines/set/abstract/machine_input.rb"; end
 module MachineInputClassMethods
   attr_accessor :machines_cql
 
@@ -79,4 +79,4 @@ def expire_machine_cache
   end
 end
 end;end;end;end;
-# ~~ generated from /Users/ethan/dev/decko/gem/card-mod-machines/set/abstract/machine_input.rb ~~
+# ~~ generated from /Users/ezl5238/dev/decko/gem/mod/machines/set/abstract/machine_input.rb ~~

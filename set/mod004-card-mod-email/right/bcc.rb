@@ -4,7 +4,7 @@ class Card; module Set; class Right
 #
 module Bcc;
 extend Card::Set
-def self.source_location; "/Users/ethan/dev/decko/gem/card-mod-email/set/right/bcc.rb"; end
+def self.source_location; "/Users/ezl5238/dev/decko/gem/mod/email/set/right/bcc.rb"; end
 include_set Abstract::EmailField
 end;end;end;end;
-# ~~ generated from /Users/ethan/dev/decko/gem/card-mod-email/set/right/bcc.rb ~~
+# ~~ generated from /Users/ezl5238/dev/decko/gem/mod/email/set/right/bcc.rb ~~

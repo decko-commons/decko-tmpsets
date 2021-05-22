@@ -4,7 +4,7 @@ class Card; module Set; class Abstract; module Machine;
 #
 module OutputCache;
 extend Card::Set
-def self.source_location; "/Users/ethan/dev/decko/gem/card-mod-machines/set/abstract/machine/output_cache.rb"; end
+def self.source_location; "/Users/ezl5238/dev/decko/gem/mod/machines/set/abstract/machine/output_cache.rb"; end
 def fetch_cache_card input_card, new=nil
   new &&= { type_id: PlainTextID }
   Card.fetch input_card.name, name, :machine_cache, new: new
@@ -22,4 +22,4 @@ def cache_output_part input_card, output
   end
 end
 end;end;end;end;end;
-# ~~ generated from /Users/ethan/dev/decko/gem/card-mod-machines/set/abstract/machine/output_cache.rb ~~
+# ~~ generated from /Users/ezl5238/dev/decko/gem/mod/machines/set/abstract/machine/output_cache.rb ~~

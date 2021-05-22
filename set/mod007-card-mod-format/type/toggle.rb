@@ -4,7 +4,7 @@ class Card; module Set; class Type
 #
 module Toggle;
 extend Card::Set
-def self.source_location; "/Users/ethan/dev/decko/gem/card-mod-format/set/type/toggle.rb"; end
+def self.source_location; "/Users/ezl5238/dev/decko/gem/mod/format/set/type/toggle.rb"; end
 def checked?
   content == "1"
 end
@@ -44,4 +44,4 @@ module HtmlFormat; module_parent.send :register_set_format, Card::Format::HtmlFo
   end
 end
 end;end;end;end;
-# ~~ generated from /Users/ethan/dev/decko/gem/card-mod-format/set/type/toggle.rb ~~
+# ~~ generated from /Users/ezl5238/dev/decko/gem/mod/format/set/type/toggle.rb ~~

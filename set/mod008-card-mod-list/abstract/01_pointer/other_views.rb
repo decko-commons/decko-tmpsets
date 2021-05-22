@@ -5,7 +5,7 @@ class Card; module Set; class Abstract; module Pointer;
 # BASE views
 module OtherViews;
 extend Card::Set
-def self.source_location; "/Users/ethan/dev/decko/gem/card-mod-list/set/abstract/01_pointer/other_views.rb"; end
+def self.source_location; "/Users/ezl5238/dev/decko/gem/mod/list/set/abstract/01_pointer/other_views.rb"; end
 
 module Format; module_parent.send :register_set_format, Card::Format, self; extend Card::Set::AbstractFormat
   def default_limit
@@ -109,4 +109,4 @@ module RssFormat; module_parent.send :register_set_format, Card::Format::RssForm
   end
 end
 end;end;end;end;end;
-# ~~ generated from /Users/ethan/dev/decko/gem/card-mod-list/set/abstract/01_pointer/other_views.rb ~~
+# ~~ generated from /Users/ezl5238/dev/decko/gem/mod/list/set/abstract/01_pointer/other_views.rb ~~

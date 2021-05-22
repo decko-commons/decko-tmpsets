@@ -4,7 +4,7 @@ class Card; module Set; class Right; module Account;
 #
 module Views;
 extend Card::Set
-def self.source_location; "/Users/ethan/dev/decko/gem/card-mod-account/set/right/account/views.rb"; end
+def self.source_location; "/Users/ezl5238/dev/decko/gem/mod/account/set/right/account/views.rb"; end
 module Format; module_parent.send :register_set_format, Card::Format, self; extend Card::Set::AbstractFormat
   view :verify_url, cache: :never do
     raise Error::PermissionDenied unless card.ok?(:create) || card.action
@@ -71,4 +71,4 @@ module EmailHtmlFormat; module_parent.send :register_set_format, Card::Format::E
   end
 end
 end;end;end;end;end;
-# ~~ generated from /Users/ethan/dev/decko/gem/card-mod-account/set/right/account/views.rb ~~
+# ~~ generated from /Users/ezl5238/dev/decko/gem/mod/account/set/right/account/views.rb ~~

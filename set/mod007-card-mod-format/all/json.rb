@@ -4,7 +4,7 @@ class Card; module Set; class All
 #
 module Json;
 extend Card::Set
-def self.source_location; "/Users/ethan/dev/decko/gem/card-mod-format/set/all/json.rb"; end
+def self.source_location; "/Users/ezl5238/dev/decko/gem/mod/format/set/all/json.rb"; end
 module JsonFormat; module_parent.send :register_set_format, Card::Format::JsonFormat, self; extend Card::Set::AbstractFormat
   # because card.item_cards returns "[[#{self}]]"
   def item_cards
@@ -171,4 +171,4 @@ def cast
   real? ? { id: id } : { name: name, type_id: type_id, content: db_content }
 end
 end;end;end;end;
-# ~~ generated from /Users/ethan/dev/decko/gem/card-mod-format/set/all/json.rb ~~
+# ~~ generated from /Users/ezl5238/dev/decko/gem/mod/format/set/all/json.rb ~~

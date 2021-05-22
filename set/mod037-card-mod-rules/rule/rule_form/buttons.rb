@@ -4,7 +4,7 @@ class Card; module Set; class Rule; module RuleForm;
 #
 module Buttons;
 extend Card::Set
-def self.source_location; "/Users/ethan/dev/decko/gem/card-mod-rules/set/rule/rule_form/buttons.rb"; end
+def self.source_location; "/Users/ezl5238/dev/decko/gem/mod/rules/set/rule/rule_form/buttons.rb"; end
 module HtmlFormat; module_parent.send :register_set_format, Card::Format::HtmlFormat, self; extend Card::Set::AbstractFormat
   def edit_rule_buttons
     wrap_with(:div, class: "button-area") do
@@ -51,4 +51,4 @@ module HtmlFormat; module_parent.send :register_set_format, Card::Format::HtmlFo
   end
 end
 end;end;end;end;end;
-# ~~ generated from /Users/ethan/dev/decko/gem/card-mod-rules/set/rule/rule_form/buttons.rb ~~
+# ~~ generated from /Users/ezl5238/dev/decko/gem/mod/rules/set/rule/rule_form/buttons.rb ~~

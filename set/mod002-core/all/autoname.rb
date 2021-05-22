@@ -4,7 +4,7 @@ class Card; module Set; class All
 #
 module Autoname;
 extend Card::Set
-def self.source_location; "/Users/ethan/dev/decko/gem/card/mod/core/set/all/autoname.rb"; end
+def self.source_location; "/Users/ezl5238/dev/decko/gem/card/mod/core/set/all/autoname.rb"; end
 event :set_autoname, :prepare_to_store, on: :create, when: :autoname? do
   self.name = autoname rule(:autoname)
   autoname_card = rule_card :autoname
@@ -23,4 +23,4 @@ def autoname?
     (@autoname_rule.nil? ? (@autoname_rule = rule(:autoname).present?) : @autoname_rule)
 end
 end;end;end;end;
-# ~~ generated from /Users/ethan/dev/decko/gem/card/mod/core/set/all/autoname.rb ~~
+# ~~ generated from /Users/ezl5238/dev/decko/gem/card/mod/core/set/all/autoname.rb ~~

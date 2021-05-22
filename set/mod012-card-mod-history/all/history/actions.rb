@@ -5,7 +5,7 @@ class Card; module Set; class All; module History;
 # -*- encoding : utf-8 -*-
 module Actions;
 extend Card::Set
-def self.source_location; "/Users/ethan/dev/decko/gem/card-mod-history/set/all/history/actions.rb"; end
+def self.source_location; "/Users/ezl5238/dev/decko/gem/mod/history/set/all/history/actions.rb"; end
 
 def all_action_ids
   Card::Action.where(card_id: id).pluck :id
@@ -134,4 +134,4 @@ module HtmlFormat; module_parent.send :register_set_format, Card::Format::HtmlFo
   end
 end
 end;end;end;end;end;
-# ~~ generated from /Users/ethan/dev/decko/gem/card-mod-history/set/all/history/actions.rb ~~
+# ~~ generated from /Users/ezl5238/dev/decko/gem/mod/history/set/all/history/actions.rb ~~

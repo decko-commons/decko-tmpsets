@@ -4,7 +4,7 @@ class Card; module Set; class All
 #
 module Account;
 extend Card::Set
-def self.source_location; "/Users/ethan/dev/decko/gem/card-mod-account/set/all/account.rb"; end
+def self.source_location; "/Users/ezl5238/dev/decko/gem/mod/account/set/all/account.rb"; end
 module ClassMethods
   def default_accounted_type_id
     UserID
@@ -112,4 +112,4 @@ event :set_stamper, :prepare_to_validate do
   self.creator_id = updater_id if new_card?
 end
 end;end;end;end;
-# ~~ generated from /Users/ethan/dev/decko/gem/card-mod-account/set/all/account.rb ~~
+# ~~ generated from /Users/ezl5238/dev/decko/gem/mod/account/set/all/account.rb ~~

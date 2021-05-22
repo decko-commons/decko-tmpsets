@@ -6,7 +6,7 @@ class Card; module Set; class All; module History;
 #  methods, but we need a distinct module so that super will be able to refer to
 module Selected;
 extend Card::Set
-def self.source_location; "/Users/ethan/dev/decko/gem/card-mod-history/set/all/history/selected.rb"; end
+def self.source_location; "/Users/ezl5238/dev/decko/gem/mod/history/set/all/history/selected.rb"; end
 # the base methods.
 def content
   @selected_action_id ? selected_content : super
@@ -70,4 +70,4 @@ def selected_content_action_id
   @selected_action_id || new_content_action_id || last_content_action_id
 end
 end;end;end;end;end;
-# ~~ generated from /Users/ethan/dev/decko/gem/card-mod-history/set/all/history/selected.rb ~~
+# ~~ generated from /Users/ezl5238/dev/decko/gem/mod/history/set/all/history/selected.rb ~~

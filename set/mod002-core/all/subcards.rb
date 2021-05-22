@@ -4,7 +4,7 @@ class Card; module Set; class All
 #
 module Subcards;
 extend Card::Set
-def self.source_location; "/Users/ethan/dev/decko/gem/card/mod/core/set/all/subcards.rb"; end
+def self.source_location; "/Users/ezl5238/dev/decko/gem/card/mod/core/set/all/subcards.rb"; end
 event :reject_empty_subcards, :prepare_to_validate do
   subcards.each_with_key do |subcard, key|
     next unless subcard.new? && subcard.unfilled?
@@ -26,4 +26,4 @@ def same_field?
   (left_id == left_id_before_act) && (right_id == right_id_before_act)
 end
 end;end;end;end;
-# ~~ generated from /Users/ethan/dev/decko/gem/card/mod/core/set/all/subcards.rb ~~
+# ~~ generated from /Users/ezl5238/dev/decko/gem/card/mod/core/set/all/subcards.rb ~~

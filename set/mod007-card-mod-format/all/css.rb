@@ -4,7 +4,7 @@ class Card; module Set; class All
 #
 module Css;
 extend Card::Set
-def self.source_location; "/Users/ethan/dev/decko/gem/card-mod-format/set/all/css.rb"; end
+def self.source_location; "/Users/ezl5238/dev/decko/gem/mod/format/set/all/css.rb"; end
 module CssFormat; module_parent.send :register_set_format, Card::Format::CssFormat, self; extend Card::Set::AbstractFormat
   def default_nest_view
     :raw
@@ -42,4 +42,4 @@ module CssFormat; module_parent.send :register_set_format, Card::Format::CssForm
   end
 end
 end;end;end;end;
-# ~~ generated from /Users/ethan/dev/decko/gem/card-mod-format/set/all/css.rb ~~
+# ~~ generated from /Users/ezl5238/dev/decko/gem/mod/format/set/all/css.rb ~~

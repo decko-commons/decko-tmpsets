@@ -4,7 +4,7 @@ class Card; module Set; class All
 #
 module New;
 extend Card::Set
-def self.source_location; "/Users/ethan/dev/decko/gem/card-mod-edit/set/all/new.rb"; end
+def self.source_location; "/Users/ezl5238/dev/decko/gem/mod/edit/set/all/new.rb"; end
 module HtmlFormat; module_parent.send :register_set_format, Card::Format::HtmlFormat, self; extend Card::Set::AbstractFormat
   delegate :autoname?, to: :card
 
@@ -192,4 +192,4 @@ module HtmlFormat; module_parent.send :register_set_format, Card::Format::HtmlFo
   end
 end
 end;end;end;end;
-# ~~ generated from /Users/ethan/dev/decko/gem/card-mod-edit/set/all/new.rb ~~
+# ~~ generated from /Users/ezl5238/dev/decko/gem/mod/edit/set/all/new.rb ~~

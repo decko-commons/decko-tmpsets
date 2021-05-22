@@ -5,7 +5,7 @@ class Card; module Set; class Abstract; module Pointer;
 # TODO: some of this should be moved to right/options!!
 module OptionsApi;
 extend Card::Set
-def self.source_location; "/Users/ethan/dev/decko/gem/card-mod-list/set/abstract/01_pointer/options_api.rb"; end
+def self.source_location; "/Users/ezl5238/dev/decko/gem/mod/list/set/abstract/01_pointer/options_api.rb"; end
 # or to type/JSON?
 
 def options_hash
@@ -84,4 +84,4 @@ module HtmlFormat; module_parent.send :register_set_format, Card::Format::HtmlFo
   end
 end
 end;end;end;end;end;
-# ~~ generated from /Users/ethan/dev/decko/gem/card-mod-list/set/abstract/01_pointer/options_api.rb ~~
+# ~~ generated from /Users/ezl5238/dev/decko/gem/mod/list/set/abstract/01_pointer/options_api.rb ~~

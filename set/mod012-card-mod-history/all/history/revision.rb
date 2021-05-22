@@ -4,7 +4,7 @@ class Card; module Set; class All; module History;
 #
 module Revision;
 extend Card::Set
-def self.source_location; "/Users/ethan/dev/decko/gem/card-mod-history/set/all/history/revision.rb"; end
+def self.source_location; "/Users/ezl5238/dev/decko/gem/mod/history/set/all/history/revision.rb"; end
 def revision action, before_action=false
   # a "revision" refers to the state of all tracked fields
   # at the time of a given action
@@ -71,4 +71,4 @@ def merge_revert_action! action, update_args, reverting_to_previous
   end
 end
 end;end;end;end;end;
-# ~~ generated from /Users/ethan/dev/decko/gem/card-mod-history/set/all/history/revision.rb ~~
+# ~~ generated from /Users/ezl5238/dev/decko/gem/mod/history/set/all/history/revision.rb ~~

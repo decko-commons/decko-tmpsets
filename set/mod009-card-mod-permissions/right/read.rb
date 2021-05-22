@@ -4,7 +4,7 @@ class Card; module Set; class Right
 #
 module Read;
 extend Card::Set
-def self.source_location; "/Users/ethan/dev/decko/gem/card-mod-permissions/set/right/read.rb"; end
+def self.source_location; "/Users/ezl5238/dev/decko/gem/mod/permissions/set/right/read.rb"; end
 include Abstract::Permission
 
 format :html do include Abstract::Permission::HtmlFormat end
@@ -83,4 +83,4 @@ event :process_read_rule_update_queue, :finalize do
   left&.update_read_rule
 end
 end;end;end;end;
-# ~~ generated from /Users/ethan/dev/decko/gem/card-mod-permissions/set/right/read.rb ~~
+# ~~ generated from /Users/ezl5238/dev/decko/gem/mod/permissions/set/right/read.rb ~~

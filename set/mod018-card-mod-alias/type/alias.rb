@@ -4,7 +4,7 @@ class Card; module Set; class Type
 #
 module Alias;
 extend Card::Set
-def self.source_location; "/Users/ethan/dev/decko/gem/card-mod-alias/set/type/alias.rb"; end
+def self.source_location; "/Users/ezl5238/dev/decko/gem/mod/alias/set/type/alias.rb"; end
 include_set Abstract::Pointer
 include_set Abstract::IdPointer
 
@@ -39,4 +39,4 @@ module HtmlFormat; module_parent.send :register_set_format, Card::Format::HtmlFo
   end
 end
 end;end;end;end;
-# ~~ generated from /Users/ethan/dev/decko/gem/card-mod-alias/set/type/alias.rb ~~
+# ~~ generated from /Users/ezl5238/dev/decko/gem/mod/alias/set/type/alias.rb ~~

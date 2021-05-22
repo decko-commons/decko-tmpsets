@@ -4,7 +4,7 @@ class Card; module Set; class All; module History;
 #
 module Last;
 extend Card::Set
-def self.source_location; "/Users/ethan/dev/decko/gem/card-mod-history/set/all/history/last.rb"; end
+def self.source_location; "/Users/ezl5238/dev/decko/gem/mod/history/set/all/history/last.rb"; end
 def acted_at
   last_act.acted_at
 end
@@ -104,4 +104,4 @@ def extract_action_id action_arg
   action_arg.is_a?(Card::Action) ? action_arg.id : action_arg
 end
 end;end;end;end;end;
-# ~~ generated from /Users/ethan/dev/decko/gem/card-mod-history/set/all/history/last.rb ~~
+# ~~ generated from /Users/ezl5238/dev/decko/gem/mod/history/set/all/history/last.rb ~~

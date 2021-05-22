@@ -4,7 +4,7 @@ class Card; module Set; class Right
 #
 module ContentOptions;
 extend Card::Set
-def self.source_location; "/Users/ethan/dev/decko/gem/card-mod-list/set/right/content_options.rb"; end
+def self.source_location; "/Users/ezl5238/dev/decko/gem/mod/list/set/right/content_options.rb"; end
 def default_limit
   cql_limit = fetch_query.limit if respond_to?(:fetch_query)
   cql_limit || 50
@@ -29,4 +29,4 @@ module HtmlFormat; module_parent.send :register_set_format, Card::Format::HtmlFo
   end
 end
 end;end;end;end;
-# ~~ generated from /Users/ethan/dev/decko/gem/card-mod-list/set/right/content_options.rb ~~
+# ~~ generated from /Users/ezl5238/dev/decko/gem/mod/list/set/right/content_options.rb ~~

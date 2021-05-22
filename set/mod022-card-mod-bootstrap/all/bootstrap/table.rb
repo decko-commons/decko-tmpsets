@@ -4,7 +4,7 @@ class Card; module Set; class All; module Bootstrap;
 #
 module Table;
 extend Card::Set
-def self.source_location; "/Users/ethan/dev/decko/gem/card-mod-bootstrap/set/all/bootstrap/table.rb"; end
+def self.source_location; "/Users/ezl5238/dev/decko/gem/mod/bootstrap/set/all/bootstrap/table.rb"; end
 module HtmlFormat; module_parent.send :register_set_format, Card::Format::HtmlFormat, self; extend Card::Set::AbstractFormat
   class TableHelper
     def initialize format, content, opts={}
@@ -107,4 +107,4 @@ module HtmlFormat; module_parent.send :register_set_format, Card::Format::HtmlFo
   end
 end
 end;end;end;end;end;
-# ~~ generated from /Users/ethan/dev/decko/gem/card-mod-bootstrap/set/all/bootstrap/table.rb ~~
+# ~~ generated from /Users/ezl5238/dev/decko/gem/mod/bootstrap/set/all/bootstrap/table.rb ~~

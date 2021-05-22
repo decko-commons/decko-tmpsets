@@ -5,7 +5,7 @@ class Card; module Set; class Type
 # -*- encoding : utf-8 -*-
 module Css;
 extend Card::Set
-def self.source_location; "/Users/ethan/dev/decko/gem/card-mod-style/set/type/css.rb"; end
+def self.source_location; "/Users/ezl5238/dev/decko/gem/mod/style/set/type/css.rb"; end
 
 require "sassc"
 require "benchmark"
@@ -92,4 +92,4 @@ def diff_args
   { diff_format: :text }
 end
 end;end;end;end;
-# ~~ generated from /Users/ethan/dev/decko/gem/card-mod-style/set/type/css.rb ~~
+# ~~ generated from /Users/ezl5238/dev/decko/gem/mod/style/set/type/css.rb ~~

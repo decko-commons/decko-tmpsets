@@ -4,7 +4,7 @@ class Card; module Set; class Type
 #
 module File;
 extend Card::Set
-def self.source_location; "/Users/ethan/dev/decko/gem/card-mod-carrierwave/set/type/file.rb"; end
+def self.source_location; "/Users/ezl5238/dev/decko/gem/mod/carrierwave/set/type/file.rb"; end
 attachment :file, uploader: CarrierWave::FileCardUploader
 
 module SelectedAction
@@ -26,9 +26,7 @@ include SelectedAction
 module Format; module_parent.send :register_set_format, Card::Format, self; extend Card::Set::AbstractFormat
   view :source do
     file = card.attachment
-    return "" unless file.valid?
-
-    contextualize_path file.url
+    file.valid? ? contextualize_path(file.url) : ""
   end
 
   view :core do
@@ -44,9 +42,13 @@ module Format; module_parent.send :register_set_format, Card::Format, self; exte
   def handle_source
     rescuing_file_source_error do
       source = _render_source
-      return "" if source.blank?
-
-      block_given? ? yield(source) : source
+      if source.blank?
+        ""
+      elsif block_given?
+        yield source
+      else
+        source
+      end
     end
   end
 
@@ -139,4 +141,4 @@ module HtmlFormat; module_parent.send :register_set_format, Card::Format::HtmlFo
   end
 end
 end;end;end;end;
-# ~~ generated from /Users/ethan/dev/decko/gem/card-mod-carrierwave/set/type/file.rb ~~
+# ~~ generated from /Users/ezl5238/dev/decko/gem/mod/carrierwave/set/type/file.rb ~~
