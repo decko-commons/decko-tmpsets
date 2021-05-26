@@ -4,7 +4,7 @@ class Card; module Set; class Rule
 #
 #! no set module
 module RuleForm;
-def self.source_location; "/Users/ezl5238/dev/decko/gem/mod/rules/set/rule/rule_form/rule_set_radio.rb"; end
+def self.source_location; "/Users/ethan/dev/decko/gem/mod/rules/set/rule/rule_form/rule_set_radio.rb"; end
 class RuleSetRadio
   attr_reader :format
 
@@ -89,4 +89,4 @@ class RuleSetRadio
   end
 end
 end;end;end;end;
-# ~~ generated from /Users/ezl5238/dev/decko/gem/mod/rules/set/rule/rule_form/rule_set_radio.rb ~~
+# ~~ generated from /Users/ethan/dev/decko/gem/mod/rules/set/rule/rule_form/rule_set_radio.rb ~~

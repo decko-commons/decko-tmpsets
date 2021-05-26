@@ -4,7 +4,7 @@ class Card; module Set; class Self
 #
 module Edited;
 extend Card::Set
-def self.source_location; "/Users/ezl5238/dev/decko/gem/mod/follow/set/self/edited.rb"; end
+def self.source_location; "/Users/ethan/dev/decko/gem/mod/follow/set/self/edited.rb"; end
 include_set Abstract::FollowOption
 
 restrictive_follow_opts position: 2
@@ -26,4 +26,4 @@ def description set_card
   "#{set_card.follow_label} I edited"
 end
 end;end;end;end;
-# ~~ generated from /Users/ezl5238/dev/decko/gem/mod/follow/set/self/edited.rb ~~
+# ~~ generated from /Users/ethan/dev/decko/gem/mod/follow/set/self/edited.rb ~~

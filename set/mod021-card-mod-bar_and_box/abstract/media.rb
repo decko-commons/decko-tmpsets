@@ -4,7 +4,7 @@ class Card; module Set; class Abstract
 #
 module Media;
 extend Card::Set
-def self.source_location; "/Users/ezl5238/dev/decko/gem/mod/bar_and_box/set/abstract/media.rb"; end
+def self.source_location; "/Users/ethan/dev/decko/gem/mod/bar_and_box/set/abstract/media.rb"; end
 module HtmlFormat; module_parent.send :register_set_format, Card::Format::HtmlFormat, self; extend Card::Set::AbstractFormat
   def image_card
     @image_card ||= card.fetch(:image, new: {})
@@ -23,4 +23,4 @@ module HtmlFormat; module_parent.send :register_set_format, Card::Format::HtmlFo
   end
 end
 end;end;end;end;
-# ~~ generated from /Users/ezl5238/dev/decko/gem/mod/bar_and_box/set/abstract/media.rb ~~
+# ~~ generated from /Users/ethan/dev/decko/gem/mod/bar_and_box/set/abstract/media.rb ~~

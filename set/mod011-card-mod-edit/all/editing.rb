@@ -4,7 +4,7 @@ class Card; module Set; class All
 #
 module Editing;
 extend Card::Set
-def self.source_location; "/Users/ezl5238/dev/decko/gem/mod/edit/set/all/editing.rb"; end
+def self.source_location; "/Users/ethan/dev/decko/gem/mod/edit/set/all/editing.rb"; end
 module HtmlFormat; module_parent.send :register_set_format, Card::Format::HtmlFormat, self; extend Card::Set::AbstractFormat
   ###---( TOP_LEVEL (used by menu) NEW / EDIT VIEWS )
   view :bridge, perms: :update, unknown: true, cache: :never, wrap: :bridge do
@@ -97,4 +97,4 @@ module HtmlFormat; module_parent.send :register_set_format, Card::Format::HtmlFo
   # end
 end
 end;end;end;end;
-# ~~ generated from /Users/ezl5238/dev/decko/gem/mod/edit/set/all/editing.rb ~~
+# ~~ generated from /Users/ethan/dev/decko/gem/mod/edit/set/all/editing.rb ~~

@@ -4,7 +4,7 @@ class Card; module Set; class All; module Follow;
 #
 module FollowerIds;
 extend Card::Set
-def self.source_location; "/Users/ezl5238/dev/decko/gem/mod/follow/set/all/follow/follower_ids.rb"; end
+def self.source_location; "/Users/ethan/dev/decko/gem/mod/follow/set/all/follow/follower_ids.rb"; end
 FOLLOWER_IDS_CACHE_KEY = "FOLLOWER_IDS".freeze
 
 card_accessor :followers
@@ -127,4 +127,4 @@ def each_direct_follower_id_with_reason
   end
 end
 end;end;end;end;end;
-# ~~ generated from /Users/ezl5238/dev/decko/gem/mod/follow/set/all/follow/follower_ids.rb ~~
+# ~~ generated from /Users/ethan/dev/decko/gem/mod/follow/set/all/follow/follower_ids.rb ~~

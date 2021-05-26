@@ -21,8 +21,8 @@ end
 def pattern_applies? card
   card.rule?
 end
-              end
-              register "Rule".underscore.to_sym, (options || {})
             end
+            register "Rule".underscore.to_sym, (options || {})
+          end
 
-# ~~ generated from /Users/ezl5238/dev/decko/gem/card/mod/core/set_pattern/06_rule.rb ~~
+# ~~ generated from /Users/ethan/dev/decko/gem/card/mod/core/set_pattern/06_rule.rb ~~

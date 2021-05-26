@@ -4,7 +4,7 @@ class Card; module Set; class Abstract; module Attachment;
 #
 module Coded;
 extend Card::Set
-def self.source_location; "/Users/ezl5238/dev/decko/gem/mod/carrierwave/set/abstract/attachment/coded.rb"; end
+def self.source_location; "/Users/ethan/dev/decko/gem/mod/carrierwave/set/abstract/attachment/coded.rb"; end
 event :lose_coded_status_on_update, :initialize, on: :update, when: :coded? do
   # unless explicit
   return if @new_mod
@@ -33,4 +33,4 @@ def mod= value
   end
 end
 end;end;end;end;end;
-# ~~ generated from /Users/ezl5238/dev/decko/gem/mod/carrierwave/set/abstract/attachment/coded.rb ~~
+# ~~ generated from /Users/ethan/dev/decko/gem/mod/carrierwave/set/abstract/attachment/coded.rb ~~

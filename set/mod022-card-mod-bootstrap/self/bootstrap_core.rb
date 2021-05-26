@@ -4,7 +4,7 @@ class Card; module Set; class Self
 #
 module BootstrapCore;
 extend Card::Set
-def self.source_location; "/Users/ezl5238/dev/decko/gem/mod/bootstrap/set/self/bootstrap_core.rb"; end
+def self.source_location; "/Users/ethan/dev/decko/gem/mod/bootstrap/set/self/bootstrap_core.rb"; end
 include_set Abstract::BootstrapCodeFile
 
 def load_stylesheets
@@ -20,4 +20,4 @@ def load_stylesheets
   add_bs_subdir "utilities"
 end
 end;end;end;end;
-# ~~ generated from /Users/ezl5238/dev/decko/gem/mod/bootstrap/set/self/bootstrap_core.rb ~~
+# ~~ generated from /Users/ethan/dev/decko/gem/mod/bootstrap/set/self/bootstrap_core.rb ~~

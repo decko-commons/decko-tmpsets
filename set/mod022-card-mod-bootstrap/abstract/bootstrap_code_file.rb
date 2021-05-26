@@ -4,7 +4,7 @@ class Card; module Set; class Abstract
 #
 module BootstrapCodeFile;
 extend Card::Set
-def self.source_location; "/Users/ezl5238/dev/decko/gem/mod/bootstrap/set/abstract/bootstrap_code_file.rb"; end
+def self.source_location; "/Users/ethan/dev/decko/gem/mod/bootstrap/set/abstract/bootstrap_code_file.rb"; end
 def self.included host_class
   host_class.include_set Abstract::CodeFile
   host_class.include OverrideCodeFile
@@ -62,4 +62,4 @@ module OverrideCodeFile
   end
 end
 end;end;end;end;
-# ~~ generated from /Users/ezl5238/dev/decko/gem/mod/bootstrap/set/abstract/bootstrap_code_file.rb ~~
+# ~~ generated from /Users/ethan/dev/decko/gem/mod/bootstrap/set/abstract/bootstrap_code_file.rb ~~

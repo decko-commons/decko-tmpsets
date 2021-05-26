@@ -4,7 +4,7 @@ class Card; module Set; class All
 #
 module Utils;
 extend Card::Set
-def self.source_location; "/Users/ezl5238/dev/decko/gem/card/mod/core/set/all/utils.rb"; end
+def self.source_location; "/Users/ethan/dev/decko/gem/card/mod/core/set/all/utils.rb"; end
 module ClassMethods
   def merge_list attribs, opts={}
     unmerged = []
@@ -101,4 +101,4 @@ module Format; module_parent.send :register_set_format, Card::Format, self; exte
   delegate :measure, to: :card
 end
 end;end;end;end;
-# ~~ generated from /Users/ezl5238/dev/decko/gem/card/mod/core/set/all/utils.rb ~~
+# ~~ generated from /Users/ethan/dev/decko/gem/card/mod/core/set/all/utils.rb ~~

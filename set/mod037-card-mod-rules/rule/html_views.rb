@@ -4,7 +4,7 @@ class Card; module Set; class Rule
 #
 module HtmlViews;
 extend Card::Set
-def self.source_location; "/Users/ezl5238/dev/decko/gem/mod/rules/set/rule/html_views.rb"; end
+def self.source_location; "/Users/ethan/dev/decko/gem/mod/rules/set/rule/html_views.rb"; end
 module HtmlFormat; module_parent.send :register_set_format, Card::Format::HtmlFormat, self; extend Card::Set::AbstractFormat
   view :core do
     # Rule cards that are searches are usual right structures and refer to the left
@@ -19,4 +19,4 @@ module HtmlFormat; module_parent.send :register_set_format, Card::Format::HtmlFo
   end
 end
 end;end;end;end;
-# ~~ generated from /Users/ezl5238/dev/decko/gem/mod/rules/set/rule/html_views.rb ~~
+# ~~ generated from /Users/ethan/dev/decko/gem/mod/rules/set/rule/html_views.rb ~~

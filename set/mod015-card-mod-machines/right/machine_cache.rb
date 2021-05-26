@@ -4,11 +4,11 @@ class Card; module Set; class Right
 #
 module MachineCache;
 extend Card::Set
-def self.source_location; "/Users/ezl5238/dev/decko/gem/mod/machines/set/right/machine_cache.rb"; end
+def self.source_location; "/Users/ethan/dev/decko/gem/mod/machines/set/right/machine_cache.rb"; end
 include_set Abstract::VirtualCache
 
 def clean_html?
   false
 end
 end;end;end;end;
-# ~~ generated from /Users/ezl5238/dev/decko/gem/mod/machines/set/right/machine_cache.rb ~~
+# ~~ generated from /Users/ethan/dev/decko/gem/mod/machines/set/right/machine_cache.rb ~~

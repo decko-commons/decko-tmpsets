@@ -4,7 +4,7 @@ class Card; module Set; class Type
 #
 module File;
 extend Card::Set
-def self.source_location; "/Users/ezl5238/dev/decko/gem/mod/carrierwave/set/type/file.rb"; end
+def self.source_location; "/Users/ethan/dev/decko/gem/mod/carrierwave/set/type/file.rb"; end
 attachment :file, uploader: CarrierWave::FileCardUploader
 
 module SelectedAction
@@ -141,4 +141,4 @@ module HtmlFormat; module_parent.send :register_set_format, Card::Format::HtmlFo
   end
 end
 end;end;end;end;
-# ~~ generated from /Users/ezl5238/dev/decko/gem/mod/carrierwave/set/type/file.rb ~~
+# ~~ generated from /Users/ethan/dev/decko/gem/mod/carrierwave/set/type/file.rb ~~

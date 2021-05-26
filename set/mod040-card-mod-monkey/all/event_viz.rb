@@ -11,7 +11,7 @@ class Card; module Set; class All
 # to see the order of events that will be executed on mycard.
 module EventViz;
 extend Card::Set
-def self.source_location; "/Users/ezl5238/dev/decko/gem/mod/monkey/set/all/event_viz.rb"; end
+def self.source_location; "/Users/ethan/dev/decko/gem/mod/monkey/set/all/event_viz.rb"; end
 # The indention and arrows (^v) indicate event dependencies.
 #
 # Note: as of yet, the functionality is a bit rough.  It does not display events
@@ -70,4 +70,4 @@ def events_branch hash, kind, filter
   hash[kind] << events_tree(filter)
 end
 end;end;end;end;
-# ~~ generated from /Users/ezl5238/dev/decko/gem/mod/monkey/set/all/event_viz.rb ~~
+# ~~ generated from /Users/ethan/dev/decko/gem/mod/monkey/set/all/event_viz.rb ~~

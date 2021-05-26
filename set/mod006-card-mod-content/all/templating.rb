@@ -4,7 +4,7 @@ class Card; module Set; class All
 #
 module Templating;
 extend Card::Set
-def self.source_location; "/Users/ezl5238/dev/decko/gem/mod/content/set/all/templating.rb"; end
+def self.source_location; "/Users/ethan/dev/decko/gem/mod/content/set/all/templating.rb"; end
 def is_template?
   return @is_template unless @is_template.nil?
 
@@ -76,4 +76,4 @@ def structure_rule_card
   card.db_content&.strip == "_self" ? nil : card
 end
 end;end;end;end;
-# ~~ generated from /Users/ezl5238/dev/decko/gem/mod/content/set/all/templating.rb ~~
+# ~~ generated from /Users/ethan/dev/decko/gem/mod/content/set/all/templating.rb ~~

@@ -4,7 +4,7 @@ class Card; module Set; class Self
 #
 module TinyMce;
 extend Card::Set
-def self.source_location; "/Users/ezl5238/dev/decko/gem/mod/tinymce_editor/set/self/tiny_mce.rb"; end
+def self.source_location; "/Users/ethan/dev/decko/gem/mod/tinymce_editor/set/self/tiny_mce.rb"; end
 def raw_help_text
   <<-TEXT
     Configure [[http://tinymce.com|TinyMCE]], Decko's default
@@ -13,4 +13,4 @@ def raw_help_text
   TEXT
 end
 end;end;end;end;
-# ~~ generated from /Users/ezl5238/dev/decko/gem/mod/tinymce_editor/set/self/tiny_mce.rb ~~
+# ~~ generated from /Users/ethan/dev/decko/gem/mod/tinymce_editor/set/self/tiny_mce.rb ~~

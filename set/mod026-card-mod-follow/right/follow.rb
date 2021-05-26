@@ -6,7 +6,7 @@ class Card; module Set; class Right
 # While the user follow dashboard ([User]+:follow`) is also in this Set, its
 module Follow;
 extend Card::Set
-def self.source_location; "/Users/ezl5238/dev/decko/gem/mod/follow/set/right/follow.rb"; end
+def self.source_location; "/Users/ethan/dev/decko/gem/mod/follow/set/right/follow.rb"; end
 # customizations are handled in TypePlusRight::User::Follow
 
 event :cache_expired_for_new_preference, :integrate, when: :preference? do
@@ -124,4 +124,4 @@ module HtmlFormat; module_parent.send :register_set_format, Card::Format::HtmlFo
   end
 end
 end;end;end;end;
-# ~~ generated from /Users/ezl5238/dev/decko/gem/mod/follow/set/right/follow.rb ~~
+# ~~ generated from /Users/ethan/dev/decko/gem/mod/follow/set/right/follow.rb ~~

@@ -4,7 +4,7 @@ class Card; module Set; class Abstract; module Machine;
 #
 module OutputUpdate;
 extend Card::Set
-def self.source_location; "/Users/ezl5238/dev/decko/gem/mod/machines/set/abstract/machine/output_update.rb"; end
+def self.source_location; "/Users/ethan/dev/decko/gem/mod/machines/set/abstract/machine/output_update.rb"; end
 def reset_machine_output
   Auth.as_bot do
     moc = machine_output_card
@@ -81,4 +81,4 @@ def output_updated_at
   end
 end
 end;end;end;end;end;
-# ~~ generated from /Users/ezl5238/dev/decko/gem/mod/machines/set/abstract/machine/output_update.rb ~~
+# ~~ generated from /Users/ethan/dev/decko/gem/mod/machines/set/abstract/machine/output_update.rb ~~

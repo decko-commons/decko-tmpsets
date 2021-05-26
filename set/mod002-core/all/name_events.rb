@@ -5,7 +5,7 @@ class Card; module Set; class All
 # STAGE: validate
 module NameEvents;
 extend Card::Set
-def self.source_location; "/Users/ezl5238/dev/decko/gem/card/mod/core/set/all/name_events.rb"; end
+def self.source_location; "/Users/ethan/dev/decko/gem/card/mod/core/set/all/name_events.rb"; end
 
 event :validate_name, :validate, on: :save, changed: :name, when: :no_autoname? do
   validate_legality_of_name
@@ -169,4 +169,4 @@ def prepare_obstructed_side side, side_id, sidename
   true
 end
 end;end;end;end;
-# ~~ generated from /Users/ezl5238/dev/decko/gem/card/mod/core/set/all/name_events.rb ~~
+# ~~ generated from /Users/ethan/dev/decko/gem/card/mod/core/set/all/name_events.rb ~~

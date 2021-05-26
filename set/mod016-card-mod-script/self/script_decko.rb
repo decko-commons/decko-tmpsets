@@ -4,7 +4,7 @@ class Card; module Set; class Self
 #
 module ScriptDecko;
 extend Card::Set
-def self.source_location; "/Users/ezl5238/dev/decko/gem/mod/script/set/self/script_decko.rb"; end
+def self.source_location; "/Users/ethan/dev/decko/gem/mod/script/set/self/script_decko.rb"; end
 include_set Abstract::CodeFile
 
 def source_files
@@ -18,4 +18,4 @@ def source_files
   end
 end
 end;end;end;end;
-# ~~ generated from /Users/ezl5238/dev/decko/gem/mod/script/set/self/script_decko.rb ~~
+# ~~ generated from /Users/ethan/dev/decko/gem/mod/script/set/self/script_decko.rb ~~

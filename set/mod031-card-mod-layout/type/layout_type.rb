@@ -5,7 +5,7 @@ class Card; module Set; class Type
 # -*- encoding : utf-8 -*-
 module LayoutType;
 extend Card::Set
-def self.source_location; "/Users/ezl5238/dev/decko/gem/mod/layout/set/type/layout_type.rb"; end
+def self.source_location; "/Users/ethan/dev/decko/gem/mod/layout/set/type/layout_type.rb"; end
 
 include_set Type::Html
 
@@ -22,4 +22,4 @@ module HtmlFormat; module_parent.send :register_set_format, Card::Format::HtmlFo
   end
 end
 end;end;end;end;
-# ~~ generated from /Users/ezl5238/dev/decko/gem/mod/layout/set/type/layout_type.rb ~~
+# ~~ generated from /Users/ethan/dev/decko/gem/mod/layout/set/type/layout_type.rb ~~

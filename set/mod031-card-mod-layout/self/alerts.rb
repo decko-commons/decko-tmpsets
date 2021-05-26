@@ -4,11 +4,11 @@ class Card; module Set; class Self
 #
 module Alerts;
 extend Card::Set
-def self.source_location; "/Users/ezl5238/dev/decko/gem/mod/layout/set/self/alerts.rb"; end
+def self.source_location; "/Users/ethan/dev/decko/gem/mod/layout/set/self/alerts.rb"; end
 def content
   "<!-- *alerts is deprecated. please remove from layout -->"
 end
 
 # view :core, :raw
 end;end;end;end;
-# ~~ generated from /Users/ezl5238/dev/decko/gem/mod/layout/set/self/alerts.rb ~~
+# ~~ generated from /Users/ethan/dev/decko/gem/mod/layout/set/self/alerts.rb ~~

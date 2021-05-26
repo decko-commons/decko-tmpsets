@@ -4,7 +4,7 @@ class Card; module Set; class All
 #
 module Content;
 extend Card::Set
-def self.source_location; "/Users/ezl5238/dev/decko/gem/mod/format/set/all/content.rb"; end
+def self.source_location; "/Users/ethan/dev/decko/gem/mod/format/set/all/content.rb"; end
 module Format; module_parent.send :register_set_format, Card::Format, self; extend Card::Set::AbstractFormat
   ONE_LINE_CHARACTER_LIMIT = 60
 
@@ -74,4 +74,4 @@ module HtmlFormat; module_parent.send :register_set_format, Card::Format::HtmlFo
   end
 end
 end;end;end;end;
-# ~~ generated from /Users/ezl5238/dev/decko/gem/mod/format/set/all/content.rb ~~
+# ~~ generated from /Users/ethan/dev/decko/gem/mod/format/set/all/content.rb ~~

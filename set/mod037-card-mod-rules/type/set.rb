@@ -4,7 +4,7 @@ class Card; module Set; class Type
 #
 module Set;
 extend Card::Set
-def self.source_location; "/Users/ezl5238/dev/decko/gem/mod/rules/set/type/set.rb"; end
+def self.source_location; "/Users/ethan/dev/decko/gem/mod/rules/set/type/set.rb"; end
 include_set Type::SearchType
 
 def anchor_name
@@ -113,4 +113,4 @@ def related_sets with_self=false
   end
 end
 end;end;end;end;
-# ~~ generated from /Users/ezl5238/dev/decko/gem/mod/rules/set/type/set.rb ~~
+# ~~ generated from /Users/ethan/dev/decko/gem/mod/rules/set/type/set.rb ~~

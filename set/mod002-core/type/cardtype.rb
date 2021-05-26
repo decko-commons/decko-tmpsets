@@ -4,7 +4,7 @@ class Card; module Set; class Type
 #
 module Cardtype;
 extend Card::Set
-def self.source_location; "/Users/ezl5238/dev/decko/gem/card/mod/core/set/type/cardtype.rb"; end
+def self.source_location; "/Users/ethan/dev/decko/gem/card/mod/core/set/type/cardtype.rb"; end
 def cards_of_type_exist?
   !new_card? && Card.where(trash: false, type_id: id).exists?
 end
@@ -34,4 +34,4 @@ event :validate_cardtype_name, :validate, on: :save, changed: :name do
   end
 end
 end;end;end;end;
-# ~~ generated from /Users/ezl5238/dev/decko/gem/card/mod/core/set/type/cardtype.rb ~~
+# ~~ generated from /Users/ethan/dev/decko/gem/card/mod/core/set/type/cardtype.rb ~~

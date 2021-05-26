@@ -5,7 +5,7 @@ class Card; module Set; class Right
 # -*- encoding : utf-8 -*-
 module Account;
 extend Card::Set
-def self.source_location; "/Users/ezl5238/dev/decko/gem/mod/account/set/right/account.rb"; end
+def self.source_location; "/Users/ethan/dev/decko/gem/mod/account/set/right/account.rb"; end
 
 card_accessor :email
 card_accessor :password
@@ -59,4 +59,4 @@ def respond_to_missing? method, _include_private=false
   method.match?(/\?$/) ? true : super
 end
 end;end;end;end;
-# ~~ generated from /Users/ezl5238/dev/decko/gem/mod/account/set/right/account.rb ~~
+# ~~ generated from /Users/ethan/dev/decko/gem/mod/account/set/right/account.rb ~~

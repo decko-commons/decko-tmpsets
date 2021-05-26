@@ -5,7 +5,7 @@ class Card; module Set; class All
 # for override
 module Follow;
 extend Card::Set
-def self.source_location; "/Users/ezl5238/dev/decko/gem/mod/follow/set/all/follow.rb"; end
+def self.source_location; "/Users/ethan/dev/decko/gem/mod/follow/set/all/follow.rb"; end
 def followable?
   true
 end
@@ -39,4 +39,4 @@ def follow_rule? user=nil
   Card.exists? follow_rule_name(user)
 end
 end;end;end;end;
-# ~~ generated from /Users/ezl5238/dev/decko/gem/mod/follow/set/all/follow.rb ~~
+# ~~ generated from /Users/ethan/dev/decko/gem/mod/follow/set/all/follow.rb ~~

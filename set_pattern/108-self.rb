@@ -27,8 +27,8 @@ end
 def anchor_id card
   card.id
 end
-              end
-              register "Self".underscore.to_sym, (options || {})
             end
+            register "Self".underscore.to_sym, (options || {})
+          end
 
-# ~~ generated from /Users/ezl5238/dev/decko/gem/card/mod/core/set_pattern/09_self.rb ~~
+# ~~ generated from /Users/ethan/dev/decko/gem/card/mod/core/set_pattern/09_self.rb ~~

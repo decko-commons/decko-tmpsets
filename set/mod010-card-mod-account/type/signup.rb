@@ -4,7 +4,7 @@ class Card; module Set; class Type
 #
 module Signup;
 extend Card::Set
-def self.source_location; "/Users/ezl5238/dev/decko/gem/mod/account/set/type/signup.rb"; end
+def self.source_location; "/Users/ethan/dev/decko/gem/mod/account/set/type/signup.rb"; end
 include_set Abstract::Accountable
 
 require_field :account
@@ -60,4 +60,4 @@ def approvable
   end
 end
 end;end;end;end;
-# ~~ generated from /Users/ezl5238/dev/decko/gem/mod/account/set/type/signup.rb ~~
+# ~~ generated from /Users/ethan/dev/decko/gem/mod/account/set/type/signup.rb ~~

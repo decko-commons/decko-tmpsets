@@ -4,7 +4,7 @@ class Card; module Set; class Abstract
 #
 module Accountable;
 extend Card::Set
-def self.source_location; "/Users/ezl5238/dev/decko/gem/mod/account/set/abstract/accountable.rb"; end
+def self.source_location; "/Users/ethan/dev/decko/gem/mod/account/set/abstract/accountable.rb"; end
 def account
   fetch :account, new: {}
 end
@@ -59,4 +59,4 @@ module HtmlFormat; module_parent.send :register_set_format, Card::Format::HtmlFo
   end
 end
 end;end;end;end;
-# ~~ generated from /Users/ezl5238/dev/decko/gem/mod/account/set/abstract/accountable.rb ~~
+# ~~ generated from /Users/ethan/dev/decko/gem/mod/account/set/abstract/accountable.rb ~~

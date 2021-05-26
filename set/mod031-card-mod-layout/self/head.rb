@@ -4,7 +4,7 @@ class Card; module Set; class Self
 #
 module Head;
 extend Card::Set
-def self.source_location; "/Users/ezl5238/dev/decko/gem/mod/layout/set/self/head.rb"; end
+def self.source_location; "/Users/ethan/dev/decko/gem/mod/layout/set/self/head.rb"; end
 setting_opts group: :webpage, position: 1, rule_type_editable: false,
              short_help_text: "head tag content",
              help_text: "head tag content"
@@ -32,4 +32,4 @@ module HtmlFormat; module_parent.send :register_set_format, Card::Format::HtmlFo
   end
 end
 end;end;end;end;
-# ~~ generated from /Users/ezl5238/dev/decko/gem/mod/layout/set/self/head.rb ~~
+# ~~ generated from /Users/ethan/dev/decko/gem/mod/layout/set/self/head.rb ~~

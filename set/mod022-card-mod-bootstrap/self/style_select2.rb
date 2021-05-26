@@ -4,7 +4,7 @@ class Card; module Set; class Self
 #
 module StyleSelect2;
 extend Card::Set
-def self.source_location; "/Users/ezl5238/dev/decko/gem/mod/bootstrap/set/self/style_select2.rb"; end
+def self.source_location; "/Users/ethan/dev/decko/gem/mod/bootstrap/set/self/style_select2.rb"; end
 include_set Abstract::CodeFile
 Self::StyleLibraries.add_item :style_select2
 
@@ -16,4 +16,4 @@ def source_dir
   ""
 end
 end;end;end;end;
-# ~~ generated from /Users/ezl5238/dev/decko/gem/mod/bootstrap/set/self/style_select2.rb ~~
+# ~~ generated from /Users/ethan/dev/decko/gem/mod/bootstrap/set/self/style_select2.rb ~~

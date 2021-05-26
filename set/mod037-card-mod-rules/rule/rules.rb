@@ -4,7 +4,7 @@ class Card; module Set; class Rule
 #
 module Rules;
 extend Card::Set
-def self.source_location; "/Users/ezl5238/dev/decko/gem/mod/rules/set/rule/rules.rb"; end
+def self.source_location; "/Users/ethan/dev/decko/gem/mod/rules/set/rule/rules.rb"; end
 event :save_recently_edited_settings, :integrate, on: :save, changed: %i[type content] do
   if (recent = Card[:recent_settings])
     recent.insert_item 0, name.right
@@ -115,4 +115,4 @@ def rule_for_set? set_name
   Card.exists?("#{set_name}+#{rule_user_setting_name}")
 end
 end;end;end;end;
-# ~~ generated from /Users/ezl5238/dev/decko/gem/mod/rules/set/rule/rules.rb ~~
+# ~~ generated from /Users/ethan/dev/decko/gem/mod/rules/set/rule/rules.rb ~~

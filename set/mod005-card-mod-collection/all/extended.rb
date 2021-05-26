@@ -4,7 +4,7 @@ class Card; module Set; class All
 #
 module Extended;
 extend Card::Set
-def self.source_location; "/Users/ezl5238/dev/decko/gem/mod/collection/set/all/extended.rb"; end
+def self.source_location; "/Users/ethan/dev/decko/gem/mod/collection/set/all/extended.rb"; end
 def extended_item_cards context=nil
   items = item_cards limit: "", context: (context || self).name
   list = []
@@ -56,4 +56,4 @@ end
 #   # a collection
 # end
 end;end;end;end;
-# ~~ generated from /Users/ezl5238/dev/decko/gem/mod/collection/set/all/extended.rb ~~
+# ~~ generated from /Users/ethan/dev/decko/gem/mod/collection/set/all/extended.rb ~~

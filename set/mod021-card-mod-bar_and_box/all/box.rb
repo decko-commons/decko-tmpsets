@@ -4,7 +4,7 @@ class Card; module Set; class All
 #
 module Box;
 extend Card::Set
-def self.source_location; "/Users/ezl5238/dev/decko/gem/mod/bar_and_box/set/all/box.rb"; end
+def self.source_location; "/Users/ethan/dev/decko/gem/mod/bar_and_box/set/all/box.rb"; end
 view :box, template: :haml do
   voo.hide :menu
 end
@@ -22,4 +22,4 @@ view :box_bottom do
    _render_updated_by]
 end
 end;end;end;end;
-# ~~ generated from /Users/ezl5238/dev/decko/gem/mod/bar_and_box/set/all/box.rb ~~
+# ~~ generated from /Users/ethan/dev/decko/gem/mod/bar_and_box/set/all/box.rb ~~

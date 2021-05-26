@@ -4,7 +4,7 @@ class Card; module Set; class Abstract; module Attachment;
 #
 module Cloud;
 extend Card::Set
-def self.source_location; "/Users/ezl5238/dev/decko/gem/mod/carrierwave/set/abstract/attachment/cloud.rb"; end
+def self.source_location; "/Users/ethan/dev/decko/gem/mod/carrierwave/set/abstract/attachment/cloud.rb"; end
 event :change_bucket_if_read_only, :initialize,
       on: :update, when: :change_bucket_if_read_only? do
   @new_storage_type = storage_type_from_config
@@ -143,4 +143,4 @@ def bucket= value
   end
 end
 end;end;end;end;end;
-# ~~ generated from /Users/ezl5238/dev/decko/gem/mod/carrierwave/set/abstract/attachment/cloud.rb ~~
+# ~~ generated from /Users/ethan/dev/decko/gem/mod/carrierwave/set/abstract/attachment/cloud.rb ~~

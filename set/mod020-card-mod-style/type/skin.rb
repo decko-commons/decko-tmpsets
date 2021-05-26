@@ -4,7 +4,7 @@ class Card; module Set; class Type
 #
 module Skin;
 extend Card::Set
-def self.source_location; "/Users/ezl5238/dev/decko/gem/mod/style/set/type/skin.rb"; end
+def self.source_location; "/Users/ethan/dev/decko/gem/mod/style/set/type/skin.rb"; end
 include_set Abstract::MachineInput
 include_set Abstract::SkinBox
 include_set Pointer
@@ -15,4 +15,4 @@ def machine_input
   ""
 end
 end;end;end;end;
-# ~~ generated from /Users/ezl5238/dev/decko/gem/mod/style/set/type/skin.rb ~~
+# ~~ generated from /Users/ethan/dev/decko/gem/mod/style/set/type/skin.rb ~~

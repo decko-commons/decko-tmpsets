@@ -4,7 +4,7 @@ class Card; module Set; class Self
 #
 module ScriptDatepicker;
 extend Card::Set
-def self.source_location; "/Users/ezl5238/dev/decko/gem/mod/date/set/self/script_datepicker.rb"; end
+def self.source_location; "/Users/ethan/dev/decko/gem/mod/date/set/self/script_datepicker.rb"; end
 include_set Abstract::VendorCodeFile
 Self::ScriptMods.add_item :script_datepicker
 
@@ -13,4 +13,4 @@ def source_files
      tempusdominus/build/js/tempusdominus-bootstrap-4.js]
 end
 end;end;end;end;
-# ~~ generated from /Users/ezl5238/dev/decko/gem/mod/date/set/self/script_datepicker.rb ~~
+# ~~ generated from /Users/ethan/dev/decko/gem/mod/date/set/self/script_datepicker.rb ~~

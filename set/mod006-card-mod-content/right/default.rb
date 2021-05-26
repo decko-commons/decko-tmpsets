@@ -4,7 +4,7 @@ class Card; module Set; class Right
 #
 module Default;
 extend Card::Set
-def self.source_location; "/Users/ezl5238/dev/decko/gem/mod/content/set/right/default.rb"; end
+def self.source_location; "/Users/ethan/dev/decko/gem/mod/content/set/right/default.rb"; end
 include_set Abstract::TemplatedNests
 
 module HtmlFormat; module_parent.send :register_set_format, Card::Format::HtmlFormat, self; extend Card::Set::AbstractFormat
@@ -40,4 +40,4 @@ def empty_ok?
   true
 end
 end;end;end;end;
-# ~~ generated from /Users/ezl5238/dev/decko/gem/mod/content/set/right/default.rb ~~
+# ~~ generated from /Users/ethan/dev/decko/gem/mod/content/set/right/default.rb ~~

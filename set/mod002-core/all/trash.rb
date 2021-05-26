@@ -4,7 +4,7 @@ class Card; module Set; class All
 #
 module Trash;
 extend Card::Set
-def self.source_location; "/Users/ezl5238/dev/decko/gem/card/mod/core/set/all/trash.rb"; end
+def self.source_location; "/Users/ethan/dev/decko/gem/card/mod/core/set/all/trash.rb"; end
 Self::Admin.add_to_basket(
   :tasks,
   name: :empty_trash,
@@ -37,11 +37,11 @@ module ClassMethods
     return unless dir
 
     (all_trashed_card_ids & all_file_ids).each do |file_id|
-      delete_files_with_id file_id
+      delete_files_with_id dir, file_id
     end
   end
 
-  def delete_files_with_id file_id
+  def delete_files_with_id dir, file_id
     raise Card::Error, t(:core_exception_almost_deleted) if Card.exists?(file_id)
 
     ::FileUtils.rm_rf "#{dir}/#{file_id}", secure: true
@@ -139,4 +139,4 @@ def delete_as_subcard subcard
   add_subcard subcard
 end
 end;end;end;end;
-# ~~ generated from /Users/ezl5238/dev/decko/gem/card/mod/core/set/all/trash.rb ~~
+# ~~ generated from /Users/ethan/dev/decko/gem/card/mod/core/set/all/trash.rb ~~

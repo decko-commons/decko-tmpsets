@@ -4,7 +4,7 @@ class Card; module Set; class All; module Bootstrap;
 #
 module Accordion;
 extend Card::Set
-def self.source_location; "/Users/ezl5238/dev/decko/gem/mod/bootstrap/set/all/bootstrap/accordion.rb"; end
+def self.source_location; "/Users/ethan/dev/decko/gem/mod/bootstrap/set/all/bootstrap/accordion.rb"; end
 module HtmlFormat; module_parent.send :register_set_format, Card::Format::HtmlFormat, self; extend Card::Set::AbstractFormat
   def accordion_group list, collapse_id=nil, args={}
     collapse_id ||= card.name.safe_key
@@ -69,4 +69,4 @@ module HtmlFormat; module_parent.send :register_set_format, Card::Format::HtmlFo
   end
 end
 end;end;end;end;end;
-# ~~ generated from /Users/ezl5238/dev/decko/gem/mod/bootstrap/set/all/bootstrap/accordion.rb ~~
+# ~~ generated from /Users/ethan/dev/decko/gem/mod/bootstrap/set/all/bootstrap/accordion.rb ~~

@@ -4,7 +4,7 @@ class Card; module Set; class Right
 #
 module WhenLastEdited;
 extend Card::Set
-def self.source_location; "/Users/ezl5238/dev/decko/gem/mod/date/set/right/when_last_edited.rb"; end
+def self.source_location; "/Users/ethan/dev/decko/gem/mod/date/set/right/when_last_edited.rb"; end
 def content
   return "" unless left&.real?
 
@@ -13,4 +13,4 @@ end
 
 # view :core, :raw
 end;end;end;end;
-# ~~ generated from /Users/ezl5238/dev/decko/gem/mod/date/set/right/when_last_edited.rb ~~
+# ~~ generated from /Users/ethan/dev/decko/gem/mod/date/set/right/when_last_edited.rb ~~

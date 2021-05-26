@@ -4,7 +4,7 @@ class Card; module Set; class Self
 #
 module Recent;
 extend Card::Set
-def self.source_location; "/Users/ezl5238/dev/decko/gem/mod/search/set/self/recent.rb"; end
+def self.source_location; "/Users/ethan/dev/decko/gem/mod/search/set/self/recent.rb"; end
 ACTS_PER_PAGE = 25
 
 view :title do
@@ -41,4 +41,4 @@ module JsonFormat; module_parent.send :register_set_format, Card::Format::JsonFo
   end
 end
 end;end;end;end;
-# ~~ generated from /Users/ezl5238/dev/decko/gem/mod/search/set/self/recent.rb ~~
+# ~~ generated from /Users/ethan/dev/decko/gem/mod/search/set/self/recent.rb ~~

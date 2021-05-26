@@ -5,7 +5,7 @@ class Card; module Set; class All; module Follow;
 # used by +:followers overwritten in type/set.rb and type/cardtype.rb
 module FollowedBy;
 extend Card::Set
-def self.source_location; "/Users/ezl5238/dev/decko/gem/mod/follow/set/all/follow/followed_by.rb"; end
+def self.source_location; "/Users/ethan/dev/decko/gem/mod/follow/set/all/follow/followed_by.rb"; end
 def followed?
   followed_by? Auth.current_id
 end
@@ -76,4 +76,4 @@ def follower_candidate_ids_for_option option_code
   block.call self
 end
 end;end;end;end;end;
-# ~~ generated from /Users/ezl5238/dev/decko/gem/mod/follow/set/all/follow/followed_by.rb ~~
+# ~~ generated from /Users/ethan/dev/decko/gem/mod/follow/set/all/follow/followed_by.rb ~~

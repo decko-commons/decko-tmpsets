@@ -15,8 +15,8 @@ end
 def prototype_args _anchor
   {}
 end
-              end
-              register "All".underscore.to_sym, (options || {})
             end
+            register "All".underscore.to_sym, (options || {})
+          end
 
-# ~~ generated from /Users/ezl5238/dev/decko/gem/card/mod/core/set_pattern/01_all.rb ~~
+# ~~ generated from /Users/ethan/dev/decko/gem/card/mod/core/set_pattern/01_all.rb ~~

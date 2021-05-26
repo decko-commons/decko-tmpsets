@@ -4,7 +4,7 @@ class Card; module Set; class All
 #
 module Error;
 extend Card::Set
-def self.source_location; "/Users/ezl5238/dev/decko/gem/mod/format/set/all/error.rb"; end
+def self.source_location; "/Users/ethan/dev/decko/gem/mod/format/set/all/error.rb"; end
 module Format; module_parent.send :register_set_format, Card::Format, self; extend Card::Set::AbstractFormat
   view :compact_missing, perms: :none, compact: true do
     ""
@@ -78,4 +78,4 @@ module JsonFormat; module_parent.send :register_set_format, Card::Format::JsonFo
   end
 end
 end;end;end;end;
-# ~~ generated from /Users/ezl5238/dev/decko/gem/mod/format/set/all/error.rb ~~
+# ~~ generated from /Users/ethan/dev/decko/gem/mod/format/set/all/error.rb ~~

@@ -4,7 +4,7 @@ class Card; module Set; class All; module Bridge;
 #
 module TabViews;
 extend Card::Set
-def self.source_location; "/Users/ezl5238/dev/decko/gem/mod/edit/set/all/bridge/tab_views.rb"; end
+def self.source_location; "/Users/ethan/dev/decko/gem/mod/edit/set/all/bridge/tab_views.rb"; end
 module HtmlFormat; module_parent.send :register_set_format, Card::Format::HtmlFormat, self; extend Card::Set::AbstractFormat
   view :engage_tab, wrap: { div: { class: "m-3 mt-4 _engage-tab" } }, cache: :never do
     [render_follow_section, discussion_section].compact
@@ -47,4 +47,4 @@ module HtmlFormat; module_parent.send :register_set_format, Card::Format::HtmlFo
   end
 end
 end;end;end;end;end;
-# ~~ generated from /Users/ezl5238/dev/decko/gem/mod/edit/set/all/bridge/tab_views.rb ~~
+# ~~ generated from /Users/ethan/dev/decko/gem/mod/edit/set/all/bridge/tab_views.rb ~~

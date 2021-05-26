@@ -4,7 +4,7 @@ class Card; module Set; class Abstract
 #
 module Paging;
 extend Card::Set
-def self.source_location; "/Users/ezl5238/dev/decko/gem/mod/collection/set/abstract/paging.rb"; end
+def self.source_location; "/Users/ethan/dev/decko/gem/mod/collection/set/abstract/paging.rb"; end
 MAX_ANONYMOUS_SEARCH_PARAM = 1000
 
 module Format; module_parent.send :register_set_format, Card::Format, self; extend Card::Set::AbstractFormat
@@ -71,4 +71,4 @@ module Format; module_parent.send :register_set_format, Card::Format, self; exte
   end
 end
 end;end;end;end;
-# ~~ generated from /Users/ezl5238/dev/decko/gem/mod/collection/set/abstract/paging.rb ~~
+# ~~ generated from /Users/ethan/dev/decko/gem/mod/collection/set/abstract/paging.rb ~~

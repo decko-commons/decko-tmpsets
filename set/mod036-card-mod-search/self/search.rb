@@ -4,7 +4,7 @@ class Card; module Set; class Self
 #
 module Search;
 extend Card::Set
-def self.source_location; "/Users/ezl5238/dev/decko/gem/mod/search/set/self/search.rb"; end
+def self.source_location; "/Users/ethan/dev/decko/gem/mod/search/set/self/search.rb"; end
 module Format; module_parent.send :register_set_format, Card::Format, self; extend Card::Set::AbstractFormat
   view :search_error, cache: :never do
     sr_class = search_with_params.class.to_s
@@ -101,4 +101,4 @@ module JsonFormat; module_parent.send :register_set_format, Card::Format::JsonFo
   end
 end
 end;end;end;end;
-# ~~ generated from /Users/ezl5238/dev/decko/gem/mod/search/set/self/search.rb ~~
+# ~~ generated from /Users/ethan/dev/decko/gem/mod/search/set/self/search.rb ~~

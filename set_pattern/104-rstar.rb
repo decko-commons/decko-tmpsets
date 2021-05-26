@@ -21,8 +21,8 @@ end
 def pattern_applies? card
   card.name.rstar?
 end
-              end
-              register "Rstar".underscore.to_sym, (options || {})
             end
+            register "Rstar".underscore.to_sym, (options || {})
+          end
 
-# ~~ generated from /Users/ezl5238/dev/decko/gem/card/mod/core/set_pattern/05_rstar.rb ~~
+# ~~ generated from /Users/ethan/dev/decko/gem/card/mod/core/set_pattern/05_rstar.rb ~~

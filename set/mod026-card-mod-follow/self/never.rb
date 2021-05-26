@@ -4,7 +4,7 @@ class Card; module Set; class Self
 #
 module Never;
 extend Card::Set
-def self.source_location; "/Users/ezl5238/dev/decko/gem/mod/follow/set/self/never.rb"; end
+def self.source_location; "/Users/ethan/dev/decko/gem/mod/follow/set/self/never.rb"; end
 include_set Abstract::FollowOption
 
 follow_opts position: 3
@@ -19,4 +19,4 @@ def label
   "ignore"
 end
 end;end;end;end;
-# ~~ generated from /Users/ezl5238/dev/decko/gem/mod/follow/set/self/never.rb ~~
+# ~~ generated from /Users/ethan/dev/decko/gem/mod/follow/set/self/never.rb ~~

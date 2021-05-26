@@ -4,7 +4,7 @@ class Card; module Set; class All
 #
 module Notify;
 extend Card::Set
-def self.source_location; "/Users/ezl5238/dev/decko/gem/mod/follow/set/all/notify.rb"; end
+def self.source_location; "/Users/ethan/dev/decko/gem/mod/follow/set/all/notify.rb"; end
 attr_accessor :follower_stash
 
 mattr_accessor :force_notifications
@@ -88,4 +88,4 @@ def current_act_card?
   # to make this work.
 end
 end;end;end;end;
-# ~~ generated from /Users/ezl5238/dev/decko/gem/mod/follow/set/all/notify.rb ~~
+# ~~ generated from /Users/ethan/dev/decko/gem/mod/follow/set/all/notify.rb ~~

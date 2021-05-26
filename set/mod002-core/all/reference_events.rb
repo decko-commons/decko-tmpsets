@@ -5,7 +5,7 @@ class Card; module Set; class All
 # test for updating referer content
 module ReferenceEvents;
 extend Card::Set
-def self.source_location; "/Users/ezl5238/dev/decko/gem/card/mod/core/set/all/reference_events.rb"; end
+def self.source_location; "/Users/ethan/dev/decko/gem/card/mod/core/set/all/reference_events.rb"; end
 event :prepare_referer_update, :validate, on: :update, changed: :name do
   self.update_referers = ![nil, false, "false"].member?(update_referers)
 end
@@ -75,4 +75,4 @@ def update_reference old_key, new_key
   Reference.where(referee_key: old_key).update_all referee_key: new_key
 end
 end;end;end;end;
-# ~~ generated from /Users/ezl5238/dev/decko/gem/card/mod/core/set/all/reference_events.rb ~~
+# ~~ generated from /Users/ethan/dev/decko/gem/card/mod/core/set/all/reference_events.rb ~~

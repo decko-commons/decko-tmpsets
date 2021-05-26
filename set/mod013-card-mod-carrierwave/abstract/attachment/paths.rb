@@ -4,7 +4,7 @@ class Card; module Set; class Abstract; module Attachment;
 #
 module Paths;
 extend Card::Set
-def self.source_location; "/Users/ezl5238/dev/decko/gem/mod/carrierwave/set/abstract/attachment/paths.rb"; end
+def self.source_location; "/Users/ethan/dev/decko/gem/mod/carrierwave/set/abstract/attachment/paths.rb"; end
 MOD_FILE_DIR = "file".freeze
 
 def store_dir
@@ -65,4 +65,4 @@ def file_id
   id? ? id : upload_cache_card.id
 end
 end;end;end;end;end;
-# ~~ generated from /Users/ezl5238/dev/decko/gem/mod/carrierwave/set/abstract/attachment/paths.rb ~~
+# ~~ generated from /Users/ethan/dev/decko/gem/mod/carrierwave/set/abstract/attachment/paths.rb ~~

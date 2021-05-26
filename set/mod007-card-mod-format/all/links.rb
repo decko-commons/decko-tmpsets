@@ -4,7 +4,7 @@ class Card; module Set; class All
 #
 module Links;
 extend Card::Set
-def self.source_location; "/Users/ezl5238/dev/decko/gem/mod/format/set/all/links.rb"; end
+def self.source_location; "/Users/ethan/dev/decko/gem/mod/format/set/all/links.rb"; end
 RESOURCE_TYPE_REGEXP = /^([a-zA-Z][\-+.a-zA-Z\d]*):/
 
 # The #link_to methods support smart formatting of links in multiple formats.
@@ -157,4 +157,4 @@ module HtmlFormat; module_parent.send :register_set_format, Card::Format::HtmlFo
   end
 end
 end;end;end;end;
-# ~~ generated from /Users/ezl5238/dev/decko/gem/mod/format/set/all/links.rb ~~
+# ~~ generated from /Users/ethan/dev/decko/gem/mod/format/set/all/links.rb ~~

@@ -4,7 +4,7 @@ class Card; module Set; class Abstract
 #
 module TestContext;
 extend Card::Set
-def self.source_location; "/Users/ezl5238/dev/decko/gem/mod/email/set/abstract/test_context.rb"; end
+def self.source_location; "/Users/ethan/dev/decko/gem/mod/email/set/abstract/test_context.rb"; end
 module HtmlFormat; module_parent.send :register_set_format, Card::Format::HtmlFormat, self; extend Card::Set::AbstractFormat
   view :core do
     return super() if voo.hide? :test_context
@@ -33,4 +33,4 @@ module EmailTextFormat; module_parent.send :register_set_format, Card::Format::E
   end
 end
 end;end;end;end;
-# ~~ generated from /Users/ezl5238/dev/decko/gem/mod/email/set/abstract/test_context.rb ~~
+# ~~ generated from /Users/ethan/dev/decko/gem/mod/email/set/abstract/test_context.rb ~~

@@ -4,7 +4,7 @@ class Card; module Set; class Type
 #
 module Basic;
 extend Card::Set
-def self.source_location; "/Users/ezl5238/dev/decko/gem/mod/legacy/set/type/basic.rb"; end
+def self.source_location; "/Users/ethan/dev/decko/gem/mod/legacy/set/type/basic.rb"; end
 include_set Abstract::TableOfContents
 end;end;end;end;
-# ~~ generated from /Users/ezl5238/dev/decko/gem/mod/legacy/set/type/basic.rb ~~
+# ~~ generated from /Users/ethan/dev/decko/gem/mod/legacy/set/type/basic.rb ~~

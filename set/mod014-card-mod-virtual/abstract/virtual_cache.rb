@@ -5,7 +5,7 @@ class Card; module Set; class Abstract
 # -*- encoding : utf-8 -*-
 module VirtualCache;
 extend Card::Set
-def self.source_location; "/Users/ezl5238/dev/decko/gem/mod/virtual/set/abstract/virtual_cache.rb"; end
+def self.source_location; "/Users/ethan/dev/decko/gem/mod/virtual/set/abstract/virtual_cache.rb"; end
 
 def virtual?
   new?
@@ -49,4 +49,4 @@ def delete!
   update! trash: true
 end
 end;end;end;end;
-# ~~ generated from /Users/ezl5238/dev/decko/gem/mod/virtual/set/abstract/virtual_cache.rb ~~
+# ~~ generated from /Users/ethan/dev/decko/gem/mod/virtual/set/abstract/virtual_cache.rb ~~

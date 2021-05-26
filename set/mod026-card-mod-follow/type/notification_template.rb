@@ -4,7 +4,7 @@ class Card; module Set; class Type
 #
 module NotificationTemplate;
 extend Card::Set
-def self.source_location; "/Users/ezl5238/dev/decko/gem/mod/follow/set/type/notification_template.rb"; end
+def self.source_location; "/Users/ethan/dev/decko/gem/mod/follow/set/type/notification_template.rb"; end
 card_reader :contextual_class
 card_reader :disappear
 card_reader :message
@@ -39,4 +39,4 @@ def alert_class
   contextual_class.present? ? contextual_class_card.item_name : :success
 end
 end;end;end;end;
-# ~~ generated from /Users/ezl5238/dev/decko/gem/mod/follow/set/type/notification_template.rb ~~
+# ~~ generated from /Users/ethan/dev/decko/gem/mod/follow/set/type/notification_template.rb ~~

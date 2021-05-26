@@ -5,7 +5,7 @@ class Card; module Set; class Abstract
 # store items as ids, not names
 module IdPointer;
 extend Card::Set
-def self.source_location; "/Users/ezl5238/dev/decko/gem/mod/list/set/abstract/id_pointer.rb"; end
+def self.source_location; "/Users/ethan/dev/decko/gem/mod/list/set/abstract/id_pointer.rb"; end
 
 def standardize_item cardish
   if (id = Card.id cardish)
@@ -27,4 +27,4 @@ def item_names args={}
   item_ids(args).map(&:cardname).compact
 end
 end;end;end;end;
-# ~~ generated from /Users/ezl5238/dev/decko/gem/mod/list/set/abstract/id_pointer.rb ~~
+# ~~ generated from /Users/ethan/dev/decko/gem/mod/list/set/abstract/id_pointer.rb ~~

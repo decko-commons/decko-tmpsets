@@ -6,7 +6,7 @@ class Card; module Set; class Right
 
 module Followers;
 extend Card::Set
-def self.source_location; "/Users/ezl5238/dev/decko/gem/mod/follow/set/right/followers.rb"; end
+def self.source_location; "/Users/ethan/dev/decko/gem/mod/follow/set/right/followers.rb"; end
 # X+*followers provides a list of all users following X.
 
 include_set Abstract::Pointer
@@ -29,4 +29,4 @@ def virtual?
   new?
 end
 end;end;end;end;
-# ~~ generated from /Users/ezl5238/dev/decko/gem/mod/follow/set/right/followers.rb ~~
+# ~~ generated from /Users/ethan/dev/decko/gem/mod/follow/set/right/followers.rb ~~

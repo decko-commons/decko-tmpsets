@@ -4,7 +4,7 @@ class Card; module Set; class Abstract
 #
 module FollowOption;
 extend Card::Set
-def self.source_location; "/Users/ezl5238/dev/decko/gem/mod/follow/set/abstract/follow_option.rb"; end
+def self.source_location; "/Users/ethan/dev/decko/gem/mod/follow/set/abstract/follow_option.rb"; end
 def restrictive_option?
   Card::FollowOption.restrictive_options.include? codename
 end
@@ -62,4 +62,4 @@ module ClassMethods
   end
 end
 end;end;end;end;
-# ~~ generated from /Users/ezl5238/dev/decko/gem/mod/follow/set/abstract/follow_option.rb ~~
+# ~~ generated from /Users/ethan/dev/decko/gem/mod/follow/set/abstract/follow_option.rb ~~

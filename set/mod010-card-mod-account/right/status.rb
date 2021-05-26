@@ -4,7 +4,7 @@ class Card; module Set; class Right
 #
 module Status;
 extend Card::Set
-def self.source_location; "/Users/ezl5238/dev/decko/gem/mod/account/set/right/status.rb"; end
+def self.source_location; "/Users/ethan/dev/decko/gem/mod/account/set/right/status.rb"; end
 include_set Abstract::AccountField
 include_set Abstract::Pointer
 
@@ -24,4 +24,4 @@ def ok_to_update
   end
 end
 end;end;end;end;
-# ~~ generated from /Users/ezl5238/dev/decko/gem/mod/account/set/right/status.rb ~~
+# ~~ generated from /Users/ethan/dev/decko/gem/mod/account/set/right/status.rb ~~

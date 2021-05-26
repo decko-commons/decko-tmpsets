@@ -4,7 +4,7 @@ class Card; module Set; class Type
 #
 module Set;
 extend Card::Set
-def self.source_location; "/Users/ezl5238/dev/decko/gem/mod/follow/set/type/set.rb"; end
+def self.source_location; "/Users/ethan/dev/decko/gem/mod/follow/set/type/set.rb"; end
 event :cache_expired_for_new_set, :store, on: :create do
   Card.follow_caches_expired
 end
@@ -59,4 +59,4 @@ def directly_followed_by? user_id=nil
   follow_rule?
 end
 end;end;end;end;
-# ~~ generated from /Users/ezl5238/dev/decko/gem/mod/follow/set/type/set.rb ~~
+# ~~ generated from /Users/ethan/dev/decko/gem/mod/follow/set/type/set.rb ~~

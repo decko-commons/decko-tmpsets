@@ -4,7 +4,7 @@ class Card; module Set; class All
 #
 #! no set module
 module Follow;
-def self.source_location; "/Users/ezl5238/dev/decko/gem/mod/follow/set/all/follow/start_follow_link.rb"; end
+def self.source_location; "/Users/ethan/dev/decko/gem/mod/follow/set/all/follow/start_follow_link.rb"; end
 
 class StartFollowLink < FollowLink
   def initialize format
@@ -16,4 +16,4 @@ class StartFollowLink < FollowLink
   end
 end
 end;end;end;end;
-# ~~ generated from /Users/ezl5238/dev/decko/gem/mod/follow/set/all/follow/start_follow_link.rb ~~
+# ~~ generated from /Users/ethan/dev/decko/gem/mod/follow/set/all/follow/start_follow_link.rb ~~

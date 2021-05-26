@@ -4,7 +4,7 @@ class Card; module Set; class Type
 #
 module User;
 extend Card::Set
-def self.source_location; "/Users/ezl5238/dev/decko/gem/mod/follow/set/type/user.rb"; end
+def self.source_location; "/Users/ethan/dev/decko/gem/mod/follow/set/type/user.rb"; end
 def follow follow_name, option="*always"
   return unless (follow_rule = Card.fetch(follow_name)&.follow_rule_card(name, new: {}))
 
@@ -13,4 +13,4 @@ def follow follow_name, option="*always"
   follow_rule.save!
 end
 end;end;end;end;
-# ~~ generated from /Users/ezl5238/dev/decko/gem/mod/follow/set/type/user.rb ~~
+# ~~ generated from /Users/ethan/dev/decko/gem/mod/follow/set/type/user.rb ~~
