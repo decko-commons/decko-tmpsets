@@ -4,7 +4,7 @@ class Card; module Set; class All
 #
 module Type;
 extend Card::Set
-def self.source_location; "/Users/ethan/dev/decko/gem/card/mod/core/set/all/type.rb"; end
+def self.source_location; "/Users/ezl5238/dev/decko/gem/card/mod/core/set/all/type.rb"; end
 module ClassMethods
   def default_type_id
     @@default_type_id ||= Card[:all].fetch(:default, skip_modules: true).type_id
@@ -67,4 +67,4 @@ event :validate_type, :validate, changed: :type_id, on: :save do
   end
 end
 end;end;end;end;
-# ~~ generated from /Users/ethan/dev/decko/gem/card/mod/core/set/all/type.rb ~~
+# ~~ generated from /Users/ezl5238/dev/decko/gem/card/mod/core/set/all/type.rb ~~

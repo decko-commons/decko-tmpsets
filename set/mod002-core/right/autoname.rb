@@ -4,9 +4,9 @@ class Card; module Set; class Right
 #
 module Autoname;
 extend Card::Set
-def self.source_location; "/Users/ethan/dev/decko/gem/card/mod/core/set/right/autoname.rb"; end
+def self.source_location; "/Users/ezl5238/dev/decko/gem/card/mod/core/set/right/autoname.rb"; end
 def history?
   false
 end
 end;end;end;end;
-# ~~ generated from /Users/ethan/dev/decko/gem/card/mod/core/set/right/autoname.rb ~~
+# ~~ generated from /Users/ezl5238/dev/decko/gem/card/mod/core/set/right/autoname.rb ~~

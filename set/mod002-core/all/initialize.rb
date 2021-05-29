@@ -4,7 +4,7 @@ class Card; module Set; class All
 #
 module Initialize;
 extend Card::Set
-def self.source_location; "/Users/ethan/dev/decko/gem/card/mod/core/set/all/initialize.rb"; end
+def self.source_location; "/Users/ezl5238/dev/decko/gem/card/mod/core/set/all/initialize.rb"; end
 JUNK_INIT_ARGS = %i[missing skip_virtual id].freeze
 
 module ClassMethods
@@ -71,11 +71,15 @@ def include_set_modules
   return self if @set_mods_loaded
 
   set_modules.each do |m|
-    singleton_class.send :include, m
+    include_set_module m
   end
   assign_set_specific_attributes
   @uncacheable = @set_mods_loaded = true
   self
+end
+
+def include_set_module m
+  singleton_class.send :include, m
 end
 
 def set_mods_loaded?
@@ -86,4 +90,4 @@ def uncacheable?
   @uncacheable == true
 end
 end;end;end;end;
-# ~~ generated from /Users/ethan/dev/decko/gem/card/mod/core/set/all/initialize.rb ~~
+# ~~ generated from /Users/ezl5238/dev/decko/gem/card/mod/core/set/all/initialize.rb ~~

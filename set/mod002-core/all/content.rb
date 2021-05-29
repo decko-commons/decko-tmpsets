@@ -4,7 +4,7 @@ class Card; module Set; class All
 #
 module Content;
 extend Card::Set
-def self.source_location; "/Users/ethan/dev/decko/gem/card/mod/core/set/all/content.rb"; end
+def self.source_location; "/Users/ezl5238/dev/decko/gem/card/mod/core/set/all/content.rb"; end
 event :set_content, :store, on: :save do
   self.db_content = prepare_db_content
   @selected_action_id = @selected_content = nil
@@ -71,4 +71,4 @@ def updater
   Card[updater_id]
 end
 end;end;end;end;
-# ~~ generated from /Users/ethan/dev/decko/gem/card/mod/core/set/all/content.rb ~~
+# ~~ generated from /Users/ezl5238/dev/decko/gem/card/mod/core/set/all/content.rb ~~

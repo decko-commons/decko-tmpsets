@@ -4,9 +4,9 @@ class Card; module Set; class Self
 #
 module Autoname;
 extend Card::Set
-def self.source_location; "/Users/ethan/dev/decko/gem/card/mod/core/set/self/autoname.rb"; end
+def self.source_location; "/Users/ezl5238/dev/decko/gem/card/mod/core/set/self/autoname.rb"; end
 setting_opts group: :templating, position: 4,
              help_text: "Autogenerate name for new cards by incrementing this value. "\
                         "[[http://decko.org/autonaming|more]]"
 end;end;end;end;
-# ~~ generated from /Users/ethan/dev/decko/gem/card/mod/core/set/self/autoname.rb ~~
+# ~~ generated from /Users/ezl5238/dev/decko/gem/card/mod/core/set/self/autoname.rb ~~

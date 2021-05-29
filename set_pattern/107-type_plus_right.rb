@@ -40,4 +40,4 @@ end
             register "TypePlusRight".underscore.to_sym, (options || {})
           end
 
-# ~~ generated from /Users/ethan/dev/decko/gem/card/mod/core/set_pattern/08_type_plus_right.rb ~~
+# ~~ generated from /Users/ezl5238/dev/decko/gem/card/mod/core/set_pattern/08_type_plus_right.rb ~~
