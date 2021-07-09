@@ -25,4 +25,4 @@ end
             register "Rstar".underscore.to_sym, (options || {})
           end
 
-# ~~ generated from /Users/ezl5238/dev/decko/gem/card/mod/core/set_pattern/05_rstar.rb ~~
+# ~~ generated from /Users/philipp/dev/decko/gem/card/mod/core/set_pattern/05_rstar.rb ~~

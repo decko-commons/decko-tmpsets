@@ -32,4 +32,4 @@ end
             register "Right".underscore.to_sym, (options || {})
           end
 
-# ~~ generated from /Users/ezl5238/dev/decko/gem/card/mod/core/set_pattern/07_right.rb ~~
+# ~~ generated from /Users/philipp/dev/decko/gem/card/mod/core/set_pattern/07_right.rb ~~
